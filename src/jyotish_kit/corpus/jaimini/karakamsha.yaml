@@ -1,0 +1,38 @@
+# Karakamsha (the atmakaraka's navamsa sign) results beyond marriage, BPHS ch.33. Houses counted from the
+# karakamsha in the navamsa chart, as in jaimini/marriage.yaml.
+defaults:
+  school: jaimini
+  classical_strength: primary
+  varga: D9
+  tags: [karakamsha]
+  source:
+    text: Brihat Parashara Hora Shastra
+    chapter: 33
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "karakamsha chapter (it follows Jaimini Upadesa Sutras 1.2); verse to be confirmed against the edition"
+
+rules:
+  - id: BPHS.33.KL12Ketu
+    name: Ketu in the 12th from karakamsha
+    source: {paraphrase: "Ketu in the 12th from the karakamsha gives final emancipation; with benefics there, the more so."}
+    condition: 'Ketu in occupants_sign(sign_from(special_lagna("Karakamsha"), 12))'
+    effect: {domains: [spirituality, moksha], polarity: 2, themes: ["liberation-oriented life"]}
+    timing: "Ketu in [dasha_lord, antardasha_lord]"
+    tags: [domain:spirituality, karakamsha]
+
+  - id: BPHS.33.KL12Benefic
+    name: Benefics in the 12th from karakamsha
+    source: {paraphrase: "Benefics in the 12th from the karakamsha incline the native to good expenditure and a better state after death; malefics there the opposite."}
+    condition: 'any(b in planets: benefic(b) and b in occupants_sign(sign_from(special_lagna("Karakamsha"), 12)))'
+    effect: {domains: [spirituality, moksha], polarity: 1, themes: ["spiritual merit"]}
+    classical_strength: supporting
+    tags: [domain:spirituality, karakamsha]
+
+  - id: BPHS.33.KL5Jupiter
+    name: Jupiter in the 5th from karakamsha
+    source: {paraphrase: "Jupiter in (or aspecting) the 5th from the karakamsha makes the native learned, versed in scripture and grammar.", note: "aspect variant not encoded"}
+    condition: 'Jupiter in occupants_sign(sign_from(special_lagna("Karakamsha"), 5))'
+    effect: {domains: [education, intelligence], polarity: 1, themes: ["learning", "scholarship"]}
+    timing: "Jupiter in [dasha_lord, antardasha_lord]"
+    classical_strength: supporting
+    tags: [domain:education, karakamsha]

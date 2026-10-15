@@ -1,0 +1,45 @@
+# Marriage domain, KP: the sub lord of the 7th cusp and the significators of 2, 7, 11.
+# Houses 2 (family), 7 (spouse), 11 (fulfilment) favour marriage; 1, 6, 10 (the 12th from each) oppose it.
+defaults:
+  school: kp
+  classical_strength: primary
+  varga: KP
+  tags: [domain:marriage]
+  source:
+    text: Krishnamurti Padhdhati Reader
+    chapter: "IV"
+    edition: "K.S. Krishnamurti, Krishnamurti Padhdhati Reader IV: Marriage, Married Life and Children, Krishman & Co., Madras"
+    note: "Reader volume and topic; page/section to be confirmed"
+
+rules:
+  - id: KP.IV.SeventhSubPromise
+    name: 7th cusp sub lord signifies 2, 7 or 11
+    source: {paraphrase: "If the sub lord of the 7th cusp is a significator of the 2nd, 7th or 11th house, marriage is promised."}
+    condition: "signifies(kp_sub_lord(7), [2, 7, 11])"
+    effect: {domains: [marriage], polarity: 2, themes: ["marriage promised"]}
+    timing: "signifies(dasha_lord, [2, 7, 11]) and signifies(antardasha_lord, [2, 7, 11])"
+    tags: [domain:marriage, kp:cusp7]
+
+  - id: KP.IV.SeventhSubDenial
+    name: 7th cusp sub lord signifies only 1, 6, 10
+    source: {paraphrase: "If the sub lord of the 7th cusp signifies the 1st, 6th or 10th but none of 2, 7 and 11, marriage is denied or long delayed."}
+    condition: "signifies(kp_sub_lord(7), [1, 6, 10]) and not signifies(kp_sub_lord(7), [2, 7, 11])"
+    effect: {domains: [marriage], polarity: -2, themes: ["denial or long delay of marriage"]}
+    tags: [domain:marriage, kp:cusp7]
+
+  - id: KP.IV.SeventhSubMixed
+    name: 7th cusp sub lord signifies both sets
+    source: {paraphrase: "If the 7th cusp sub lord signifies 2, 7 or 11 and also 1, 6 or 10, marriage comes with obstacles, delay or friction in married life."}
+    condition: "signifies(kp_sub_lord(7), [2, 7, 11]) and signifies(kp_sub_lord(7), [1, 6, 10])"
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["obstacles or friction in married life"]}
+    tags: [domain:marriage, kp:cusp7]
+
+  - id: KP.IV.MarriageTiming
+    name: Periods of 2-7-11 significators
+    source: {paraphrase: "Marriage takes place in the conjoined periods (dasha, bhukti, antara) of planets that signify the 2nd, 7th and 11th houses."}
+    condition: "signifies(kp_sub_lord(7), [2, 7, 11])"
+    effect: {domains: [marriage], polarity: 1, themes: ["period of marriage"]}
+    timing: >-
+      signifies(dasha_lord, [2, 7, 11]) and signifies(antardasha_lord, [2, 7, 11])
+      and signifies(pratyantardasha_lord, [2, 7, 11])
+    tags: [domain:marriage, kp:cusp7, timing]

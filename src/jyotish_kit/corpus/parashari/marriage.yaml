@@ -1,0 +1,218 @@
+# Marriage domain, Parashari: 7th house and lord, Venus as karaka, D9, Kuja dosha, timing.
+# House-judgement principles (a bhava prospers when it and its lord are strong and aided by benefics,
+# and suffers under malefic influence and when its lord is in a dusthana) are BPHS ch.11.
+defaults:
+  school: parashari
+  classical_strength: primary
+  tags: [domain:marriage, bhava:7]
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "chapter per the named edition's numbering; verse to be confirmed against it"
+
+rules:
+  # ---------------------------------------------------------------- 7th lord
+  - id: BPHS.18.SeventhLordDignified
+    name: 7th lord in own sign or exaltation
+    source: {chapter: 18, paraphrase: "When the 7th lord is in its own sign or exaltation, the native enjoys full happiness through the spouse."}
+    condition: "dignified(lord(7))"
+    effect: {domains: [marriage, spouse], polarity: 2, themes: ["marital happiness", "capable spouse"]}
+    timing: "lord(7) in [dasha_lord, antardasha_lord]"
+    tags: [domain:marriage, lord:7]
+
+
+  - id: BPHS.18.SeventhLordDusthana
+    name: 7th lord in a dusthana
+    source: {chapter: 18, paraphrase: "The 7th lord in the 6th, 8th or 12th, without dignity, makes the spouse sickly and the marriage strained."}
+    condition: "in_house(lord(7), dusthana) and not dignified(lord(7))"
+    effect: {domains: [marriage, spouse], polarity: -2, themes: ["spouse's health", "marital strain"]}
+    timing: "lord(7) in [dasha_lord, antardasha_lord]"
+    tags: [domain:marriage, lord:7, alt:lord7_dusthana]
+
+
+  - id: BPHS.11.SeventhLordAfflicted
+    name: 7th lord afflicted and unaided
+    source: {chapter: 11, paraphrase: "A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic help; applied to the 7th, the marriage and spouse suffer."}
+    condition: "afflicted(lord(7)) and not aided(lord(7))"
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["difficulties through partnership"]}
+    timing: "lord(7) in [dasha_lord, antardasha_lord]"
+    tags: [domain:marriage, lord:7]
+
+
+  - id: BPHS.11.SeventhLordStrongInGoodHouse
+    name: 7th lord strong in a kendra or trikona
+    source: {chapter: 11, paraphrase: "A house prospers when its lord is strong and placed in a kendra or trikona; applied to the 7th, marriage and partnerships flourish."}
+    condition: "strong(lord(7)) and in_house(lord(7), [1, 4, 5, 7, 9, 10])"
+    effect: {domains: [marriage, partnership], polarity: 1, themes: ["supportive marriage", "good partnerships"]}
+    timing: "lord(7) in [dasha_lord, antardasha_lord]"
+
+  # ---------------------------------------------------------------- the 7th house
+    tags: [domain:marriage, lord:7]
+
+
+  - id: BPHS.11.SeventhHouseBenefic
+    name: Benefic influence on the 7th
+    source: {chapter: 11, paraphrase: "A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 7th, a harmonious marriage."}
+    condition: >-
+      any(b in planets: benefic(b) and (in_house(b, 7) or aspects_house(b, 7)))
+      and not any(m in planets: malefic(m) and (in_house(m, 7) or aspects_house(m, 7)))
+    effect: {domains: [marriage, spouse], polarity: 1, themes: ["harmony in marriage"]}
+
+  - id: BPHS.11.SeventhHouseMalefic
+    name: Malefic influence on the 7th
+    source: {chapter: 11, paraphrase: "A house occupied or aspected by malefics with no benefic influence is harmed; applied to the 7th, friction and loss in marriage."}
+    condition: >-
+      any(m in planets: malefic(m) and (in_house(m, 7) or aspects_house(m, 7)))
+      and not any(b in planets: benefic(b) and (in_house(b, 7) or aspects_house(b, 7)))
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["friction in marriage"]}
+
+  - id: BPHS.18.VenusInSeventh
+    name: Venus in the 7th
+    source: {chapter: 18, paraphrase: "Venus in the 7th makes the native strongly sensual."}
+    condition: "in_house(Venus, 7)"
+    effect: {domains: [marriage, sexuality], polarity: 0, themes: ["strong desire nature"]}
+    classical_strength: supporting
+    tags: [domain:marriage, bhava:7, karaka:Venus]
+
+  - id: BPHS.11.JupiterProtectsSeventh
+    name: Jupiter's aspect on the 7th or its lord
+    source: {chapter: 11, paraphrase: "The aspect of Jupiter, the greatest benefic, protects the house or lord it falls on; on the 7th or its lord it guards the marriage.", note: "general principle; locus to be confirmed"}
+    condition: "aspects_house(Jupiter, 7) or (lord(7) != Jupiter and (aspects(Jupiter, lord(7)) or conjunct(Jupiter, lord(7))))"
+    effect: {domains: [marriage, spouse], polarity: 1, themes: ["protection of the marriage"]}
+    classical_strength: supporting
+    tags: [domain:marriage, bhava:7, karaka:Jupiter]
+
+  # ---------------------------------------------------------------- Venus, karaka of spouse (BPHS ch.32)
+  - id: BPHS.32.VenusKarakaStrong
+    name: Venus (spouse karaka) strong and well placed
+    source: {chapter: 32, paraphrase: "Venus is the significator of the spouse; strong and well placed, it supports marital happiness and pleasures."}
+    condition: "strong(Venus) and not in_house(Venus, dusthana)"
+    effect: {domains: [marriage, spouse, happiness], polarity: 1, themes: ["marital happiness"]}
+    timing: "Venus in [dasha_lord, antardasha_lord]"
+    tags: [domain:marriage, karaka:Venus]
+
+  - id: BPHS.32.VenusKarakaWeak
+    name: Venus (spouse karaka) weak or in a dusthana
+    source: {chapter: 32, paraphrase: "Venus as significator of the spouse, when weak (debilitated, combust, defeated) or in a dusthana, harms marital happiness."}
+    condition: "weak(Venus) or in_house(Venus, dusthana)"
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["marital dissatisfaction"]}
+    timing: "Venus in [dasha_lord, antardasha_lord]"
+    tags: [domain:marriage, karaka:Venus]
+
+  # ---------------------------------------------------------------- navamsa (D9) confirmation
+  - id: BPHS.7.D9SeventhLordStrong
+    name: D9 7th lord dignified
+    source: {chapter: 7, paraphrase: "The navamsa is examined for the spouse; a dignified lord of the 7th in the navamsa supports the marriage.", note: "BPHS ch.7 assigns D9 to spouse; the specific test is standard practice"}
+    varga: D9
+    condition: "dignified(lord(7))"
+    effect: {domains: [marriage, spouse], polarity: 1, themes: ["navamsa supports marriage"]}
+    classical_strength: supporting
+    tags: [domain:marriage, varga:D9, lord:7]
+
+  - id: BPHS.7.D9SeventhLordDusthana
+    name: D9 7th lord in a dusthana
+    source: {chapter: 7, paraphrase: "The lord of the 7th in the 6th, 8th or 12th of the navamsa weakens the marriage indications.", note: "BPHS ch.7 assigns D9 to spouse; the specific test is standard practice"}
+    varga: D9
+    condition: "in_house(lord(7), dusthana) and not dignified(lord(7))"
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["navamsa weakens marriage"]}
+    classical_strength: supporting
+    tags: [domain:marriage, varga:D9, lord:7]
+
+  - id: BPHS.7.D9VenusDignified
+    name: Venus dignified in D9
+    source: {chapter: 7, paraphrase: "Venus in its own sign or exaltation in the navamsa strengthens marital happiness."}
+    varga: D9
+    condition: "dignified(Venus)"
+    effect: {domains: [marriage, spouse], polarity: 1, themes: ["navamsa strength of the karaka"]}
+    classical_strength: supporting
+    tags: [domain:marriage, varga:D9, karaka:Venus]
+
+  - id: BPHS.7.D9VenusDebilitated
+    name: Venus debilitated in D9
+    source: {chapter: 7, paraphrase: "Venus debilitated in the navamsa weakens the significator of marriage."}
+    varga: D9
+    condition: "neecha(Venus)"
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["navamsa weakness of the karaka"]}
+    classical_strength: supporting
+    tags: [domain:marriage, varga:D9, karaka:Venus]
+
+  - id: BPHS.7.D9SeventhBenefic
+    name: Benefics in the D9 7th
+    source: {chapter: 7, paraphrase: "Benefics occupying the 7th of the navamsa indicate a good spouse."}
+    varga: D9
+    condition: "any(b in occupants(7): benefic(b))"
+    effect: {domains: [spouse], polarity: 1, themes: ["good-natured spouse"]}
+    classical_strength: supporting
+    tags: [domain:marriage, varga:D9]
+
+  # ---------------------------------------------------------------- timing
+  - id: BPHS.18.MarriageTiming
+    name: Periods that bring marriage
+    source: {chapter: 18, paraphrase: "Marriage takes place in the dasha or antardasha of the 7th lord, of Venus, of a planet in the 7th, or of the lord of the navamsa occupied by the 7th lord.", note: "list as commonly drawn from the 7th-house chapter; confirm the verse"}
+    condition: "true"
+    effect: {domains: [marriage], polarity: 1, themes: ["period of marriage"]}
+    timing: >-
+      any(x in [dasha_lord, antardasha_lord]:
+          x == lord(7) or x == Venus or x in occupants(7) or x == lord_of_sign(varga("D9").sign_of(lord(7))))
+    classical_strength: supporting
+    tags: [domain:marriage, timing]
+
+  # ---------------------------------------------------------------- Kuja (Mangal) dosha
+  - id: KujaDosha.Matching.FromLagna
+    name: Kuja dosha from the Lagna
+    source:
+      text: "Kuja dosha (marriage-matching tradition)"
+      chapter: "kuja dosha"
+      edition: "as compiled in B.V. Raman, Muhurtha or Electional Astrology, chapter on marriage (later editions, UBS Publishers)"
+      paraphrase: "Mars in the 1st, 2nd, 4th, 7th, 8th or 12th from the Lagna is held to harm marriage and the spouse; tradition lists exceptions such as Mars in its own or exaltation sign, joined with or aspected by Jupiter, or in particular signs for particular houses."
+      note: "not stated in BPHS; the houses and the exceptions vary between regional manuals, so this is a matching convention"
+    condition: "in_house(Mars, [1, 2, 4, 7, 8, 12])"
+    cancels_if: >-
+      dignified(Mars) or conjunct(Mars, Jupiter) or aspects(Jupiter, Mars)
+      or (in_house(Mars, 2) and in_sign(Mars, [Gemini, Virgo]))
+      or (in_house(Mars, 7) and in_sign(Mars, [Cancer, Capricorn]))
+      or (in_house(Mars, 8) and in_sign(Mars, [Sagittarius, Pisces]))
+      or (in_house(Mars, 12) and in_sign(Mars, [Taurus, Libra]))
+      or in_sign(Lagna, [Cancer, Leo])
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["friction or delay in marriage", "matching concern"]}
+    timing: "Mars in [dasha_lord, antardasha_lord]"
+    classical_strength: minority_view
+    tags: [domain:marriage, karaka:Mars, dosha]
+
+  - id: KujaDosha.Matching.FromMoon
+    name: Kuja dosha from the Moon
+    source:
+      text: "Kuja dosha (marriage-matching tradition)"
+      chapter: "kuja dosha"
+      edition: "as compiled in B.V. Raman, Muhurtha or Electional Astrology, chapter on marriage (later editions, UBS Publishers)"
+      paraphrase: "The same placements of Mars counted from the Moon are also examined, with the same exceptions."
+      note: "counting from the Moon and from Venus is a tradition-specific extension"
+    condition: "house_from(Mars, Moon) in [1, 2, 4, 7, 8, 12]"
+    cancels_if: >-
+      dignified(Mars) or conjunct(Mars, Jupiter) or aspects(Jupiter, Mars)
+      or (house_from(Mars, Moon) == 2 and in_sign(Mars, [Gemini, Virgo]))
+      or (house_from(Mars, Moon) == 7 and in_sign(Mars, [Cancer, Capricorn]))
+      or (house_from(Mars, Moon) == 8 and in_sign(Mars, [Sagittarius, Pisces]))
+      or (house_from(Mars, Moon) == 12 and in_sign(Mars, [Taurus, Libra]))
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["matching concern"]}
+    classical_strength: minority_view
+    tags: [domain:marriage, karaka:Mars, dosha]
+
+  - id: KujaDosha.Matching.FromVenus
+    name: Kuja dosha from Venus
+    source:
+      text: "Kuja dosha (marriage-matching tradition)"
+      chapter: "kuja dosha"
+      edition: "as compiled in B.V. Raman, Muhurtha or Electional Astrology, chapter on marriage (later editions, UBS Publishers)"
+      paraphrase: "The same placements of Mars counted from Venus are also examined, with the same exceptions."
+      note: "counting from the Moon and from Venus is a tradition-specific extension"
+    condition: "house_from(Mars, Venus) in [1, 2, 4, 7, 8, 12]"
+    cancels_if: >-
+      dignified(Mars) or conjunct(Mars, Jupiter) or aspects(Jupiter, Mars)
+      or (house_from(Mars, Venus) == 2 and in_sign(Mars, [Gemini, Virgo]))
+      or (house_from(Mars, Venus) == 7 and in_sign(Mars, [Cancer, Capricorn]))
+      or (house_from(Mars, Venus) == 8 and in_sign(Mars, [Sagittarius, Pisces]))
+      or (house_from(Mars, Venus) == 12 and in_sign(Mars, [Taurus, Libra]))
+    effect: {domains: [marriage, spouse], polarity: -1, themes: ["matching concern"]}
+    classical_strength: minority_view
+    tags: [domain:marriage, karaka:Mars, dosha]

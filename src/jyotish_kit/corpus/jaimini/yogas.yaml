@@ -1,0 +1,29 @@
+# Jaimini raja yogas from the chara karakas.
+defaults:
+  school: jaimini
+  classical_strength: primary
+  tags: [yoga, raja]
+  source:
+    text: Brihat Parashara Hora Shastra
+    chapter: 39
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "the karaka-based raja yogas in the raja yoga chapter; verse to be confirmed against the edition"
+
+rules:
+  - id: BPHS.39.AKAmK
+    name: Atmakaraka with Amatyakaraka
+    source: {paraphrase: "The atmakaraka and amatyakaraka joined, or aspecting each other by sign, give authority and a high position."}
+    condition: 'conjunct(karaka("AK"), karaka("AmK")) or (rashi_aspects(karaka("AK"), karaka("AmK")) and rashi_aspects(karaka("AmK"), karaka("AK")))'
+    effect: {domains: [status, career, authority], polarity: 2, themes: ["rise to authority"]}
+    timing: 'karaka("AK") in [dasha_lord, antardasha_lord] or karaka("AmK") in [dasha_lord, antardasha_lord]'
+    tags: [yoga, raja, karaka:AK, karaka:AmK]
+
+  - id: BPHS.39.AKPK
+    name: Atmakaraka with Putrakaraka
+    source: {paraphrase: "The atmakaraka and putrakaraka together in the Lagna or 5th, or joined and aspected by benefics, give a raja yoga."}
+    condition: >-
+      (in_house(karaka("AK"), [1, 5]) and in_house(karaka("PK"), [1, 5]))
+      or (conjunct(karaka("AK"), karaka("PK")) and any(b in planets: benefic(b) and aspects(b, karaka("AK"))))
+    effect: {domains: [status, children], polarity: 2, themes: ["distinction", "worthy children"]}
+    timing: 'karaka("AK") in [dasha_lord, antardasha_lord] or karaka("PK") in [dasha_lord, antardasha_lord]'
+    tags: [yoga, raja, karaka:AK, karaka:PK]

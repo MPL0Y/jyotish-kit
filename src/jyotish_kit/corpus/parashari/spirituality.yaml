@@ -1,0 +1,18 @@
+# Spirituality / renunciation, Parashari. The 12th lord's placement is BPHS ch.24 (bhavesh.yaml).
+defaults:
+  school: parashari
+  classical_strength: supporting
+  tags: [domain:spirituality]
+  source:
+    text: Phaladeepika
+    chapter: 27
+    edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Ranjan Publications, New Delhi"
+    note: "Pravrajya yoga chapter; verse to be confirmed against the edition"
+
+rules:
+  - id: Phaladeepika.27.Pravrajya
+    name: Four or more planets in one sign (pravrajya)
+    source: {paraphrase: "Four or more of the seven planets joined in one sign incline the native to renunciation; the strongest of them names the order, and the yoga fails if that planet is combust.", note: "the strongest-planet and combustion qualifiers are applied by synthesis's strength weighting, not in the condition"}
+    condition: "any(h in houses: count(p in seven: in_house(p, h)) >= 4)"
+    effect: {domains: [spirituality, moksha], polarity: 1, themes: ["inclination to renunciation"]}
+    tags: [domain:spirituality, yoga]

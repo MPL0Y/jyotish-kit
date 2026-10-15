@@ -1,0 +1,207 @@
+# Pancha Mahapurusha, lunar (Chandra) and solar (Surya) yogas.
+defaults:
+  school: parashari
+  classical_strength: primary
+  tags: [yoga]
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "chapter per the named edition's numbering; verse to be confirmed against it"
+
+rules:
+  # ---------------------------------------------------------------- Pancha Mahapurusha (BPHS ch.75)
+  - id: BPHS.75.Ruchaka
+    name: Ruchaka yoga
+    source: {chapter: 75, paraphrase: "Mars in a kendra from the Lagna in its own sign or exaltation forms Ruchaka: a strong, valorous person who leads, overcomes enemies and becomes well known, often in command of others."}
+    condition: "in_house(Mars, kendra) and dignified(Mars)"
+    effect: {domains: [self, courage, authority, fame], polarity: 2, themes: ["physical strength and valour", "command, leadership", "victory over opponents"]}
+    timing: "Mars in [dasha_lord, antardasha_lord]"
+    tags: [yoga, mahapurusha, karaka:Mars]
+
+  - id: BPHS.75.Bhadra
+    name: Bhadra yoga
+    source: {chapter: 75, paraphrase: "Mercury in a kendra from the Lagna in its own sign or exaltation forms Bhadra: an intelligent, learned and eloquent person, respected by the learned, long-lived and prosperous."}
+    condition: "in_house(Mercury, kendra) and dignified(Mercury)"
+    effect: {domains: [intelligence, education, speech, fame], polarity: 2, themes: ["intellect and learning", "eloquence", "respect from the learned"]}
+    timing: "Mercury in [dasha_lord, antardasha_lord]"
+    tags: [yoga, mahapurusha, karaka:Mercury]
+
+  - id: BPHS.75.Hamsa
+    name: Hamsa yoga
+    source: {chapter: 75, paraphrase: "Jupiter in a kendra from the Lagna in its own sign or exaltation forms Hamsa: a righteous, good-looking person honoured by good people, with spiritual inclinations and a contented life."}
+    condition: "in_house(Jupiter, kendra) and dignified(Jupiter)"
+    effect: {domains: [dharma, fame, spirituality, self], polarity: 2, themes: ["righteousness", "honour from the virtuous", "spiritual leaning"]}
+    timing: "Jupiter in [dasha_lord, antardasha_lord]"
+    tags: [yoga, mahapurusha, karaka:Jupiter]
+
+  - id: BPHS.75.Malavya
+    name: Malavya yoga
+    source: {chapter: 75, paraphrase: "Venus in a kendra from the Lagna in its own sign or exaltation forms Malavya: a person of comforts and refinement, with wealth, vehicles, a good spouse and sharp senses."}
+    condition: "in_house(Venus, kendra) and dignified(Venus)"
+    effect: {domains: [wealth, vehicles, spouse, happiness], polarity: 2, themes: ["comforts and luxuries", "vehicles", "marital happiness", "artistic refinement"]}
+    timing: "Venus in [dasha_lord, antardasha_lord]"
+    tags: [yoga, mahapurusha, karaka:Venus]
+
+  - id: BPHS.75.Sasa
+    name: Sasa yoga
+    source: {chapter: 75, paraphrase: "Saturn in a kendra from the Lagna in its own sign or exaltation forms Sasa: a person who commands servants and followers, heads a group, town or institution, though the text also notes questionable conduct."}
+    condition: "in_house(Saturn, kendra) and dignified(Saturn)"
+    effect: {domains: [authority, service, status], polarity: 1, themes: ["authority over many people", "position in an institution", "mixed conduct"]}
+    timing: "Saturn in [dasha_lord, antardasha_lord]"
+    tags: [yoga, mahapurusha, karaka:Saturn]
+
+  # ---------------------------------------------------------------- Moon from the Sun (BPHS ch.37)
+  - id: BPHS.37.MoonKendraFromSun
+    name: Adhama yoga (Moon in kendra from Sun)
+    source: {chapter: 37, paraphrase: "When the Moon is in a kendra from the Sun, wealth, learning and skill are meagre."}
+    condition: "house_from(Moon, Sun) in kendra"
+    effect: {domains: [wealth, intelligence], polarity: -1, themes: ["limited wealth and skill"]}
+    classical_strength: supporting
+    tags: [yoga, chandra]
+
+  - id: BPHS.37.MoonPanapharaFromSun
+    name: Sama yoga (Moon in panaphara from Sun)
+    source: {chapter: 37, paraphrase: "When the Moon is in a panaphara (2nd, 5th, 8th, 11th) from the Sun, wealth, learning and skill are moderate."}
+    condition: "house_from(Moon, Sun) in panaphara"
+    effect: {domains: [wealth, intelligence], polarity: 0, themes: ["moderate wealth and skill"]}
+    classical_strength: supporting
+    tags: [yoga, chandra]
+
+  - id: BPHS.37.MoonApoklimaFromSun
+    name: Varishtha yoga (Moon in apoklima from Sun)
+    source: {chapter: 37, paraphrase: "When the Moon is in an apoklima (3rd, 6th, 9th, 12th) from the Sun, wealth, learning and skill are excellent."}
+    condition: "house_from(Moon, Sun) in apoklima"
+    effect: {domains: [wealth, intelligence], polarity: 1, themes: ["abundant wealth, learning and skill"]}
+    classical_strength: supporting
+    tags: [yoga, chandra]
+
+  # ---------------------------------------------------------------- Moon's neighbours (BPHS ch.37)
+  - id: BPHS.37.Sunapha
+    name: Sunapha yoga
+    source: {chapter: 37, paraphrase: "A planet other than the Sun in the 2nd from the Moon (the 12th empty) gives Sunapha: self-made wealth, a royal or ruler-like standing, intelligence and good name."}
+    condition: >-
+      any(p in occupants_from(Moon, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and not any(p in occupants_from(Moon, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [wealth, status, intelligence], polarity: 1, themes: ["self-earned wealth", "reputation"]}
+    timing: "any(p in occupants_from(Moon, 2): p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, chandra]
+
+  - id: BPHS.37.Anapha
+    name: Anapha yoga
+    source: {chapter: 37, paraphrase: "A planet other than the Sun in the 12th from the Moon (the 2nd empty) gives Anapha: a well-formed, healthy body, dignity, good conduct, comforts and fame."}
+    condition: >-
+      any(p in occupants_from(Moon, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and not any(p in occupants_from(Moon, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [health, self, fame], polarity: 1, themes: ["good health and bearing", "comforts", "renown"]}
+    timing: "any(p in occupants_from(Moon, 12): p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, chandra]
+
+  - id: BPHS.37.Durudhura
+    name: Durudhura yoga
+    source: {chapter: 37, paraphrase: "Planets other than the Sun on both sides of the Moon (2nd and 12th) give Durudhura: enjoyment of pleasures, wealth and vehicles, generosity, and servants or followers."}
+    condition: >-
+      any(p in occupants_from(Moon, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and any(p in occupants_from(Moon, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [wealth, vehicles, happiness], polarity: 2, themes: ["pleasures and possessions", "generosity"]}
+    tags: [yoga, chandra]
+
+  - id: BPHS.37.Kemadruma
+    name: Kemadruma yoga
+    source: {chapter: 37, paraphrase: "With no planet other than the Sun in the 2nd or 12th from the Moon, Kemadruma arises: poverty, sorrow, dependence on others and lack of support; it is cancelled when a planet occupies a kendra from the Lagna or from the Moon."}
+    condition: >-
+      not any(p in occupants_from(Moon, 2) + occupants_from(Moon, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    cancels_if: "any(p in [Mars, Mercury, Jupiter, Venus, Saturn]: in_house(p, kendra) or kendra_from(p, Moon))"
+    effect: {domains: [wealth, happiness], polarity: -2, themes: ["want and dependence", "lack of support"]}
+    tags: [yoga, chandra, arishta]
+
+  - id: BPHS.37.Adhi
+    name: Adhi yoga
+    source: {chapter: 37, paraphrase: "Benefics in the 6th, 7th and 8th from the Moon form Adhi yoga: according to their strength the native becomes a leader, a minister or a commander, happy and free of enemies.", note: "texts differ on whether all three benefics are required; this rule requires Mercury, Jupiter and Venus all in 6/7/8 from the Moon"}
+    condition: "all(b in [Mercury, Jupiter, Venus]: house_from(b, Moon) in [6, 7, 8])"
+    effect: {domains: [authority, status, enemies], polarity: 2, themes: ["leadership or ministerial rank", "victory over enemies"]}
+    timing: "any(b in [Mercury, Jupiter, Venus]: b in [dasha_lord, antardasha_lord])"
+    tags: [yoga, chandra]
+
+  # ---------------------------------------------------------------- other Moon-based (BPHS ch.36)
+  - id: BPHS.36.Gajakesari
+    name: Gajakesari yoga
+    source: {chapter: 36, paraphrase: "Jupiter in a kendra from the Lagna or the Moon, joined with or aspected by benefics, and neither debilitated, combust nor in an enemy's sign, gives Gajakesari: splendour, wealth, intelligence, virtue and the favour of rulers.", note: "Phaladeepika ch.6 gives a shorter form: Jupiter in a kendra from the Moon"}
+    condition: >-
+      (in_house(Jupiter, kendra) or kendra_from(Jupiter, Moon)) and aided(Jupiter)
+      and not neecha(Jupiter) and not is_combust(Jupiter) and dignity(Jupiter) not in ["enemy", "great_enemy"]
+    effect: {domains: [wealth, intelligence, fame, status], polarity: 2, themes: ["wealth and intellect", "favour of authorities", "lasting reputation"]}
+    timing: "Jupiter in [dasha_lord, antardasha_lord] or Moon in [dasha_lord, antardasha_lord]"
+    tags: [yoga, chandra, karaka:Jupiter]
+
+  - id: BPHS.36.Amala
+    name: Amala yoga
+    source: {chapter: 36, paraphrase: "A benefic in the 10th from the Lagna or from the Moon gives Amala: spotless reputation lasting as long as the Moon and stars, good conduct and prosperity."}
+    condition: "any(b in occupants(10) + occupants_from(Moon, 10): benefic(b))"
+    effect: {domains: [fame, career, status], polarity: 1, themes: ["clean reputation", "good conduct in work"]}
+    tags: [yoga]
+
+  - id: Phaladeepika.6.ChandraMangala
+    name: Chandra-Mangala yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The Moon joined with Mars gives earnings through hard or unscrupulous trades and a harsh disposition, including towards the mother."}
+    condition: "conjunct(Moon, Mars)"
+    effect: {domains: [wealth, mother, temperament], polarity: 0, themes: ["earnings through trade by any means", "harshness"]}
+    timing: "Moon in [dasha_lord, antardasha_lord] or Mars in [dasha_lord, antardasha_lord]"
+    classical_strength: supporting
+    tags: [yoga, chandra]
+
+  - id: Phaladeepika.6.Shakata
+    name: Shakata yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The Moon in the 6th, 8th or 12th from Jupiter gives Shakata: fortune lost and regained repeatedly like a turning cart wheel, an ordinary standing; it does not apply when the Moon is in a kendra from the Lagna."}
+    condition: "house_from(Moon, Jupiter) in [6, 8, 12]"
+    cancels_if: "in_house(Moon, kendra)"
+    effect: {domains: [wealth, status], polarity: -1, themes: ["fluctuating fortune", "ups and downs in standing"]}
+    tags: [yoga, chandra]
+
+  - id: Phaladeepika.6.Vasumati
+    name: Vasumati yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "Benefics occupying the upachaya houses (3, 6, 10, 11) from the Lagna or the Moon make the native wealthy, staying at home amid plenty.", note: "this rule requires all three of Mercury, Jupiter and Venus in upachayas from one reference"}
+    condition: >-
+      all(b in [Mercury, Jupiter, Venus]: house_from(b, Moon) in upachaya)
+      or all(b in [Mercury, Jupiter, Venus]: in_house(b, upachaya))
+    effect: {domains: [wealth, gains], polarity: 2, themes: ["steady accumulation of wealth"]}
+    tags: [yoga, dhana]
+
+  # ---------------------------------------------------------------- solar (BPHS ch.38)
+  - id: BPHS.38.Vesi
+    name: Vesi yoga
+    source: {chapter: 38, paraphrase: "A planet other than the Moon in the 2nd from the Sun (the 12th empty) gives Vesi: truthful, even-tempered, steady though somewhat slow; benefics forming it improve the results, malefics spoil them."}
+    condition: >-
+      any(p in occupants_from(Sun, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and not any(p in occupants_from(Sun, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [temperament, status], polarity: 1, themes: ["truthfulness", "balanced outlook"]}
+    classical_strength: supporting
+    tags: [yoga, surya]
+
+  - id: BPHS.38.Vosi
+    name: Vosi yoga
+    source: {chapter: 38, paraphrase: "A planet other than the Moon in the 12th from the Sun (the 2nd empty) gives Vosi: skilful, charitable, learned and strong; benefics improve it, malefics spoil it."}
+    condition: >-
+      any(p in occupants_from(Sun, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and not any(p in occupants_from(Sun, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [temperament, education], polarity: 1, themes: ["skill", "charity", "learning"]}
+    classical_strength: supporting
+    tags: [yoga, surya]
+
+  - id: BPHS.38.Ubhayachari
+    name: Ubhayachari yoga
+    source: {chapter: 38, paraphrase: "Planets other than the Moon on both sides of the Sun give Ubhayachari: eloquent, well-built, ruler-like, rich and famous."}
+    condition: >-
+      any(p in occupants_from(Sun, 2): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+      and any(p in occupants_from(Sun, 12): p in [Mars, Mercury, Jupiter, Venus, Saturn])
+    effect: {domains: [status, wealth, speech], polarity: 2, themes: ["eloquence", "ruler-like standing", "wealth"]}
+    tags: [yoga, surya]
+
+  - id: Phaladeepika.6.Lagnadhi
+    name: Lagnadhi yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara", paraphrase: "Benefics in the 6th, 7th and 8th from the Lagna, free of malefic conjunction or aspect: a leader of men, learned, happy, long-lived.", note: "applied as for Adhi yoga from the Moon: Mercury, Jupiter and Venus all in 6/7/8; chapter per the named edition, verse to be confirmed"}
+    condition: >-
+      all(b in [Mercury, Jupiter, Venus]: in_house(b, [6, 7, 8])
+          and not any(m in natural_malefics: conjunct(m, b) or aspects(m, b)))
+    effect: {domains: [status, authority, happiness, longevity], polarity: 2, themes: ["leadership", "learning", "long life"]}
+    timing: "any(b in [Mercury, Jupiter, Venus]: b in [dasha_lord, antardasha_lord])"
+    tags: [yoga]

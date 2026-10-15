@@ -1,0 +1,2806 @@
+# Bhavesh in bhava (BPHS ch.24): the lord of each house placed in each house, 12 x 12 rules.
+# Paraphrases are our own condensed wording of the chapter, not a translation.
+# Generated once from a paraphrase table; edit this file directly from now on.
+defaults:
+  school: parashari
+  classical_strength: primary
+  source:
+    text: Brihat Parashara Hora Shastra
+    chapter: 24
+    edition: R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984
+    note: verse to be confirmed against the edition; the text qualifies many results by the lord's strength and
+      associations, which synthesis applies
+rules:
+- id: BPHS.24.L1H1
+  name: Lagna lord in the Lagna
+  source:
+    paraphrase: 'The Lagna lord in the Lagna: physically comfortable and courageous, intelligent but changeable
+      in mind; the text adds two marriages or relationships outside marriage.'
+  condition: in_house(lord(1), 1)
+  effect:
+    domains:
+    - self
+    - health
+    polarity: 1
+    themes:
+    - vitality
+    - restless mind
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:1
+- id: BPHS.24.L1H2
+  name: Lagna lord in the 2nd
+  source:
+    paraphrase: 'The Lagna lord in the 2nd: gains wealth, learned, content, good-natured, religious and respected;
+      the text mentions more than one marriage.'
+  condition: in_house(lord(1), 2)
+  effect:
+    domains:
+    - self
+    - health
+    - wealth
+    polarity: 1
+    themes:
+    - self-earned wealth
+    - good character
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:2
+- id: BPHS.24.L1H3
+  name: Lagna lord in the 3rd
+  source:
+    paraphrase: 'The Lagna lord in the 3rd: brave as a lion, gains every kind of wealth, respected and intelligent;
+      two marriages are mentioned.'
+  condition: in_house(lord(1), 3)
+  effect:
+    domains:
+    - self
+    - health
+    - siblings
+    polarity: 1
+    themes:
+    - courage
+    - initiative
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:3
+- id: BPHS.24.L1H4
+  name: Lagna lord in the 4th
+  source:
+    paraphrase: 'The Lagna lord in the 4th: enjoys the support of both parents, many brothers, attractive and of
+      good qualities, strongly sensual.'
+  condition: in_house(lord(1), 4)
+  effect:
+    domains:
+    - self
+    - health
+    - happiness
+    - mother
+    polarity: 1
+    themes:
+    - family support
+    - domestic happiness
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:4
+- id: BPHS.24.L1H5
+  name: Lagna lord in the 5th
+  source:
+    paraphrase: 'The Lagna lord in the 5th: only moderate happiness from children (the first child may be lost),
+      honoured, quick to anger, favoured by those in power.'
+  condition: in_house(lord(1), 5)
+  effect:
+    domains:
+    - self
+    - health
+    - status
+    - children
+    polarity: 0
+    themes:
+    - mixed results with children
+    - favour of authority
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:5
+- id: BPHS.24.L1H6
+  name: Lagna lord in the 6th
+  source:
+    paraphrase: 'The Lagna lord in the 6th: lacks bodily ease and is troubled by enemies when joined with malefics
+      and unaided by benefics; otherwise healthy.'
+  condition: in_house(lord(1), 6)
+  effect:
+    domains:
+    - self
+    - health
+    - enemies
+    polarity: -1
+    themes:
+    - health strain
+    - opponents
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:6
+- id: BPHS.24.L1H7
+  name: Lagna lord in the 7th
+  source:
+    paraphrase: 'The Lagna lord in the 7th: if the Lagna lord is a malefic, the spouse''s life is at risk; if a
+      benefic, the native wanders or stays poor, or else rises to eminence.'
+  condition: in_house(lord(1), 7)
+  effect:
+    domains:
+    - self
+    - health
+    - travel
+    - spouse
+    polarity: 0
+    themes:
+    - spouse's welfare
+    - travel
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:7
+- id: BPHS.24.L1H8
+  name: Lagna lord in the 8th
+  source:
+    paraphrase: 'The Lagna lord in the 8th: a capable scholar but sickly, given to anger, gambling and illicit affairs,
+      with secretive habits.'
+  condition: in_house(lord(1), 8)
+  effect:
+    domains:
+    - self
+    - health
+    - occult
+    - longevity
+    polarity: -1
+    themes:
+    - ill health
+    - secretiveness
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:8
+- id: BPHS.24.L1H9
+  name: Lagna lord in the 9th
+  source:
+    paraphrase: 'The Lagna lord in the 9th: fortunate, liked by people, devout, skilful and eloquent, blessed with
+      spouse, children and wealth.'
+  condition: in_house(lord(1), 9)
+  effect:
+    domains:
+    - self
+    - health
+    - dharma
+    - fortune
+    polarity: 2
+    themes:
+    - good fortune
+    - devotion
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:9
+- id: BPHS.24.L1H10
+  name: Lagna lord in the 10th
+  source:
+    paraphrase: 'The Lagna lord in the 10th: happiness from the father, honour from authorities, fame, and wealth
+      earned by one''s own effort.'
+  condition: in_house(lord(1), 10)
+  effect:
+    domains:
+    - self
+    - health
+    - fame
+    - father
+    - career
+    polarity: 2
+    themes:
+    - recognition
+    - self-made success
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:10
+- id: BPHS.24.L1H11
+  name: Lagna lord in the 11th
+  source:
+    paraphrase: 'The Lagna lord in the 11th: steady gains, good qualities and fame; the text mentions several partners.'
+  condition: in_house(lord(1), 11)
+  effect:
+    domains:
+    - self
+    - health
+    - fame
+    - gains
+    polarity: 2
+    themes:
+    - continual gains
+    - renown
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:11
+- id: BPHS.24.L1H12
+  name: Lagna lord in the 12th
+  source:
+    paraphrase: 'The Lagna lord in the 12th: little bodily comfort, wasteful spending and a quick temper, unless
+      joined with or aspected by a benefic.'
+  condition: in_house(lord(1), 12)
+  effect:
+    domains:
+    - self
+    - health
+    - expenditure
+    polarity: -1
+    themes:
+    - drain on health and money
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:1
+  - bhava:12
+- id: BPHS.24.L2H1
+  name: 2nd lord in the Lagna
+  source:
+    paraphrase: 'The 2nd lord in the Lagna: gains children and wealth but is at odds with the family, strongly sensual,
+      hard-hearted, working for others.'
+  condition: in_house(lord(2), 1)
+  effect:
+    domains:
+    - wealth
+    - family
+    - temperament
+    - self
+    polarity: 0
+    themes:
+    - wealth with family friction
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:1
+- id: BPHS.24.L2H2
+  name: 2nd lord in the 2nd
+  source:
+    paraphrase: 'The 2nd lord in the 2nd: wealthy and proud; more than one marriage, but few or no children.'
+  condition: in_house(lord(2), 2)
+  effect:
+    domains:
+    - wealth
+    - family
+    - children
+    polarity: 1
+    themes:
+    - accumulated wealth
+    - pride
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:2
+- id: BPHS.24.L2H3
+  name: 2nd lord in the 3rd
+  source:
+    paraphrase: 'The 2nd lord in the 3rd: brave, clever, of good qualities but sensual and miserly; with malefics,
+      against religious custom.'
+  condition: in_house(lord(2), 3)
+  effect:
+    domains:
+    - wealth
+    - family
+    - siblings
+    polarity: 0
+    themes:
+    - courage
+    - frugality
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:3
+- id: BPHS.24.L2H4
+  name: 2nd lord in the 4th
+  source:
+    paraphrase: 'The 2nd lord in the 4th: acquires every kind of wealth; with an exalted Jupiter involved, the native
+      equals a ruler in riches.'
+  condition: in_house(lord(2), 4)
+  effect:
+    domains:
+    - wealth
+    - family
+    - property
+    - mother
+    polarity: 1
+    themes:
+    - property and wealth
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:4
+- id: BPHS.24.L2H5
+  name: 2nd lord in the 5th
+  source:
+    paraphrase: 'The 2nd lord in the 5th: wealthy, and the children also earn and accumulate wealth.'
+  condition: in_house(lord(2), 5)
+  effect:
+    domains:
+    - wealth
+    - family
+    - children
+    polarity: 1
+    themes:
+    - wealth through children
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:5
+- id: BPHS.24.L2H6
+  name: 2nd lord in the 6th
+  source:
+    paraphrase: 'The 2nd lord in the 6th: with benefics, gains through opponents; with malefics, losses through
+      them and possible bodily defects.'
+  condition: in_house(lord(2), 6)
+  effect:
+    domains:
+    - wealth
+    - family
+    - enemies
+    polarity: 0
+    themes:
+    - money and disputes
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:6
+- id: BPHS.24.L2H7
+  name: 2nd lord in the 7th
+  source:
+    paraphrase: 'The 2nd lord in the 7th: inclined towards others'' spouses and may practise medicine; with malefics,
+      both partners stray.'
+  condition: in_house(lord(2), 7)
+  effect:
+    domains:
+    - wealth
+    - family
+    - spouse
+    polarity: -1
+    themes:
+    - marital morality
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:7
+- id: BPHS.24.L2H8
+  name: 2nd lord in the 8th
+  source:
+    paraphrase: 'The 2nd lord in the 8th: much land and wealth, but limited happiness in marriage and from an elder
+      sibling.'
+  condition: in_house(lord(2), 8)
+  effect:
+    domains:
+    - wealth
+    - family
+    - spouse
+    - longevity
+    polarity: 0
+    themes:
+    - landed wealth
+    - marital limitation
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:8
+- id: BPHS.24.L2H9
+  name: 2nd lord in the 9th
+  source:
+    paraphrase: 'The 2nd lord in the 9th: wealthy, industrious and capable; unwell in childhood and happy later,
+      visits holy places.'
+  condition: in_house(lord(2), 9)
+  effect:
+    domains:
+    - wealth
+    - family
+    - dharma
+    - fortune
+    polarity: 1
+    themes:
+    - prosperity
+    - pilgrimage
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:9
+- id: BPHS.24.L2H10
+  name: 2nd lord in the 10th
+  source:
+    paraphrase: 'The 2nd lord in the 10th: sensual yet respected and learned, wealthy with several partners, but
+      little happiness from children.'
+  condition: in_house(lord(2), 10)
+  effect:
+    domains:
+    - wealth
+    - family
+    - career
+    polarity: 1
+    themes:
+    - wealth through profession
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:10
+- id: BPHS.24.L2H11
+  name: 2nd lord in the 11th
+  source:
+    paraphrase: 'The 2nd lord in the 11th: every kind of wealth, always industrious, respected and famous.'
+  condition: in_house(lord(2), 11)
+  effect:
+    domains:
+    - wealth
+    - family
+    - gains
+    polarity: 2
+    themes:
+    - income
+    - industry
+    - fame
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:11
+- id: BPHS.24.L2H12
+  name: 2nd lord in the 12th
+  source:
+    paraphrase: 'The 2nd lord in the 12th: adventurous but without wealth, covets others'' money, and the eldest
+      child brings no happiness.'
+  condition: in_house(lord(2), 12)
+  effect:
+    domains:
+    - wealth
+    - family
+    - expenditure
+    polarity: -1
+    themes:
+    - loss of wealth
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:2
+  - bhava:12
+- id: BPHS.24.L3H1
+  name: 3rd lord in the Lagna
+  source:
+    paraphrase: 'The 3rd lord in the Lagna: earns wealth by his own effort, devotional, brave and intelligent even
+      without much formal learning.'
+  condition: in_house(lord(3), 1)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - self
+    polarity: 1
+    themes:
+    - self-effort
+    - courage
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:1
+- id: BPHS.24.L3H2
+  name: 3rd lord in the 2nd
+  source:
+    paraphrase: 'The 3rd lord in the 2nd: heavy in body, lacking courage and drive, discontented, eyeing others''
+      wealth and partners.'
+  condition: in_house(lord(3), 2)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - wealth
+    polarity: -1
+    themes:
+    - low initiative
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:2
+- id: BPHS.24.L3H3
+  name: 3rd lord in the 3rd
+  source:
+    paraphrase: 'The 3rd lord in the 3rd: happiness through siblings, wealth and children, cheerful and very happy.'
+  condition: in_house(lord(3), 3)
+  effect:
+    domains:
+    - siblings
+    - courage
+    polarity: 1
+    themes:
+    - sibling support
+    - good spirits
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:3
+- id: BPHS.24.L3H4
+  name: 3rd lord in the 4th
+  source:
+    paraphrase: 'The 3rd lord in the 4th: happy, wealthy and intelligent, but the spouse is said to be ill-natured.'
+  condition: in_house(lord(3), 4)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - spouse
+    - mother
+    polarity: 0
+    themes:
+    - comfort
+    - domestic friction
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:4
+- id: BPHS.24.L3H5
+  name: 3rd lord in the 5th
+  source:
+    paraphrase: 'The 3rd lord in the 5th: has children and good qualities; with malefics the spouse is harsh.'
+  condition: in_house(lord(3), 5)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - children
+    polarity: 0
+    themes:
+    - children
+    - spouse's temper
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:5
+- id: BPHS.24.L3H6
+  name: 3rd lord in the 6th
+  source:
+    paraphrase: 'The 3rd lord in the 6th: at odds with siblings and maternal uncle, yet wealthy and close to the
+      maternal aunt.'
+  condition: in_house(lord(3), 6)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - enemies
+    polarity: -1
+    themes:
+    - sibling friction
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:6
+- id: BPHS.24.L3H7
+  name: 3rd lord in the 7th
+  source:
+    paraphrase: 'The 3rd lord in the 7th: inclined to serve those in power, unhappy in childhood.'
+  condition: in_house(lord(3), 7)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - service
+    - spouse
+    polarity: -1
+    themes:
+    - service
+    - difficult childhood
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:7
+- id: BPHS.24.L3H8
+  name: 3rd lord in the 8th
+  source:
+    paraphrase: 'The 3rd lord in the 8th: lives by serving others, given to theft, and the text warns of death at
+      the gate of authority.'
+  condition: in_house(lord(3), 8)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - longevity
+    polarity: -2
+    themes:
+    - hardship
+    - risk
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:8
+- id: BPHS.24.L3H9
+  name: 3rd lord in the 9th
+  source:
+    paraphrase: 'The 3rd lord in the 9th: little support from the father, but fortune comes through the spouse and
+      children.'
+  condition: in_house(lord(3), 9)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - fortune
+    polarity: 0
+    themes:
+    - fortune through spouse
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:9
+- id: BPHS.24.L3H10
+  name: 3rd lord in the 10th
+  source:
+    paraphrase: 'The 3rd lord in the 10th: all comforts and self-made wealth, though attached to unworthy company.'
+  condition: in_house(lord(3), 10)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - career
+    polarity: 1
+    themes:
+    - self-made success
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:10
+- id: BPHS.24.L3H11
+  name: 3rd lord in the 11th
+  source:
+    paraphrase: 'The 3rd lord in the 11th: gains through trade, adventurous though not learned, serves others.'
+  condition: in_house(lord(3), 11)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - gains
+    polarity: 1
+    themes:
+    - trade
+    - enterprise
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:11
+- id: BPHS.24.L3H12
+  name: 3rd lord in the 12th
+  source:
+    paraphrase: 'The 3rd lord in the 12th: spends on wrong pursuits, has a harsh father, and gains fortune through
+      a woman.'
+  condition: in_house(lord(3), 12)
+  effect:
+    domains:
+    - siblings
+    - courage
+    - father
+    - expenditure
+    polarity: -1
+    themes:
+    - wasteful spending
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:3
+  - bhava:12
+- id: BPHS.24.L4H1
+  name: 4th lord in the Lagna
+  source:
+    paraphrase: 'The 4th lord in the Lagna: learned and virtuous, with ornaments, land, vehicles and the mother''s
+      love.'
+  condition: in_house(lord(4), 1)
+  effect:
+    domains:
+    - mother
+    - home
+    - property
+    - vehicles
+    - self
+    polarity: 2
+    themes:
+    - property
+    - vehicles
+    - learning
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:1
+- id: BPHS.24.L4H2
+  name: 4th lord in the 2nd
+  source:
+    paraphrase: 'The 4th lord in the 2nd: enjoys pleasures, all kinds of wealth, family life and honour; bold but
+      shrewd.'
+  condition: in_house(lord(4), 2)
+  effect:
+    domains:
+    - mother
+    - home
+    - wealth
+    polarity: 1
+    themes:
+    - comforts
+    - family life
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:2
+- id: BPHS.24.L4H3
+  name: 4th lord in the 3rd
+  source:
+    paraphrase: 'The 4th lord in the 3rd: brave, with servants, generous, virtuous, charitable, healthy, with self-earned
+      wealth.'
+  condition: in_house(lord(4), 3)
+  effect:
+    domains:
+    - mother
+    - home
+    - siblings
+    polarity: 1
+    themes:
+    - courage
+    - generosity
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:3
+- id: BPHS.24.L4H4
+  name: 4th lord in the 4th
+  source:
+    paraphrase: 'The 4th lord in the 4th: a counsellor with every kind of wealth, skilful, virtuous, respected,
+      learned and happy, devoted to the spouse.'
+  condition: in_house(lord(4), 4)
+  effect:
+    domains:
+    - mother
+    - home
+    - happiness
+    - property
+    polarity: 2
+    themes:
+    - domestic happiness
+    - property
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:4
+- id: BPHS.24.L4H5
+  name: 4th lord in the 5th
+  source:
+    paraphrase: 'The 4th lord in the 5th: happy, liked by all, devout, virtuous and respected, with self-earned
+      wealth.'
+  condition: in_house(lord(4), 5)
+  effect:
+    domains:
+    - mother
+    - home
+    - happiness
+    - children
+    polarity: 2
+    themes:
+    - contentment
+    - devotion
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:5
+- id: BPHS.24.L4H6
+  name: 4th lord in the 6th
+  source:
+    paraphrase: 'The 4th lord in the 6th: deprived of the mother''s happiness, quick-tempered, given to deceit,
+      independent and ill-disposed.'
+  condition: in_house(lord(4), 6)
+  effect:
+    domains:
+    - mother
+    - home
+    - enemies
+    polarity: -1
+    themes:
+    - loss of maternal comfort
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:6
+- id: BPHS.24.L4H7
+  name: 4th lord in the 7th
+  source:
+    paraphrase: 'The 4th lord in the 7th: highly educated, but gives up the ancestral property and is tongue-tied
+      in assemblies.'
+  condition: in_house(lord(4), 7)
+  effect:
+    domains:
+    - mother
+    - home
+    - education
+    - spouse
+    polarity: 0
+    themes:
+    - learning
+    - loss of patrimony
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:7
+- id: BPHS.24.L4H8
+  name: 4th lord in the 8th
+  source:
+    paraphrase: 'The 4th lord in the 8th: lacks a home and comforts, inherits little from the father, and lacks
+      vigour.'
+  condition: in_house(lord(4), 8)
+  effect:
+    domains:
+    - mother
+    - home
+    - longevity
+    polarity: -1
+    themes:
+    - domestic deprivation
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:8
+- id: BPHS.24.L4H9
+  name: 4th lord in the 9th
+  source:
+    paraphrase: 'The 4th lord in the 9th: dear to everyone, devout, virtuous, respected and happy in every way.'
+  condition: in_house(lord(4), 9)
+  effect:
+    domains:
+    - mother
+    - home
+    - happiness
+    - fortune
+    polarity: 2
+    themes:
+    - fortune
+    - happiness
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:9
+- id: BPHS.24.L4H10
+  name: 4th lord in the 10th
+  source:
+    paraphrase: 'The 4th lord in the 10th: honoured by authorities, experimental in skills, contented, enjoys pleasures
+      with self-control.'
+  condition: in_house(lord(4), 10)
+  effect:
+    domains:
+    - mother
+    - home
+    - career
+    polarity: 2
+    themes:
+    - royal honour
+    - status
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:10
+- id: BPHS.24.L4H11
+  name: 4th lord in the 11th
+  source:
+    paraphrase: 'The 4th lord in the 11th: liberal, virtuous and charitable, helpful to others, but fears hidden
+      disease.'
+  condition: in_house(lord(4), 11)
+  effect:
+    domains:
+    - mother
+    - home
+    - health
+    - gains
+    polarity: 1
+    themes:
+    - generosity
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:11
+- id: BPHS.24.L4H12
+  name: 4th lord in the 12th
+  source:
+    paraphrase: 'The 4th lord in the 12th: lacks domestic comforts, falls into bad habits, foolish and idle.'
+  condition: in_house(lord(4), 12)
+  effect:
+    domains:
+    - mother
+    - home
+    - expenditure
+    polarity: -1
+    themes:
+    - loss of comforts
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:4
+  - bhava:12
+- id: BPHS.24.L5H1
+  name: 5th lord in the Lagna
+  source:
+    paraphrase: 'The 5th lord in the Lagna: scholarly and happy through children, but miserly, crooked and covetous
+      of others'' wealth.'
+  condition: in_house(lord(5), 1)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - self
+    polarity: 0
+    themes:
+    - learning
+    - children
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:1
+- id: BPHS.24.L5H2
+  name: 5th lord in the 2nd
+  source:
+    paraphrase: 'The 5th lord in the 2nd: many children and wealth, head of a household, respected, devoted to the
+      spouse and famous.'
+  condition: in_house(lord(5), 2)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - wealth
+    polarity: 1
+    themes:
+    - wealth
+    - family
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:2
+- id: BPHS.24.L5H3
+  name: 5th lord in the 3rd
+  source:
+    paraphrase: 'The 5th lord in the 3rd: fond of siblings, a tale-bearer, miserly and absorbed in his own affairs.'
+  condition: in_house(lord(5), 3)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - siblings
+    polarity: 0
+    themes:
+    - self-interest
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:3
+- id: BPHS.24.L5H4
+  name: 5th lord in the 4th
+  source:
+    paraphrase: 'The 5th lord in the 4th: happy, with the mother''s love, wealth and intellect; a ruler, counsellor
+      or teacher.'
+  condition: in_house(lord(5), 4)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - happiness
+    - mother
+    polarity: 2
+    themes:
+    - intelligence
+    - happiness
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:4
+- id: BPHS.24.L5H5
+  name: 5th lord in the 5th
+  source:
+    paraphrase: 'The 5th lord in the 5th: children if joined with benefics, none if with malefics; virtuous and
+      dear to friends.'
+  condition: in_house(lord(5), 5)
+  effect:
+    domains:
+    - children
+    - intelligence
+    polarity: 1
+    themes:
+    - progeny depends on associations
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:5
+- id: BPHS.24.L5H6
+  name: 5th lord in the 6th
+  source:
+    paraphrase: 'The 5th lord in the 6th: children become like enemies or are lost, or a child is adopted.'
+  condition: in_house(lord(5), 6)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - enemies
+    polarity: -1
+    themes:
+    - trouble through children
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:6
+- id: BPHS.24.L5H7
+  name: 5th lord in the 7th
+  source:
+    paraphrase: 'The 5th lord in the 7th: respected, very religious, with children, helpful to others.'
+  condition: in_house(lord(5), 7)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - spouse
+    polarity: 1
+    themes:
+    - children
+    - virtue
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:7
+- id: BPHS.24.L5H8
+  name: 5th lord in the 8th
+  source:
+    paraphrase: 'The 5th lord in the 8th: little happiness from children, respiratory troubles, angry and unhappy.'
+  condition: in_house(lord(5), 8)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - health
+    - longevity
+    polarity: -2
+    themes:
+    - children
+    - respiratory health
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:8
+- id: BPHS.24.L5H9
+  name: 5th lord in the 9th
+  source:
+    paraphrase: 'The 5th lord in the 9th: a child rises to princely rank, or the native writes books; famous and
+      the light of the family.'
+  condition: in_house(lord(5), 9)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - fame
+    - fortune
+    polarity: 2
+    themes:
+    - distinguished children
+    - authorship
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:9
+- id: BPHS.24.L5H10
+  name: 5th lord in the 10th
+  source:
+    paraphrase: 'The 5th lord in the 10th: a raja yoga: many pleasures and great fame.'
+  condition: in_house(lord(5), 10)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - fame
+    - career
+    polarity: 2
+    themes:
+    - raja yoga
+    - fame
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:10
+- id: BPHS.24.L5H11
+  name: 5th lord in the 11th
+  source:
+    paraphrase: 'The 5th lord in the 11th: learned, popular, an author, very skilful, with many children and wealth.'
+  condition: in_house(lord(5), 11)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - gains
+    polarity: 2
+    themes:
+    - learning
+    - children
+    - wealth
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:11
+- id: BPHS.24.L5H12
+  name: 5th lord in the 12th
+  source:
+    paraphrase: 'The 5th lord in the 12th: deprived of happiness from children; a child is adopted or taken in.'
+  condition: in_house(lord(5), 12)
+  effect:
+    domains:
+    - children
+    - intelligence
+    - expenditure
+    polarity: -1
+    themes:
+    - no natural progeny
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:5
+  - bhava:12
+- id: BPHS.24.L6H1
+  name: 6th lord in the Lagna
+  source:
+    paraphrase: 'The 6th lord in the Lagna: sickly yet famous, at odds with his own people, wealthy, respected,
+      bold and virtuous.'
+  condition: in_house(lord(6), 1)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - health
+    - self
+    polarity: 0
+    themes:
+    - illness
+    - conflict with kin
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:1
+- id: BPHS.24.L6H2
+  name: 6th lord in the 2nd
+  source:
+    paraphrase: 'The 6th lord in the 2nd: bold and renowned among his people, lives away from home, happy, a skilled
+      speaker devoted to work.'
+  condition: in_house(lord(6), 2)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - speech
+    - wealth
+    polarity: 0
+    themes:
+    - work
+    - living away
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:2
+- id: BPHS.24.L6H3
+  name: 6th lord in the 3rd
+  source:
+    paraphrase: 'The 6th lord in the 3rd: quick to anger, lacking courage, at odds with siblings, with disobedient
+      servants.'
+  condition: in_house(lord(6), 3)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - siblings
+    polarity: -1
+    themes:
+    - sibling conflict
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:3
+- id: BPHS.24.L6H4
+  name: 6th lord in the 4th
+  source:
+    paraphrase: 'The 6th lord in the 4th: deprived of the mother''s happiness, intelligent but a tale-bearer, jealous,
+      yet very rich.'
+  condition: in_house(lord(6), 4)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - mother
+    polarity: 0
+    themes:
+    - maternal distance
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:4
+- id: BPHS.24.L6H5
+  name: 6th lord in the 5th
+  source:
+    paraphrase: 'The 6th lord in the 5th: finances rise and fall, friction with children and friends, but happy,
+      selfish yet kind.'
+  condition: in_house(lord(6), 5)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - wealth
+    - children
+    polarity: 0
+    themes:
+    - fluctuating finances
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:5
+- id: BPHS.24.L6H6
+  name: 6th lord in the 6th
+  source:
+    paraphrase: 'The 6th lord in the 6th: enmity with relatives but friendship with outsiders; middling happiness
+      in wealth.'
+  condition: in_house(lord(6), 6)
+  effect:
+    domains:
+    - enemies
+    - disease
+    polarity: 0
+    themes:
+    - kin friction
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:6
+- id: BPHS.24.L6H7
+  name: 6th lord in the 7th
+  source:
+    paraphrase: 'The 6th lord in the 7th: little happiness through the spouse, though famous, virtuous, respected,
+      bold and wealthy.'
+  condition: in_house(lord(6), 7)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - spouse
+    polarity: -1
+    themes:
+    - marital strain
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:7
+- id: BPHS.24.L6H8
+  name: 6th lord in the 8th
+  source:
+    paraphrase: 'The 6th lord in the 8th: sickly, hostile, covets others'' wealth and partners, impure in habits.'
+  condition: in_house(lord(6), 8)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - health
+    - longevity
+    polarity: -2
+    themes:
+    - chronic illness
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:8
+- id: BPHS.24.L6H9
+  name: 6th lord in the 9th
+  source:
+    paraphrase: 'The 6th lord in the 9th: trades in timber and stone, with fluctuating fortunes at work.'
+  condition: in_house(lord(6), 9)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - career
+    - fortune
+    polarity: 0
+    themes:
+    - unsteady profession
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:9
+- id: BPHS.24.L6H10
+  name: 6th lord in the 10th
+  source:
+    paraphrase: 'The 6th lord in the 10th: known among his people, not devoted to the father, happy abroad, a good
+      speaker.'
+  condition: in_house(lord(6), 10)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - foreign
+    - father
+    - career
+    polarity: 0
+    themes:
+    - work abroad
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:10
+- id: BPHS.24.L6H11
+  name: 6th lord in the 11th
+  source:
+    paraphrase: 'The 6th lord in the 11th: gains through opponents, virtuous and bold, but some lack of happiness
+      from children.'
+  condition: in_house(lord(6), 11)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - gains
+    polarity: 0
+    themes:
+    - gains through competition
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:11
+- id: BPHS.24.L6H12
+  name: 6th lord in the 12th
+  source:
+    paraphrase: 'The 6th lord in the 12th: spends on vices, hostile to the learned, harms living beings.'
+  condition: in_house(lord(6), 12)
+  effect:
+    domains:
+    - enemies
+    - disease
+    - expenditure
+    polarity: -2
+    themes:
+    - harmful spending
+  timing: lord(6) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:6
+  - bhava:12
+- id: BPHS.24.L7H1
+  name: 7th lord in the Lagna
+  source:
+    paraphrase: 'The 7th lord in the Lagna: drawn to others'' spouses, clever but wicked and lacking courage, prone
+      to wind disorders.'
+  condition: in_house(lord(7), 1)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - health
+    - self
+    polarity: -1
+    themes:
+    - restless relationships
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:1
+- id: BPHS.24.L7H2
+  name: 7th lord in the 2nd
+  source:
+    paraphrase: 'The 7th lord in the 2nd: more than one marriage, wealth through the spouse, but given to procrastination.'
+  condition: in_house(lord(7), 2)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - wealth
+    polarity: 0
+    themes:
+    - wealth through spouse
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:2
+- id: BPHS.24.L7H3
+  name: 7th lord in the 3rd
+  source:
+    paraphrase: 'The 7th lord in the 3rd: loss of children is indicated, sometimes one son survives or a daughter
+      is born.'
+  condition: in_house(lord(7), 3)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - children
+    - siblings
+    polarity: -1
+    themes:
+    - children
+    - siblings
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:3
+- id: BPHS.24.L7H4
+  name: 7th lord in the 4th
+  source:
+    paraphrase: 'The 7th lord in the 4th: the spouse is not under his control; truthful, intelligent and religious;
+      dental trouble.'
+  condition: in_house(lord(7), 4)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - mother
+    polarity: 0
+    themes:
+    - independent spouse
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:4
+- id: BPHS.24.L7H5
+  name: 7th lord in the 5th
+  source:
+    paraphrase: 'The 7th lord in the 5th: respected, of every good quality, delighted, with every kind of wealth.'
+  condition: in_house(lord(7), 5)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - children
+    polarity: 1
+    themes:
+    - happy partnership
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:5
+- id: BPHS.24.L7H6
+  name: 7th lord in the 6th
+  source:
+    paraphrase: 'The 7th lord in the 6th: a sickly spouse or enmity with the spouse, wrathful and unhappy.'
+  condition: in_house(lord(7), 6)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - disease
+    - enemies
+    polarity: -2
+    themes:
+    - spouse's health
+    - marital conflict
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - alt:lord7_dusthana
+  - bhava:6
+- id: BPHS.24.L7H7
+  name: 7th lord in the 7th
+  source:
+    paraphrase: 'The 7th lord in the 7th: happiness through the spouse, courageous and intelligent but changeable.'
+  condition: in_house(lord(7), 7)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    polarity: 2
+    themes:
+    - marital happiness
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:7
+- id: BPHS.24.L7H8
+  name: 7th lord in the 8th
+  source:
+    paraphrase: 'The 7th lord in the 8th: little marital happiness; the spouse suffers illness and is not agreeable.'
+  condition: in_house(lord(7), 8)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - longevity
+    polarity: -2
+    themes:
+    - marital unhappiness
+    - spouse's health
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - alt:lord7_dusthana
+  - bhava:8
+- id: BPHS.24.L7H9
+  name: 7th lord in the 9th
+  source:
+    paraphrase: 'The 7th lord in the 9th: association with many women, well disposed to the spouse, many undertakings.'
+  condition: in_house(lord(7), 9)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - fortune
+    polarity: 0
+    themes:
+    - many ventures
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:9
+- id: BPHS.24.L7H10
+  name: 7th lord in the 10th
+  source:
+    paraphrase: 'The 7th lord in the 10th: the spouse is not obedient; religious, with wealth and children.'
+  condition: in_house(lord(7), 10)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - career
+    polarity: 0
+    themes:
+    - independent spouse
+    - prosperity
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:10
+- id: BPHS.24.L7H11
+  name: 7th lord in the 11th
+  source:
+    paraphrase: 'The 7th lord in the 11th: gains through the spouse, few sons, more daughters.'
+  condition: in_house(lord(7), 11)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - gains
+    polarity: 1
+    themes:
+    - gains through spouse
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - bhava:11
+- id: BPHS.24.L7H12
+  name: 7th lord in the 12th
+  source:
+    paraphrase: 'The 7th lord in the 12th: poor and miserly, livelihood connected with clothing, and the spouse
+      spends freely.'
+  condition: in_house(lord(7), 12)
+  effect:
+    domains:
+    - spouse
+    - marriage
+    - expenditure
+    polarity: -1
+    themes:
+    - expenditure through spouse
+  timing: lord(7) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:7
+  - alt:lord7_dusthana
+  - bhava:12
+- id: BPHS.24.L8H1
+  name: 8th lord in the Lagna
+  source:
+    paraphrase: 'The 8th lord in the Lagna: lacks bodily comfort and suffers illness, displeasing to the devout
+      and learned.'
+  condition: in_house(lord(8), 1)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - health
+    - self
+    polarity: -2
+    themes:
+    - ill health
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:1
+- id: BPHS.24.L8H2
+  name: 8th lord in the 2nd
+  source:
+    paraphrase: 'The 8th lord in the 2nd: lacks vigour and has little wealth; what is lost is not recovered.'
+  condition: in_house(lord(8), 2)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - wealth
+    polarity: -1
+    themes:
+    - financial loss
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:2
+- id: BPHS.24.L8H3
+  name: 8th lord in the 3rd
+  source:
+    paraphrase: 'The 8th lord in the 3rd: no happiness from siblings, idle, without servants or strength.'
+  condition: in_house(lord(8), 3)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - siblings
+    polarity: -1
+    themes:
+    - sibling loss
+    - low energy
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:3
+- id: BPHS.24.L8H4
+  name: 8th lord in the 4th
+  source:
+    paraphrase: 'The 8th lord in the 4th: loses the mother early, lacks house, land and happiness, and betrays friends.'
+  condition: in_house(lord(8), 4)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - home
+    - mother
+    polarity: -2
+    themes:
+    - loss of home and mother
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:4
+- id: BPHS.24.L8H5
+  name: 8th lord in the 5th
+  source:
+    paraphrase: 'The 8th lord in the 5th: dull-witted with few children, but long-lived and wealthy.'
+  condition: in_house(lord(8), 5)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - children
+    polarity: 0
+    themes:
+    - few children
+    - long life
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:5
+- id: BPHS.24.L8H6
+  name: 8th lord in the 6th
+  source:
+    paraphrase: 'The 8th lord in the 6th: overcomes enemies but suffers illness; danger from snakes and water in
+      childhood.'
+  condition: in_house(lord(8), 6)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - disease
+    - enemies
+    polarity: 0
+    themes:
+    - victory with illness
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:6
+- id: BPHS.24.L8H7
+  name: 8th lord in the 7th
+  source:
+    paraphrase: 'The 8th lord in the 7th: two marriages; with malefics, decline in business.'
+  condition: in_house(lord(8), 7)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - spouse
+    polarity: -1
+    themes:
+    - marital disruption
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:7
+- id: BPHS.24.L8H8
+  name: 8th lord in the 8th
+  source:
+    paraphrase: 'The 8th lord in the 8th: long-lived; if the lord is weak, a medium life; given to theft and blamed
+      by others.'
+  condition: in_house(lord(8), 8)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    polarity: 0
+    themes:
+    - longevity
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:8
+- id: BPHS.24.L8H9
+  name: 8th lord in the 9th
+  source:
+    paraphrase: 'The 8th lord in the 9th: abandons religion, heterodox, has an ill-natured spouse and covets others''
+      wealth.'
+  condition: in_house(lord(8), 9)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - dharma
+    - fortune
+    polarity: -2
+    themes:
+    - loss of faith
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:9
+- id: BPHS.24.L8H10
+  name: 8th lord in the 10th
+  source:
+    paraphrase: 'The 8th lord in the 10th: no happiness from the father, a tale-bearer without a livelihood; benefic
+      aspect removes these evils.'
+  condition: in_house(lord(8), 10)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - career
+    - father
+    polarity: -1
+    themes:
+    - career obstacles
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:10
+- id: BPHS.24.L8H11
+  name: 8th lord in the 11th
+  source:
+    paraphrase: 'The 8th lord in the 11th: without wealth if joined with malefics and poor in childhood, happy later;
+      long-lived with benefics.'
+  condition: in_house(lord(8), 11)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - gains
+    polarity: 0
+    themes:
+    - late prosperity
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:11
+- id: BPHS.24.L8H12
+  name: 8th lord in the 12th
+  source:
+    paraphrase: 'The 8th lord in the 12th: spends on wrong deeds and has a short life, especially with a malefic
+      in the 12th.'
+  condition: in_house(lord(8), 12)
+  effect:
+    domains:
+    - longevity
+    - inheritance
+    - expenditure
+    polarity: -1
+    themes:
+    - loss
+    - short life
+  timing: lord(8) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:8
+  - bhava:12
+- id: BPHS.24.L9H1
+  name: 9th lord in the Lagna
+  source:
+    paraphrase: 'The 9th lord in the Lagna: fortunate, honoured by authorities, virtuous, attractive, learned and
+      publicly respected.'
+  condition: in_house(lord(9), 1)
+  effect:
+    domains:
+    - fortune
+    - father
+    - self
+    polarity: 2
+    themes:
+    - fortune
+    - honour
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:1
+- id: BPHS.24.L9H2
+  name: 9th lord in the 2nd
+  source:
+    paraphrase: 'The 9th lord in the 2nd: learned, dear to all, wealthy, sensual, with happiness from spouse and
+      children.'
+  condition: in_house(lord(9), 2)
+  effect:
+    domains:
+    - fortune
+    - father
+    - wealth
+    polarity: 2
+    themes:
+    - wealth
+    - family happiness
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:2
+- id: BPHS.24.L9H3
+  name: 9th lord in the 3rd
+  source:
+    paraphrase: 'The 9th lord in the 3rd: happiness through siblings, wealthy, virtuous and attractive.'
+  condition: in_house(lord(9), 3)
+  effect:
+    domains:
+    - fortune
+    - father
+    - siblings
+    polarity: 1
+    themes:
+    - sibling support
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:3
+- id: BPHS.24.L9H4
+  name: 9th lord in the 4th
+  source:
+    paraphrase: 'The 9th lord in the 4th: houses, vehicles and happiness, every kind of wealth, devoted to the mother.'
+  condition: in_house(lord(9), 4)
+  effect:
+    domains:
+    - fortune
+    - father
+    - home
+    - vehicles
+    - mother
+    polarity: 2
+    themes:
+    - property
+    - comfort
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:4
+- id: BPHS.24.L9H5
+  name: 9th lord in the 5th
+  source:
+    paraphrase: 'The 9th lord in the 5th: children and prosperity, devoted to elders, bold, charitable and learned.'
+  condition: in_house(lord(9), 5)
+  effect:
+    domains:
+    - fortune
+    - father
+    - children
+    polarity: 2
+    themes:
+    - children
+    - learning
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:5
+- id: BPHS.24.L9H6
+  name: 9th lord in the 6th
+  source:
+    paraphrase: 'The 9th lord in the 6th: meagre fortune, little happiness from maternal relatives, troubled by
+      enemies.'
+  condition: in_house(lord(9), 6)
+  effect:
+    domains:
+    - fortune
+    - father
+    - enemies
+    polarity: -1
+    themes:
+    - obstructed fortune
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:6
+- id: BPHS.24.L9H7
+  name: 9th lord in the 7th
+  source:
+    paraphrase: 'The 9th lord in the 7th: fortune rises after marriage; virtuous and famous.'
+  condition: in_house(lord(9), 7)
+  effect:
+    domains:
+    - fortune
+    - father
+    - marriage
+    - spouse
+    polarity: 2
+    themes:
+    - fortune through marriage
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:7
+- id: BPHS.24.L9H8
+  name: 9th lord in the 8th
+  source:
+    paraphrase: 'The 9th lord in the 8th: lacks prosperity and gets no happiness from an elder sibling.'
+  condition: in_house(lord(9), 8)
+  effect:
+    domains:
+    - fortune
+    - father
+    - longevity
+    polarity: -2
+    themes:
+    - blocked fortune
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:8
+- id: BPHS.24.L9H9
+  name: 9th lord in the 9th
+  source:
+    paraphrase: 'The 9th lord in the 9th: abundant fortune, virtue, beauty and much happiness from siblings.'
+  condition: in_house(lord(9), 9)
+  effect:
+    domains:
+    - fortune
+    - father
+    - dharma
+    polarity: 2
+    themes:
+    - great fortune
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:9
+- id: BPHS.24.L9H10
+  name: 9th lord in the 10th
+  source:
+    paraphrase: 'The 9th lord in the 10th: a ruler or equal, a minister or commander, virtuous and publicly respected.'
+  condition: in_house(lord(9), 10)
+  effect:
+    domains:
+    - fortune
+    - father
+    - career
+    - status
+    polarity: 2
+    themes:
+    - high office
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:10
+- id: BPHS.24.L9H11
+  name: 9th lord in the 11th
+  source:
+    paraphrase: 'The 9th lord in the 11th: gains grow day by day; devoted to elders, virtuous and meritorious.'
+  condition: in_house(lord(9), 11)
+  effect:
+    domains:
+    - fortune
+    - father
+    - gains
+    polarity: 2
+    themes:
+    - steady gains
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:11
+- id: BPHS.24.L9H12
+  name: 9th lord in the 12th
+  source:
+    paraphrase: 'The 9th lord in the 12th: loss of fortune, spends on good causes, becomes poor by entertaining
+      guests.'
+  condition: in_house(lord(9), 12)
+  effect:
+    domains:
+    - fortune
+    - father
+    - expenditure
+    - foreign
+    polarity: -1
+    themes:
+    - fortune spent
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:9
+  - bhava:12
+- id: BPHS.24.L10H1
+  name: 10th lord in the Lagna
+  source:
+    paraphrase: 'The 10th lord in the Lagna: learned and famous, a poet; illness in childhood, happiness later,
+      with wealth growing daily.'
+  condition: in_house(lord(10), 1)
+  effect:
+    domains:
+    - career
+    - status
+    - fame
+    - self
+    polarity: 2
+    themes:
+    - fame
+    - growing wealth
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:1
+- id: BPHS.24.L10H2
+  name: 10th lord in the 2nd
+  source:
+    paraphrase: 'The 10th lord in the 2nd: wealthy, virtuous, honoured by authorities, charitable, happy with father
+      and others.'
+  condition: in_house(lord(10), 2)
+  effect:
+    domains:
+    - career
+    - status
+    - wealth
+    polarity: 2
+    themes:
+    - wealth through work
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:2
+- id: BPHS.24.L10H3
+  name: 10th lord in the 3rd
+  source:
+    paraphrase: 'The 10th lord in the 3rd: happiness from siblings and servants, brave, virtuous, eloquent and truthful.'
+  condition: in_house(lord(10), 3)
+  effect:
+    domains:
+    - career
+    - status
+    - siblings
+    polarity: 1
+    themes:
+    - courage
+    - communication
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:3
+- id: BPHS.24.L10H4
+  name: 10th lord in the 4th
+  source:
+    paraphrase: 'The 10th lord in the 4th: happy, devoted to the mother''s welfare, with vehicles, land and houses,
+      wealthy.'
+  condition: in_house(lord(10), 4)
+  effect:
+    domains:
+    - career
+    - status
+    - home
+    - property
+    - mother
+    polarity: 2
+    themes:
+    - property
+    - comfort
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:4
+- id: BPHS.24.L10H5
+  name: 10th lord in the 5th
+  source:
+    paraphrase: 'The 10th lord in the 5th: accomplished in all learning, always delighted, wealthy, with children.'
+  condition: in_house(lord(10), 5)
+  effect:
+    domains:
+    - career
+    - status
+    - education
+    - children
+    polarity: 2
+    themes:
+    - learning
+    - children
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:5
+- id: BPHS.24.L10H6
+  name: 10th lord in the 6th
+  source:
+    paraphrase: 'The 10th lord in the 6th: no happiness from the father, clever but without wealth, troubled by
+      enemies.'
+  condition: in_house(lord(10), 6)
+  effect:
+    domains:
+    - career
+    - status
+    - enemies
+    polarity: -1
+    themes:
+    - career obstacles
+    - opponents
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:6
+- id: BPHS.24.L10H7
+  name: 10th lord in the 7th
+  source:
+    paraphrase: 'The 10th lord in the 7th: happiness through the spouse, intelligent, virtuous, eloquent, truthful
+      and religious.'
+  condition: in_house(lord(10), 7)
+  effect:
+    domains:
+    - career
+    - status
+    - spouse
+    - partnership
+    polarity: 1
+    themes:
+    - spouse
+    - partnership
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:7
+- id: BPHS.24.L10H8
+  name: 10th lord in the 8th
+  source:
+    paraphrase: 'The 10th lord in the 8th: without meaningful work, long-lived, given to blaming others.'
+  condition: in_house(lord(10), 8)
+  effect:
+    domains:
+    - career
+    - status
+    - longevity
+    polarity: -1
+    themes:
+    - lack of work
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:8
+- id: BPHS.24.L10H9
+  name: 10th lord in the 9th
+  source:
+    paraphrase: 'The 10th lord in the 9th: one born to a ruling family becomes a ruler, others equal one; wealth
+      and children.'
+  condition: in_house(lord(10), 9)
+  effect:
+    domains:
+    - career
+    - status
+    - fortune
+    polarity: 2
+    themes:
+    - eminence
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:9
+- id: BPHS.24.L10H10
+  name: 10th lord in the 10th
+  source:
+    paraphrase: 'The 10th lord in the 10th: skilled in all work, brave, truthful and devoted to elders.'
+  condition: in_house(lord(10), 10)
+  effect:
+    domains:
+    - career
+    - status
+    polarity: 2
+    themes:
+    - professional mastery
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:10
+- id: BPHS.24.L10H11
+  name: 10th lord in the 11th
+  source:
+    paraphrase: 'The 10th lord in the 11th: wealth, happiness and children, virtuous, truthful and always delighted.'
+  condition: in_house(lord(10), 11)
+  effect:
+    domains:
+    - career
+    - status
+    - gains
+    polarity: 2
+    themes:
+    - gains through work
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:11
+- id: BPHS.24.L10H12
+  name: 10th lord in the 12th
+  source:
+    paraphrase: 'The 10th lord in the 12th: spends through dealings with authorities, fears enemies and is anxious
+      despite his skill.'
+  condition: in_house(lord(10), 12)
+  effect:
+    domains:
+    - career
+    - status
+    - expenditure
+    polarity: -1
+    themes:
+    - career expenses
+    - anxiety
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:10
+  - bhava:12
+- id: BPHS.24.L11H1
+  name: 11th lord in the Lagna
+  source:
+    paraphrase: 'The 11th lord in the Lagna: sincere, rich, happy, even-minded, a poet and eloquent, always gaining.'
+  condition: in_house(lord(11), 1)
+  effect:
+    domains:
+    - gains
+    - friends
+    - self
+    polarity: 2
+    themes:
+    - continual gains
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:1
+- id: BPHS.24.L11H2
+  name: 11th lord in the 2nd
+  source:
+    paraphrase: 'The 11th lord in the 2nd: every kind of wealth and accomplishment, charitable, religious and always
+      happy.'
+  condition: in_house(lord(11), 2)
+  effect:
+    domains:
+    - gains
+    - friends
+    - wealth
+    polarity: 2
+    themes:
+    - wealth
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:2
+- id: BPHS.24.L11H3
+  name: 11th lord in the 3rd
+  source:
+    paraphrase: 'The 11th lord in the 3rd: skilled in every work, wealthy, happy with siblings, with occasional
+      joint pain.'
+  condition: in_house(lord(11), 3)
+  effect:
+    domains:
+    - gains
+    - friends
+    - siblings
+    polarity: 1
+    themes:
+    - enterprise
+    - sibling support
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:3
+- id: BPHS.24.L11H4
+  name: 11th lord in the 4th
+  source:
+    paraphrase: 'The 11th lord in the 4th: gains through maternal relatives, visits holy places, happiness of house
+      and land.'
+  condition: in_house(lord(11), 4)
+  effect:
+    domains:
+    - gains
+    - friends
+    - home
+    - mother
+    polarity: 1
+    themes:
+    - property gains
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:4
+- id: BPHS.24.L11H5
+  name: 11th lord in the 5th
+  source:
+    paraphrase: 'The 11th lord in the 5th: happy, educated, virtuous and religious.'
+  condition: in_house(lord(11), 5)
+  effect:
+    domains:
+    - gains
+    - friends
+    - children
+    - education
+    polarity: 2
+    themes:
+    - children
+    - learning
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:5
+- id: BPHS.24.L11H6
+  name: 11th lord in the 6th
+  source:
+    paraphrase: 'The 11th lord in the 6th: suffers illness, harsh, lives abroad and is troubled by enemies.'
+  condition: in_house(lord(11), 6)
+  effect:
+    domains:
+    - gains
+    - friends
+    - disease
+    - foreign
+    - enemies
+    polarity: -1
+    themes:
+    - illness
+    - living abroad
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:6
+- id: BPHS.24.L11H7
+  name: 11th lord in the 7th
+  source:
+    paraphrase: 'The 11th lord in the 7th: gains through the spouse''s family, generous and virtuous, sensual and
+      devoted to the spouse.'
+  condition: in_house(lord(11), 7)
+  effect:
+    domains:
+    - gains
+    - friends
+    - spouse
+    polarity: 1
+    themes:
+    - gains through marriage
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:7
+- id: BPHS.24.L11H8
+  name: 11th lord in the 8th
+  source:
+    paraphrase: 'The 11th lord in the 8th: reversals in undertakings; long-lived, but the spouse may die first.'
+  condition: in_house(lord(11), 8)
+  effect:
+    domains:
+    - gains
+    - friends
+    - longevity
+    polarity: -1
+    themes:
+    - setbacks
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:8
+- id: BPHS.24.L11H9
+  name: 11th lord in the 9th
+  source:
+    paraphrase: 'The 11th lord in the 9th: fortunate, skilful, truthful, honoured by authorities and affluent.'
+  condition: in_house(lord(11), 9)
+  effect:
+    domains:
+    - gains
+    - friends
+    - fortune
+    polarity: 2
+    themes:
+    - fortune
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:9
+- id: BPHS.24.L11H10
+  name: 11th lord in the 10th
+  source:
+    paraphrase: 'The 11th lord in the 10th: honoured by authorities, virtuous, religious, intelligent, truthful
+      and self-controlled.'
+  condition: in_house(lord(11), 10)
+  effect:
+    domains:
+    - gains
+    - friends
+    - career
+    polarity: 2
+    themes:
+    - recognition at work
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:10
+- id: BPHS.24.L11H11
+  name: 11th lord in the 11th
+  source:
+    paraphrase: 'The 11th lord in the 11th: gains in every undertaking; learning and happiness grow day by day.'
+  condition: in_house(lord(11), 11)
+  effect:
+    domains:
+    - gains
+    - friends
+    polarity: 2
+    themes:
+    - continual gains
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:11
+- id: BPHS.24.L11H12
+  name: 11th lord in the 12th
+  source:
+    paraphrase: 'The 11th lord in the 12th: spends on good deeds, sensual, many partners, friends among foreigners.'
+  condition: in_house(lord(11), 12)
+  effect:
+    domains:
+    - gains
+    - friends
+    - expenditure
+    polarity: -1
+    themes:
+    - expenditure
+    - foreign contacts
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:11
+  - bhava:12
+- id: BPHS.24.L12H1
+  name: 12th lord in the Lagna
+  source:
+    paraphrase: 'The 12th lord in the Lagna: a spendthrift with a weak constitution and phlegmatic troubles, lacking
+      wealth and learning.'
+  condition: in_house(lord(12), 1)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - health
+    - self
+    polarity: -1
+    themes:
+    - expenditure
+    - weak health
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:1
+- id: BPHS.24.L12H2
+  name: 12th lord in the 2nd
+  source:
+    paraphrase: 'The 12th lord in the 2nd: spends on unworthy things, though religious, sweet-spoken, virtuous and
+      happy.'
+  condition: in_house(lord(12), 2)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - wealth
+    polarity: -1
+    themes:
+    - leakage of wealth
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:2
+- id: BPHS.24.L12H3
+  name: 12th lord in the 3rd
+  source:
+    paraphrase: 'The 12th lord in the 3rd: no happiness from siblings, dislikes others, concerned with his own nourishment.'
+  condition: in_house(lord(12), 3)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - siblings
+    polarity: -1
+    themes:
+    - sibling distance
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:3
+- id: BPHS.24.L12H4
+  name: 12th lord in the 4th
+  source:
+    paraphrase: 'The 12th lord in the 4th: no happiness from the mother; losses of land, vehicles and houses accumulate.'
+  condition: in_house(lord(12), 4)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - home
+    - mother
+    polarity: -1
+    themes:
+    - property losses
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:4
+- id: BPHS.24.L12H5
+  name: 12th lord in the 5th
+  source:
+    paraphrase: 'The 12th lord in the 5th: without children or learning, spends to obtain a child, visits holy places.'
+  condition: in_house(lord(12), 5)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - children
+    polarity: -1
+    themes:
+    - progeny difficulty
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:5
+- id: BPHS.24.L12H6
+  name: 12th lord in the 6th
+  source:
+    paraphrase: 'The 12th lord in the 6th: enmity with his own people, angry, unhappy, drawn to others'' spouses.'
+  condition: in_house(lord(12), 6)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - enemies
+    polarity: -1
+    themes:
+    - conflict with kin
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:6
+- id: BPHS.24.L12H7
+  name: 12th lord in the 7th
+  source:
+    paraphrase: 'The 12th lord in the 7th: spends because of the spouse, little marital happiness, lacking learning
+      and strength.'
+  condition: in_house(lord(12), 7)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - spouse
+    polarity: -1
+    themes:
+    - marital expenses
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:7
+- id: BPHS.24.L12H8
+  name: 12th lord in the 8th
+  source:
+    paraphrase: 'The 12th lord in the 8th: always gains, speaks pleasantly, medium lifespan, with every good quality.'
+  condition: in_house(lord(12), 8)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - gains
+    - longevity
+    polarity: 1
+    themes:
+    - gains
+    - pleasant speech
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:8
+- id: BPHS.24.L12H9
+  name: 12th lord in the 9th
+  source:
+    paraphrase: 'The 12th lord in the 9th: disrespects elders, even hostile to friends, intent on his own ends.'
+  condition: in_house(lord(12), 9)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - fortune
+    polarity: -1
+    themes:
+    - strained relations
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:9
+- id: BPHS.24.L12H10
+  name: 12th lord in the 10th
+  source:
+    paraphrase: 'The 12th lord in the 10th: spends through dealings with authorities, moderate happiness from the
+      father.'
+  condition: in_house(lord(12), 10)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - career
+    polarity: 0
+    themes:
+    - career expenses
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:10
+- id: BPHS.24.L12H11
+  name: 12th lord in the 11th
+  source:
+    paraphrase: 'The 12th lord in the 11th: gains suffer; raised by others, sometimes gains through others.'
+  condition: in_house(lord(12), 11)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    - gains
+    polarity: -1
+    themes:
+    - blocked gains
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:11
+- id: BPHS.24.L12H12
+  name: 12th lord in the 12th
+  source:
+    paraphrase: 'The 12th lord in the 12th: heavy expenditure, little bodily comfort, irritable and spiteful.'
+  condition: in_house(lord(12), 12)
+  effect:
+    domains:
+    - expenditure
+    - losses
+    polarity: -1
+    themes:
+    - heavy expenditure
+  timing: lord(12) in [dasha_lord, antardasha_lord]
+  tags:
+  - bhavesh
+  - lord:12
+  - bhava:12

@@ -1,0 +1,90 @@
+# Layer 3/4 data: what each life topic means to the chart. Python reads this; it holds no interpretation.
+#
+# house / karakas: the bhava and its significators (BPHS ch.32, karakas of the houses), used for the
+#   triple confirmation (bhava, bhavesh, karaka; BPHS ch.11-12 judge a house by all three).
+# varga: the divisional chart that must confirm a D1 promise (BPHS ch.6-7 assign each varga its subject).
+#   Wealth stays D1: the hora (D2) has only two signs, so a sign-dignity check means little there.
+# domains: rule effect domains that count towards the topic.
+# kp: KP houses favouring (favour) and opposing (oppose, the 12th from each) the matter (KP Readers).
+
+topics:
+  self:      {house: 1,  karakas: [Sun],                              varga: D1,  domains: [self, health, appearance, temperament], kp: {favour: [1, 5, 11], oppose: [6, 8, 12]}}
+  wealth:    {house: 2,  karakas: [Jupiter],                          varga: D1,  domains: [wealth, family, speech], kp: {favour: [2, 6, 11], oppose: [5, 8, 12]}}
+  siblings:  {house: 3,  karakas: [Mars],                             varga: D3,  domains: [siblings, courage, communication], kp: {favour: [3, 11], oppose: [2, 10, 12]}}
+  mother:    {house: 4,  karakas: [Moon],                             varga: D12, domains: [mother], kp: {favour: [4, 11], oppose: [3, 10, 12]}}
+  property:  {house: 4,  karakas: [Mars, Venus],                      varga: D4,  domains: [home, property, vehicles, happiness], kp: {favour: [4, 11, 12], oppose: [3, 5, 10]}}
+  education: {house: 4,  karakas: [Mercury, Jupiter],                 varga: D24, domains: [education, intelligence], kp: {favour: [4, 9, 11], oppose: [3, 8, 10]}}
+  children:  {house: 5,  karakas: [Jupiter],                          varga: D7,  domains: [children], kp: {favour: [2, 5, 11], oppose: [1, 4, 10]}}
+  health:    {house: 6,  karakas: [Mars, Saturn],                     varga: D30, domains: [disease, enemies, debts, service], kp: {favour: [5, 11], oppose: [6, 8, 12]}}
+  marriage:  {house: 7,  karakas: [Venus],                            varga: D9,  domains: [marriage, spouse, partnership, sexuality], kp: {favour: [2, 7, 11], oppose: [1, 6, 10]}}
+  longevity: {house: 8,  karakas: [Saturn],                           varga: D30, domains: [longevity, inheritance, occult, hidden_matters], kp: {favour: [1, 5, 11], oppose: [2, 7, 8]}}
+  father:    {house: 9,  karakas: [Sun],                              varga: D12, domains: [father], kp: {favour: [9, 11], oppose: [8, 10, 12]}}
+  fortune:   {house: 9,  karakas: [Jupiter],                          varga: D9,  domains: [fortune, dharma, guru], kp: {favour: [5, 9, 11], oppose: [4, 8, 12]}}
+  career:    {house: 10, karakas: [Sun, Mercury, Jupiter, Saturn],    varga: D10, domains: [career, status, authority, fame], kp: {favour: [2, 6, 10, 11], oppose: [1, 5, 9]}}
+  gains:     {house: 11, karakas: [Jupiter],                          varga: D1,  domains: [gains, friends], kp: {favour: [2, 6, 11], oppose: [5, 8, 12]}}
+  foreign:   {house: 12, karakas: [Saturn],                           varga: D1,  domains: [foreign, travel, expenditure, losses], kp: {favour: [3, 9, 12], oppose: [2, 4, 11]}}
+  spirituality: {house: 12, karakas: [Jupiter, Ketu],                 varga: D20, domains: [spirituality, moksha], kp: {favour: [5, 9, 12], oppose: [2, 6, 10, 11]}}
+
+# Triple confirmation (BPHS ch.11: a house prospers when the bhava, its lord and its karaka are all well
+# disposed). Each part reads +1 (plus), -1 (minus) or 0; {h} is the house, {p} the lord or a karaka.
+triple:
+  bhava:
+    plus: >-
+      shubhakartari({h}) or (any(b in planets: benefic(b) and (in_house(b, {h}) or aspects_house(b, {h})))
+      and not any(m in planets: malefic(m) and (in_house(m, {h}) or aspects_house(m, {h}))))
+    minus: >-
+      papakartari({h}) or (any(m in planets: malefic(m) and (in_house(m, {h}) or aspects_house(m, {h})))
+      and not any(b in planets: benefic(b) and (in_house(b, {h}) or aspects_house(b, {h}))))
+  graha:
+    plus: 'strong({p}) and not in_house({p}, dusthana)'
+    minus: 'weak({p}) or (in_house({p}, dusthana) and not dignified({p})) or (afflicted({p}) and not aided({p}))'
+
+# Varga confirmation: evaluated in the topic's varga for its house lord and each karaka ({p}).
+varga_confirmation:
+  source: "BPHS ch.6-7 (each varga judges its subject); a D1 promise unsupported in its varga gives nominal results"
+  supports: 'dignified({p}) or (in_house({p}, [1, 4, 5, 7, 9, 10]) and not neecha({p}))'
+  denies: 'neecha({p}) or (in_house({p}, dusthana) and not dignified({p}))'
+
+# Timing: how a running dasha lord {p} connects to the topic (house {h}, karakas {karakas}).
+activation:
+  parashari:
+    - {name: lord of the house,  w: 1.0, expr: 'lord({h}) == {p}'}
+    - {name: occupies the house, w: 1.0, expr: 'in_house({p}, {h})'}
+    - {name: aspects the house,  w: 0.5, expr: 'aspects_house({p}, {h})'}
+    - {name: karaka,             w: 0.5, expr: '{p} in {karakas}'}
+    - {name: with the lord,      w: 0.5, expr: '{p} != lord({h}) and (conjunct({p}, lord({h})) or aspects({p}, lord({h})))'}
+    - {name: star of the lord,   w: 0.5, expr: '{p} != lord({h}) and nakshatra_lord_of({p}) == lord({h})'}
+  kp:
+    - {name: signifies favourable houses, w: 1.0, expr: 'signifies({p}, {favour})'}
+    - {name: signifies opposing houses only, w: -1.0, expr: 'signifies({p}, {oppose}) and not signifies({p}, {favour})'}
+
+# Nabhasa precedence: when yogas of these groups co-exist, the listed group yields.
+precedence:
+  - {yields: sankhya, to: [akriti, ashraya, dala], source: "Brihat Jataka ch.12; Saravali: sankhya yogas apply only when no other Nabhasa yoga is present (verse to be confirmed)"}
+
+# Query routing fallback (Layer 5, used when no LLM router is available): words that point to each topic.
+keywords:
+  self:         [personality, health, body, appearance, nature, temperament, myself, vitality, looks]
+  wealth:       [money, wealth, finance, finances, rich, savings, income, salary, family, speech]
+  siblings:     [brother, sister, sibling, siblings, courage, communication]
+  mother:       [mother, mom, mum, maa]
+  property:     [house, home, property, land, flat, apartment, vehicle, car, real estate]
+  education:    [education, study, studies, degree, exam, exams, college, university, masters, learning]
+  children:     [child, children, kid, kids, son, daughter, baby, pregnancy, progeny]
+  health:       [disease, illness, sick, enemy, enemies, debt, debts, loan, litigation, court, competition]
+  marriage:     [marriage, marry, married, wedding, spouse, wife, husband, partner, relationship, girlfriend, boyfriend, love, romance]
+  longevity:    [longevity, lifespan, accident, inheritance, occult, surgery, transformation]
+  father:       [father, dad, papa]
+  fortune:      [luck, fortune, dharma, religion, guru, teacher, pilgrimage, higher learning]
+  career:       [career, job, work, promotion, profession, business, boss, office, role, fame, status, company]
+  gains:        [gain, gains, profit, profits, friends, network, wishes, bonus]
+  foreign:      [abroad, foreign, overseas, travel, visa, relocate, relocation, emigrate, settle, expenses, losses]
+  spirituality: [spiritual, spirituality, moksha, meditation, enlightenment, awakening, liberation]
+
+# Life-event domains (people/*.yaml, `kundli event add`) -> topic, where the name is not a topic itself or
+# one of a topic's rule domains.
+event_domains:
+  relationship: marriage
+  residence: property
+  job: career
+  study: education

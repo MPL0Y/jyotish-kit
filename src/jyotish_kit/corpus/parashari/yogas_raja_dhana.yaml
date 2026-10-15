@@ -1,0 +1,368 @@
+# Raja, dhana, viparita, neecha bhanga, daridra, parivartana and other named yogas.
+# Timing follows the classical principle that a yoga gives its results in the dashas and antardashas of
+# the planets forming it.
+defaults:
+  school: parashari
+  classical_strength: primary
+  tags: [yoga]
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "chapter per the named edition's numbering; verse to be confirmed against it"
+
+rules:
+  # ---------------------------------------------------------------- raja yogas (BPHS ch.39, ch.34)
+  - id: BPHS.39.KendraTrikona
+    name: Raja yoga (kendra and trikona lords)
+    source: {chapter: 39, paraphrase: "When the lord of a kendra and the lord of a trikona are related (conjoined, in mutual aspect or exchange), a raja yoga forms: rise in status, authority and prosperity, in proportion to the strength of the two planets."}
+    condition: "any(k in [1, 4, 7, 10]: any(t in [1, 5, 9]: lord(k) != lord(t) and associated(lord(k), lord(t))))"
+    effect: {domains: [status, authority, career, wealth], polarity: 2, themes: ["rise in position", "authority", "prosperity"]}
+    timing: >-
+      any(k in [1, 4, 7, 10]: lord(k) in [dasha_lord, antardasha_lord])
+      and any(t in [1, 5, 9]: lord(t) in [dasha_lord, antardasha_lord])
+    tags: [yoga, raja]
+
+  - id: BPHS.39.DharmaKarmadhipati
+    name: Dharma-Karmadhipati yoga
+    source: {chapter: 39, paraphrase: "The lords of the 9th and 10th related by conjunction, aspect or exchange form the most powerful raja yoga: fame, success in one's work and good fortune."}
+    condition: "lord(9) != lord(10) and associated(lord(9), lord(10))"
+    effect: {domains: [career, fortune, fame, status], polarity: 2, themes: ["professional success", "fortune", "reputation"]}
+    timing: "lord(9) in [dasha_lord, antardasha_lord] or lord(10) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, raja, bhava:9, bhava:10]
+
+  - id: BPHS.34.YogakarakaWellPlaced
+    name: Yogakaraka in kendra or trikona
+    source: {chapter: 34, paraphrase: "A planet that owns both a kendra and a trikona is a yogakaraka; placed in a kendra or trikona it gives authority and success, especially in its own periods."}
+    condition: "any(p in seven: yogakaraka(p) and in_house(p, [1, 4, 5, 7, 9, 10]))"
+    effect: {domains: [status, career, authority], polarity: 2, themes: ["success in the yogakaraka's periods"]}
+    timing: "yogakaraka(dasha_lord) or yogakaraka(antardasha_lord)"
+    tags: [yoga, raja]
+
+  # ---------------------------------------------------------------- viparita (Phaladeepika ch.6)
+  - id: Phaladeepika.6.Harsha
+    name: Harsha yoga (viparita)
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The 6th lord in the 6th, 8th or 12th gives Harsha: happiness, a strong body, victory over enemies, wealth, friends and a dislike of wrongdoing."}
+    condition: "in_house(lord(6), dusthana)"
+    effect: {domains: [enemies, health, wealth], polarity: 1, themes: ["victory over adversaries", "robust health"]}
+    timing: "lord(6) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, viparita, bhava:6]
+
+  - id: Phaladeepika.6.Sarala
+    name: Sarala yoga (viparita)
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The 8th lord in the 6th, 8th or 12th gives Sarala: long life, fearlessness, learning, wealth, children and renown, success over obstacles."}
+    condition: "in_house(lord(8), dusthana)"
+    effect: {domains: [longevity, wealth, fame], polarity: 1, themes: ["long life", "fearlessness", "overcoming obstacles"]}
+    timing: "lord(8) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, viparita, bhava:8]
+
+  - id: Phaladeepika.6.Vimala
+    name: Vimala yoga (viparita)
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The 12th lord in the 6th, 8th or 12th gives Vimala: frugal, independent, of good conduct, spends on good causes and is well regarded."}
+    condition: "in_house(lord(12), dusthana)"
+    effect: {domains: [expenditure, status, temperament], polarity: 1, themes: ["thrift", "independence", "good conduct"]}
+    timing: "lord(12) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, viparita, bhava:12]
+
+  # ---------------------------------------------------------------- neecha bhanga (Phaladeepika ch.7)
+  - id: Phaladeepika.7.NeechaBhanga_DispositorKendra
+    name: Neecha bhanga (dispositor in kendra)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "A debilitated planet's debility is cancelled, and a raja yoga can result, when the lord of the sign it occupies is in a kendra from the Lagna or the Moon.", note: "Neecha bhanga raja yoga verses ~7.26-30; confirm numbering"}
+    condition: "any(p in seven: neecha(p) and (in_house(lord_of_sign(sign_of(p)), kendra) or kendra_from(lord_of_sign(sign_of(p)), Moon)))"
+    effect: {domains: [status, authority], polarity: 2, themes: ["rise after early setbacks", "debility turned to strength"]}
+    timing: "any(p in seven: neecha(p) and (p in [dasha_lord, antardasha_lord] or lord_of_sign(sign_of(p)) in [dasha_lord, antardasha_lord]))"
+    tags: [yoga, raja, neecha_bhanga, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_ExaltLordKendra
+    name: Neecha bhanga (exaltation lord in kendra)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "Debility is cancelled when the lord of the sign in which the debilitated planet would be exalted is in a kendra from the Lagna or the Moon.", note: "Neecha bhanga raja yoga verses ~7.26-30; confirm numbering"}
+    condition: "any(p in seven: neecha(p) and (in_house(lord_of_sign(exaltation_sign(p)), kendra) or kendra_from(lord_of_sign(exaltation_sign(p)), Moon)))"
+    effect: {domains: [status, authority], polarity: 2, themes: ["rise after early setbacks"]}
+    timing: "any(p in seven: neecha(p) and (p in [dasha_lord, antardasha_lord] or lord_of_sign(exaltation_sign(p)) in [dasha_lord, antardasha_lord]))"
+    tags: [yoga, raja, neecha_bhanga, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_ExaltedThereKendra
+    name: Neecha bhanga (planet exalted in that sign is in kendra)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "Debility is cancelled when the planet that is exalted in the debilitation sign occupies a kendra from the Lagna or the Moon.", note: "Neecha bhanga raja yoga verses ~7.26-30; confirm numbering"}
+    condition: "any(p in seven: neecha(p) and any(q in exalted_in(sign_of(p)): in_house(q, kendra) or kendra_from(q, Moon)))"
+    effect: {domains: [status, authority], polarity: 2, themes: ["rise after early setbacks"]}
+    timing: "any(p in seven: neecha(p) and (p in [dasha_lord, antardasha_lord] or any(q in exalted_in(sign_of(p)): q in [dasha_lord, antardasha_lord])))"
+    tags: [yoga, raja, neecha_bhanga, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_DispositorAspect
+    name: Neecha bhanga (aspected by the dispositor)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "Debility is cancelled when the debilitated planet is aspected by the lord of the sign it occupies.", note: "given in commentaries on the neecha bhanga verses; locus to be confirmed"}
+    condition: "any(p in seven: neecha(p) and aspects(lord_of_sign(sign_of(p)), p))"
+    effect: {domains: [status], polarity: 1, themes: ["debility relieved"]}
+    classical_strength: supporting
+    timing: "any(p in seven: neecha(p) and p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, neecha_bhanga, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_ExaltedNavamsa
+    name: Neecha bhanga (exalted in navamsa)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "A planet debilitated in the rashi but exalted in the navamsa has its debility cancelled.", note: "given in commentaries on the neecha bhanga verses; locus to be confirmed"}
+    condition: 'any(p in seven: neecha(p) and varga("D9").dignity(p) == "exalted")'
+    effect: {domains: [status], polarity: 1, themes: ["debility relieved by navamsa strength"]}
+    classical_strength: supporting
+    timing: "any(p in seven: neecha(p) and p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, neecha_bhanga, varga:D9, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_Exchange
+    name: Neecha bhanga (exchange with dispositor)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "A debilitated planet in sign exchange with the lord of its sign has its debility cancelled.", note: "given in commentaries on the neecha bhanga verses; locus to be confirmed"}
+    condition: "any(p in seven: neecha(p) and exchange_type(p, lord_of_sign(sign_of(p))) != none)"
+    effect: {domains: [status], polarity: 1, themes: ["debility relieved by exchange"]}
+    classical_strength: supporting
+    timing: "any(p in seven: neecha(p) and p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, neecha_bhanga, alt:neecha_bhanga]
+
+  - id: Phaladeepika.7.NeechaBhanga_InKendra
+    name: Neecha bhanga (debilitated planet in kendra)
+    source: {text: Phaladeepika, chapter: 7, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "A debilitated planet itself placed in a kendra from the Lagna or the Moon is held by some authorities to have its debility cancelled.", note: "a minority condition in commentaries; locus to be confirmed"}
+    condition: "any(p in seven: neecha(p) and (in_house(p, kendra) or kendra_from(p, Moon)))"
+    effect: {domains: [status], polarity: 1, themes: ["debility partly relieved"]}
+    classical_strength: minority_view
+    timing: "any(p in seven: neecha(p) and p in [dasha_lord, antardasha_lord])"
+    tags: [yoga, neecha_bhanga, alt:neecha_bhanga]
+
+  # ---------------------------------------------------------------- dhana (BPHS ch.41, ch.36)
+  - id: BPHS.41.WealthLordsWithTrikona
+    name: Dhana yoga (2nd/11th lord with trikona lord)
+    source: {chapter: 41, paraphrase: "The lord of the 2nd or 11th related to the lord of the Lagna, 5th or 9th gives wealth."}
+    condition: "any(a in [2, 11]: any(b in [1, 5, 9]: lord(a) != lord(b) and associated(lord(a), lord(b))))"
+    effect: {domains: [wealth, gains], polarity: 2, themes: ["accumulation of wealth"]}
+    timing: >-
+      any(a in [2, 11]: lord(a) in [dasha_lord, antardasha_lord])
+      or any(b in [5, 9]: lord(b) in [dasha_lord, antardasha_lord])
+    tags: [yoga, dhana]
+
+  - id: BPHS.41.SecondEleventhLords
+    name: Dhana yoga (2nd and 11th lords)
+    source: {chapter: 41, paraphrase: "The lords of the 2nd and 11th related to each other bring earnings and savings."}
+    condition: "lord(2) != lord(11) and associated(lord(2), lord(11))"
+    effect: {domains: [wealth, gains], polarity: 1, themes: ["income and savings"]}
+    timing: "lord(2) in [dasha_lord, antardasha_lord] or lord(11) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, dhana, bhava:2, bhava:11]
+
+  - id: BPHS.36.Lakshmi
+    name: Lakshmi yoga
+    source: {chapter: 36, paraphrase: "With the Lagna lord strong and the 9th lord in a kendra in its own sign, moolatrikona or exaltation, the native is wealthy, virtuous, learned, handsome and of high standing.", note: "some versions also require Venus well placed"}
+    condition: "in_house(lord(9), kendra) and dignified(lord(9)) and strong(lord(1))"
+    effect: {domains: [wealth, fortune, status], polarity: 2, themes: ["wealth", "good fortune", "high standing"]}
+    timing: "lord(9) in [dasha_lord, antardasha_lord] or lord(1) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, dhana]
+
+  # ---------------------------------------------------------------- daridra (BPHS ch.42, Phaladeepika ch.6)
+  - id: BPHS.42.LagnaTwelfthExchangeMaraka
+    name: Daridra yoga (1st-12th exchange with maraka)
+    source: {chapter: 42, paraphrase: "The Lagna lord in the 12th and the 12th lord in the Lagna, joined with or aspected by a maraka lord, causes poverty."}
+    condition: >-
+      in_house(lord(1), 12) and in_house(lord(12), 1)
+      and any(m in [lord(2), lord(7)]: m != lord(1) and (conjunct(m, lord(1)) or aspects(m, lord(1))))
+    effect: {domains: [wealth, losses], polarity: -2, themes: ["drain of wealth"]}
+    timing: "lord(1) in [dasha_lord, antardasha_lord] or lord(12) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, daridra]
+
+  - id: BPHS.42.LagnaSixthExchangeMaraka
+    name: Daridra yoga (1st-6th exchange with maraka)
+    source: {chapter: 42, paraphrase: "The Lagna lord in the 6th and the 6th lord in the Lagna, joined with or aspected by a maraka lord, causes poverty."}
+    condition: >-
+      in_house(lord(1), 6) and in_house(lord(6), 1)
+      and any(m in [lord(2), lord(7)]: m != lord(1) and (conjunct(m, lord(1)) or aspects(m, lord(1))))
+    effect: {domains: [wealth, debts], polarity: -2, themes: ["debt and want"]}
+    timing: "lord(1) in [dasha_lord, antardasha_lord] or lord(6) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, daridra]
+
+  - id: BPHS.42.MoonKetuLagna
+    name: Daridra yoga (Moon and Ketu in Lagna)
+    source: {chapter: 42, paraphrase: "The Moon and Ketu together in the Lagna indicate poverty."}
+    condition: "in_house(Moon, 1) and in_house(Ketu, 1)"
+    effect: {domains: [wealth], polarity: -1, themes: ["want"]}
+    classical_strength: supporting
+    tags: [yoga, daridra]
+
+  - id: Phaladeepika.6.Dur
+    name: Dur yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The 10th lord in the 6th, 8th or 12th: one's efforts go unrewarded or benefit others, and standing is low."}
+    condition: "in_house(lord(10), dusthana)"
+    effect: {domains: [career, status], polarity: -1, themes: ["work without due reward"]}
+    timing: "lord(10) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, bhava:10]
+
+  - id: Phaladeepika.6.Daridra
+    name: Daridra yoga (11th lord in dusthana)
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "The 11th lord in the 6th, 8th or 12th: debts, want, harsh speech and menial work."}
+    condition: "in_house(lord(11), dusthana)"
+    effect: {domains: [gains, wealth, debts], polarity: -1, themes: ["blocked gains", "debts"]}
+    timing: "lord(11) in [dasha_lord, antardasha_lord]"
+    tags: [yoga, daridra, bhava:11]
+
+  # ---------------------------------------------------------------- parivartana (Phaladeepika ch.6)
+  - id: Phaladeepika.6.MahaParivartana
+    name: Maha parivartana yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "An exchange of signs between lords of the good houses (1, 2, 4, 5, 7, 9, 10, 11) gives Maha yoga: the favour of fortune, fine clothes, gold, authority, vehicles and children."}
+    condition: 'any(p in seven: any(q in seven: exchange_type(p, q) == "maha"))'
+    effect: {domains: [wealth, status, vehicles], polarity: 2, themes: ["prosperity and authority"]}
+    timing: 'exchange_type(dasha_lord, antardasha_lord) == "maha" or any(q in seven: exchange_type(dasha_lord, q) == "maha")'
+    tags: [yoga, parivartana]
+
+  - id: Phaladeepika.6.KhalaParivartana
+    name: Khala parivartana yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "An exchange involving the 3rd lord gives Khala yoga: a fickle nature, at times arrogant, with fortunes that rise and fall."}
+    condition: 'any(p in seven: any(q in seven: exchange_type(p, q) == "khala"))'
+    effect: {domains: [temperament, wealth], polarity: 0, themes: ["fluctuating fortune", "changeable temperament"]}
+    timing: 'any(q in seven: exchange_type(dasha_lord, q) == "khala")'
+    tags: [yoga, parivartana]
+
+  - id: Phaladeepika.6.DainyaParivartana
+    name: Dainya parivartana yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "An exchange involving the lord of the 6th, 8th or 12th gives Dainya yoga: an unsteady mind, trouble from opponents, and setbacks."}
+    condition: 'any(p in seven: any(q in seven: exchange_type(p, q) == "dainya"))'
+    effect: {domains: [enemies, temperament], polarity: -1, themes: ["setbacks", "opponents"]}
+    timing: 'any(q in seven: exchange_type(dasha_lord, q) == "dainya")'
+    tags: [yoga, parivartana]
+
+  # ---------------------------------------------------------------- other named yogas (BPHS ch.36)
+  - id: BPHS.36.Shubha
+    name: Shubha yoga
+    source: {chapter: 36, paraphrase: "Benefics in the Lagna, or the Lagna hemmed between benefics, make one eloquent, handsome and virtuous."}
+    condition: "any(b in occupants(1): benefic(b)) or shubhakartari(1)"
+    effect: {domains: [self, speech, appearance], polarity: 1, themes: ["eloquence", "good looks", "virtue"]}
+    classical_strength: supporting
+    tags: [yoga, bhava:1]
+
+  - id: BPHS.36.Ashubha
+    name: Ashubha (papa) yoga
+    source: {chapter: 36, paraphrase: "Malefics in the Lagna, or the Lagna hemmed between malefics, make one sinful in inclination, appetite-driven and liable to lose others' wealth."}
+    condition: "any(m in occupants(1): malefic(m)) or papakartari(1)"
+    effect: {domains: [self, temperament, health], polarity: -1, themes: ["strain on body and character"]}
+    classical_strength: supporting
+    tags: [yoga, bhava:1]
+
+  - id: BPHS.36.Parvata
+    name: Parvata yoga
+    source: {chapter: 36, paraphrase: "Benefics in the kendras (no malefics there) with the 6th and 8th empty or holding only benefics: fortunate, eloquent, generous, learned, a leader of a town."}
+    condition: >-
+      any(b in seven: benefic(b) and in_house(b, kendra))
+      and not any(m in planets: malefic(m) and in_house(m, kendra))
+      and all(p in occupants(6) + occupants(8): benefic(p))
+    effect: {domains: [fortune, status, speech], polarity: 2, themes: ["prosperity", "leadership", "generosity"]}
+    tags: [yoga]
+
+  - id: BPHS.36.Kahala
+    name: Kahala yoga
+    source: {chapter: 36, paraphrase: "The lords of the 4th and 9th in mutual kendras with a strong Lagna lord: bold, stubborn, commanding a following, ruler of a small domain."}
+    condition: "lord(4) != lord(9) and kendra_from(lord(4), lord(9)) and strong(lord(1))"
+    effect: {domains: [authority, courage], polarity: 1, themes: ["boldness", "command"]}
+    timing: "lord(4) in [dasha_lord, antardasha_lord] or lord(9) in [dasha_lord, antardasha_lord]"
+    tags: [yoga]
+
+  - id: BPHS.36.Chamara
+    name: Chamara yoga
+    source: {chapter: 36, paraphrase: "The Lagna lord exalted in a kendra and aspected by Jupiter: honoured by rulers, long-lived, learned and eloquent."}
+    condition: 'dignity(lord(1)) == "exalted" and in_house(lord(1), kendra) and aspects(Jupiter, lord(1))'
+    effect: {domains: [status, speech, longevity], polarity: 2, themes: ["honour", "learning"]}
+    timing: "lord(1) in [dasha_lord, antardasha_lord]"
+    tags: [yoga]
+
+  - id: BPHS.36.Shankha
+    name: Shankha yoga
+    source: {chapter: 36, paraphrase: "The lords of the 5th and 6th in mutual kendras with a strong Lagna lord: humane, wealthy, with spouse, children and land, long-lived and of good deeds."}
+    condition: "lord(5) != lord(6) and kendra_from(lord(5), lord(6)) and strong(lord(1))"
+    effect: {domains: [wealth, children, longevity], polarity: 1, themes: ["prosperity", "family", "long life"]}
+    timing: "lord(5) in [dasha_lord, antardasha_lord] or lord(6) in [dasha_lord, antardasha_lord]"
+    tags: [yoga]
+
+  - id: BPHS.36.Bheri
+    name: Bheri yoga
+    source: {chapter: 36, paraphrase: "Venus, Jupiter and the Lagna lord in kendras with a strong 9th lord: long-lived, wealthy, a ruler, of good family and conduct.", note: "BPHS also gives a variant based on planets in the 1st, 2nd, 7th and 12th"}
+    condition: "in_house(Venus, kendra) and in_house(Jupiter, kendra) and in_house(lord(1), kendra) and strong(lord(9))"
+    effect: {domains: [wealth, status, longevity], polarity: 2, themes: ["wealth", "authority"]}
+    tags: [yoga]
+
+  - id: BPHS.36.Khadga
+    name: Khadga yoga
+    source: {chapter: 36, paraphrase: "The 2nd lord in the 9th and the 9th lord in the 2nd, with the Lagna lord in a kendra or trikona: wealth, fortune, learning and skill."}
+    condition: "in_house(lord(2), 9) and in_house(lord(9), 2) and in_house(lord(1), [1, 4, 5, 7, 9, 10])"
+    effect: {domains: [wealth, fortune, education], polarity: 2, themes: ["wealth and fortune"]}
+    timing: "lord(2) in [dasha_lord, antardasha_lord] or lord(9) in [dasha_lord, antardasha_lord]"
+    tags: [yoga]
+
+  - id: BPHS.36.Kalanidhi
+    name: Kalanidhi yoga
+    source: {chapter: 36, paraphrase: "Jupiter in the 2nd or 5th joined with or aspected by both Mercury and Venus: virtuous, honoured by rulers, healthy, wealthy and learned."}
+    condition: >-
+      in_house(Jupiter, [2, 5])
+      and (conjunct(Jupiter, Mercury) or aspects(Mercury, Jupiter))
+      and (conjunct(Jupiter, Venus) or aspects(Venus, Jupiter))
+    effect: {domains: [wealth, status, education], polarity: 2, themes: ["learning", "honour", "wealth"]}
+    timing: "Jupiter in [dasha_lord, antardasha_lord]"
+    tags: [yoga]
+
+  - id: BPHS.36.Shrinatha
+    name: Shrinatha yoga
+    source: {chapter: 36, paraphrase: "The 7th lord exalted in the 10th, with the 10th lord related to the 9th lord: wealthy, eloquent, honoured, devoted.", note: "condition as commonly read; confirm against the verse"}
+    condition: 'dignity(lord(7)) == "exalted" and in_house(lord(7), 10) and lord(9) != lord(10) and associated(lord(10), lord(9))'
+    effect: {domains: [wealth, status, speech], polarity: 2, themes: ["wealth", "honour"]}
+    tags: [yoga]
+
+  - id: Phaladeepika.6.Saraswati
+    name: Saraswati yoga
+    source: {text: Phaladeepika, chapter: 6, edition: "V. Subrahmanya Sastri (tr.), Phaladeepika of Mantreswara, Bangalore, 1937", paraphrase: "Jupiter, Venus and Mercury in kendras, trikonas or the 2nd, with Jupiter in its own, exaltation or a friend's sign: learned in many fields, eloquent, a poet, wealthy and praised."}
+    condition: >-
+      all(p in [Jupiter, Venus, Mercury]: in_house(p, [1, 2, 4, 5, 7, 9, 10]))
+      and dignity(Jupiter) in ["exalted", "moolatrikona", "own", "great_friend", "friend"]
+    effect: {domains: [education, intelligence, speech, fame], polarity: 2, themes: ["learning", "eloquence", "creativity"]}
+    timing: "any(p in [Jupiter, Venus, Mercury]: p in [dasha_lord, antardasha_lord])"
+    tags: [yoga]
+
+  # ---------------------------------------------------------------- further BPHS ch.36 named yogas
+  - id: BPHS.36.Matsya
+    name: Matsya yoga
+    source: {chapter: 36, paraphrase: "Benefics in the Lagna and the 9th, both kinds of planet in the 5th, and malefics in the 4th and 8th: a seer, kind, strong, learned and famous.", note: "condition as commonly read; confirm against the verse"}
+    condition: >-
+      any(b in occupants(1): benefic(b)) and any(b in occupants(9): benefic(b))
+      and any(b in occupants(5): benefic(b)) and any(m in occupants(5): malefic(m))
+      and any(m in occupants(4): malefic(m)) and any(m in occupants(8): malefic(m))
+    effect: {domains: [intelligence, fame, dharma], polarity: 2, themes: ["insight", "renown", "virtue"]}
+    tags: [yoga]
+
+  - id: BPHS.36.Kurma
+    name: Kurma yoga
+    source: {chapter: 36, paraphrase: "Benefics in the 5th, 6th and 7th in exaltation, own or friendly signs, and malefics in the 1st, 3rd and 11th in own or exaltation signs: famous, virtuous, happy, a leader.", note: "condition as commonly read; confirm against the verse"}
+    condition: >-
+      all(h in [5, 6, 7]: any(b in occupants(h): benefic(b)
+          and dignity(b) in ["exalted", "moolatrikona", "own", "great_friend", "friend"]))
+      and all(h in [1, 3, 11]: any(m in occupants(h): malefic(m) and dignified(m)))
+    effect: {domains: [fame, status, happiness], polarity: 2, themes: ["renown", "leadership", "contentment"]}
+    tags: [yoga]
+
+  - id: BPHS.36.Kalpadruma
+    name: Kalpadruma (Parijata) yoga
+    source: {chapter: 36, paraphrase: "The Lagna lord, its dispositor, that planet's dispositor and the navamsa dispositor of the last all in kendras or trikonas, or exalted: a powerful, prosperous, righteous ruler-like person.", note: "condition as commonly read; confirm against the verse"}
+    condition: >-
+      all(p in [lord(1), lord_of_sign(sign_of(lord(1))), lord_of_sign(sign_of(lord_of_sign(sign_of(lord(1))))),
+                lord_of_sign(varga("D9").sign_of(lord_of_sign(sign_of(lord_of_sign(sign_of(lord(1)))))))]:
+          in_house(p, [1, 4, 5, 7, 9, 10]) or dignity(p) == "exalted")
+    effect: {domains: [status, wealth, authority, dharma], polarity: 2, themes: ["prosperity", "power", "righteousness"]}
+    tags: [yoga, raja]
+
+  - id: BPHS.36.Hari
+    name: Hari yoga
+    source: {chapter: 36, paraphrase: "Benefics in the 2nd, 12th and 8th counted from the 2nd lord: happy, learned, wealthy, blessed with children.", note: "condition as commonly read; confirm against the verse"}
+    condition: 'all(n in [2, 8, 12]: any(b in occupants_sign(sign_from(sign_of(lord(2)), n)): benefic(b)))'
+    effect: {domains: [wealth, happiness, children], polarity: 2, themes: ["comfort", "wealth"]}
+    tags: [yoga, dhana]
+
+  - id: BPHS.36.Hara
+    name: Hara yoga
+    source: {chapter: 36, paraphrase: "Benefics in the 4th, 9th and 8th counted from the 7th lord: happy, learned, wealthy, blessed with children.", note: "condition as commonly read; confirm against the verse"}
+    condition: 'all(n in [4, 8, 9]: any(b in occupants_sign(sign_from(sign_of(lord(7)), n)): benefic(b)))'
+    effect: {domains: [wealth, happiness, education], polarity: 2, themes: ["comfort", "learning"]}
+    tags: [yoga, dhana]
+
+  - id: BPHS.36.Brahma
+    name: Brahma yoga
+    source: {chapter: 36, paraphrase: "Benefics in the 4th, 10th and 11th counted from the Lagna lord: happy, learned, wealthy, long-lived, charitable.", note: "BPHS version; Phaladeepika gives a different Brahma yoga (Jupiter and Venus in kendras from the 9th and 11th lords)"}
+    condition: 'all(n in [4, 10, 11]: any(b in occupants_sign(sign_from(sign_of(lord(1)), n)): benefic(b)))'
+    effect: {domains: [wealth, education, longevity, dharma], polarity: 2, themes: ["learning", "longevity", "generosity"]}
+    tags: [yoga, dhana]

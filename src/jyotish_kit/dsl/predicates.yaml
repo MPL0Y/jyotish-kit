@@ -1,0 +1,148 @@
+# Derived predicates, written in the DSL. `school: common` predicates are visible to every school; a school
+# may define its own version under the same name, which then wins inside that school's rules.
+# Citations are to R. Santhanam's BPHS (Ranjan, 1984) unless stated; `note` flags working definitions.
+
+- name: owns
+  school: common
+  params: [p, hs]
+  expr: "any(h in hs: lord(h) == p)"
+  doc: p is lord of any of the houses hs (current varga)
+  source: {text: BPHS, chapter: 3, note: "sign lordship; Scorpio = Mars, Aquarius = Saturn"}
+
+- name: benefic
+  school: common
+  params: [p]
+  expr: >-
+    p in [Jupiter, Venus]
+    or (p == Moon and paksha() == "Shukla")
+    or (p == Mercury and not any(m in [Sun, Mars, Saturn, Rahu, Ketu]: varga("D1").conjunct(Mercury, m))
+        and not (paksha() == "Krishna" and varga("D1").conjunct(Mercury, Moon)))
+  doc: natural benefic at birth - Jupiter, Venus, waxing Moon, Mercury unless joined (D1) with a malefic
+  source: {text: BPHS, chapter: 3, verse: "10-11", note: "waxing/waning taken as Shukla/Krishna paksha"}
+
+- name: malefic
+  school: common
+  params: [p]
+  expr: "p in planets and not benefic(p)"
+  doc: natural malefic at birth - Sun, Mars, Saturn, Rahu, Ketu, waning Moon, Mercury with malefics
+  source: {text: BPHS, chapter: 3, verse: "10-11"}
+
+- name: dignified
+  school: common
+  params: [p]
+  expr: 'dignity(p) in ["exalted", "moolatrikona", "own"]'
+  doc: exalted, in moolatrikona or in own sign (current varga)
+  source: {text: BPHS, chapter: 3}
+
+- name: kendra_from
+  school: common
+  params: [p, ref]
+  expr: "house_from(p, ref) in kendra"
+  doc: p in a kendra (1/4/7/10) counted from ref's sign
+  source: {text: BPHS, chapter: 11, note: "house groups"}
+
+- name: associated
+  school: parashari
+  params: [p, q]
+  expr: >-
+    conjunct(p, q) or (aspects(p, q) and aspects(q, p)) or exchange_type(p, q) != none
+    or (in_sign(p, signs_owned(q)) and aspects(q, p))
+  doc: sambandha - conjunction, mutual aspect, sign exchange, or p in q's sign aspected by q
+  source: {text: BPHS, chapter: 39, note: "the four-fold relationship used for raja yogas; working definition"}
+
+- name: afflicted
+  school: parashari
+  params: [p]
+  expr: >-
+    any(m in planets: m != p and malefic(m) and (conjunct(p, m) or aspects(m, p)))
+    or is_combust(p) or dignity(p) == "debilitated"
+  doc: joined with or aspected by a natural malefic, combust, or debilitated (current varga)
+  source: {text: BPHS, chapter: 11, note: "working definition assembled from the house-judgement chapters"}
+
+- name: aided
+  school: parashari
+  params: [p]
+  expr: "any(b in planets: b != p and benefic(b) and (conjunct(p, b) or aspects(b, p)))"
+  doc: joined with or aspected by a natural benefic
+  source: {text: BPHS, chapter: 11}
+
+- name: strong
+  school: parashari
+  params: [p]
+  expr: >-
+    dignified(p)
+    or (p in seven and shadbala_ratio(p) >= 1 and dignity(p) != "debilitated" and not is_combust(p))
+  doc: dignified, or (Sun..Saturn) meeting its shadbala minimum while neither debilitated nor combust
+  source: {text: BPHS, chapter: 27, note: "shadbala minimums per B.V. Raman; working definition"}
+
+- name: weak
+  school: parashari
+  params: [p]
+  expr: >-
+    dignity(p) == "debilitated" or is_combust(p) or lost_war(p)
+    or (p in seven and shadbala_ratio(p) < 1)
+  doc: debilitated, combust, defeated in war, or below its shadbala minimum
+  source: {text: BPHS, chapter: 27}
+
+- name: functional_benefic
+  school: parashari
+  params: [p]
+  expr: >-
+    owns(p, [1]) or (owns(p, [5, 9]) and not owns(p, [3, 6, 11])
+                     and not (owns(p, [8]) and p not in [Sun, Moon]))
+  doc: Lagna lord, or trikona lord not also owning 3/6/8/11 (Sun and Moon exempt from the 8th)
+  source: {text: BPHS, chapter: 34, verse: "2-12"}
+
+- name: functional_malefic
+  school: parashari
+  params: [p]
+  expr: "not owns(p, [1, 5, 9]) and (owns(p, [3, 6, 11]) or (owns(p, [8]) and p not in [Sun, Moon]))"
+  doc: owns 3/6/8/11 and no trikona (Sun and Moon exempt from the 8th)
+  source: {text: BPHS, chapter: 34, verse: "2-12"}
+
+- name: yogakaraka
+  school: parashari
+  params: [p]
+  expr: "owns(p, [4, 7, 10]) and owns(p, [5, 9])"
+  doc: one planet owning both a kendra and a trikona
+  source: {text: BPHS, chapter: 34}
+
+- name: maraka
+  school: parashari
+  params: [p]
+  expr: "owns(p, [2, 7])"
+  doc: lord of the 2nd or 7th
+  source: {text: BPHS, chapter: 44}
+
+- name: badhakesh
+  school: parashari
+  params: [p]
+  expr: >-
+    (sign_quality(sign_of(Lagna)) == "movable" and lord(11) == p)
+    or (sign_quality(sign_of(Lagna)) == "fixed" and lord(9) == p)
+    or (sign_quality(sign_of(Lagna)) == "dual" and lord(7) == p)
+  doc: lord of the badhaka house - 11th for movable, 9th for fixed, 7th for dual Lagna
+  source: {text: Prasna Marga, chapter: 15, note: "badhaka sthana; also used in BPHS commentaries"}
+
+- name: papakartari
+  school: parashari
+  params: [h]
+  expr: >-
+    any(a in occupants(h % 12 + 1): malefic(a)) and any(b in occupants((h + 10) % 12 + 1): malefic(b))
+  doc: house h hemmed between malefics in the houses on either side
+  source: {text: BPHS, chapter: 31, note: "kartari; Phaladeepika ch.6 names papa/shubha kartari"}
+
+- name: shubhakartari
+  school: parashari
+  params: [h]
+  expr: >-
+    any(a in occupants(h % 12 + 1): benefic(a)) and any(b in occupants((h + 10) % 12 + 1): benefic(b))
+  doc: house h hemmed between benefics
+  source: {text: BPHS, chapter: 31}
+
+- name: neecha
+  school: common
+  params: [p]
+  expr: 'dignity(p) == "debilitated"'
+  doc: p debilitated in the current varga
+  source: {text: BPHS, chapter: 3}

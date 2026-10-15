@@ -1,0 +1,622 @@
+# KP cuspal sub lord theory for every topic except marriage (kp/marriage.yaml), health and longevity
+# (their 6th/8th-house framing needs its own rules). Generated once; edit directly.
+defaults:
+  school: kp
+  classical_strength: primary
+  varga: KP
+  source:
+    text: Krishnamurti Padhdhati Reader
+    edition: K.S. Krishnamurti, Krishnamurti Padhdhati Readers III (Predictive Stellar Astrology) and IV (Marriage, Married
+      Life and Children), Krishman & Co., Madras
+    note: the cuspal sub lord principle applied per matter; the favouring and opposing house groups are those of topics.yaml
+      (standard KP practice); section/page to be confirmed
+rules:
+- id: KP.III.SelfSubPromise
+  name: 1 cusp sub lord signifies 1, 5, 11 (self)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 1 signifies houses 1, 5, 11, self matters are promised.
+  condition: signifies(kp_sub_lord(1), [1, 5, 11])
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: 2
+    themes: [self promised]
+  timing: signifies(dasha_lord, [1, 5, 11]) and signifies(antardasha_lord, [1, 5, 11])
+  tags: ['domain:self', 'kp:cusp1']
+- id: KP.III.SelfSubDenial
+  name: 1 cusp sub lord signifies only 6, 8, 12 (self)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 1 signifies 6, 8, 12 and none of 1, 5, 11, self matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(1), [6, 8, 12]) and not signifies(kp_sub_lord(1), [1, 5, 11])
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: -2
+    themes: [self denied or delayed]
+  tags: ['domain:self', 'kp:cusp1']
+- id: KP.III.SelfSubMixed
+  name: 1 cusp sub lord signifies both sets (self)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 1 signifies both 1, 5, 11 and 6, 8, 12, self matters come with obstacles.
+  condition: signifies(kp_sub_lord(1), [1, 5, 11]) and signifies(kp_sub_lord(1), [6, 8, 12])
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: -1
+    themes: [obstacles in self]
+  tags: ['domain:self', 'kp:cusp1']
+- id: KP.III.SelfTiming
+  name: Periods of 1, 5, 11 significators (self)
+  source:
+    chapter: III
+    paraphrase: Self matters fructify in the conjoined periods of planets signifying houses 1, 5, 11.
+  condition: signifies(kp_sub_lord(1), [1, 5, 11])
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: 1
+    themes: [period of self]
+  timing: signifies(dasha_lord, [1, 5, 11]) and signifies(antardasha_lord, [1, 5, 11]) and signifies(pratyantardasha_lord,
+    [1, 5, 11])
+  tags: ['domain:self', 'kp:cusp1', timing]
+- id: KP.III.WealthSubPromise
+  name: 2 cusp sub lord signifies 2, 6, 11 (wealth)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 2 signifies houses 2, 6, 11, wealth matters are promised.
+  condition: signifies(kp_sub_lord(2), [2, 6, 11])
+  effect:
+    domains: [wealth, family, speech]
+    polarity: 2
+    themes: [wealth promised]
+  timing: signifies(dasha_lord, [2, 6, 11]) and signifies(antardasha_lord, [2, 6, 11])
+  tags: ['domain:wealth', 'kp:cusp2']
+- id: KP.III.WealthSubDenial
+  name: 2 cusp sub lord signifies only 5, 8, 12 (wealth)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 2 signifies 5, 8, 12 and none of 2, 6, 11, wealth matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(2), [5, 8, 12]) and not signifies(kp_sub_lord(2), [2, 6, 11])
+  effect:
+    domains: [wealth, family, speech]
+    polarity: -2
+    themes: [wealth denied or delayed]
+  tags: ['domain:wealth', 'kp:cusp2']
+- id: KP.III.WealthSubMixed
+  name: 2 cusp sub lord signifies both sets (wealth)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 2 signifies both 2, 6, 11 and 5, 8, 12, wealth matters come with obstacles.
+  condition: signifies(kp_sub_lord(2), [2, 6, 11]) and signifies(kp_sub_lord(2), [5, 8, 12])
+  effect:
+    domains: [wealth, family, speech]
+    polarity: -1
+    themes: [obstacles in wealth]
+  tags: ['domain:wealth', 'kp:cusp2']
+- id: KP.III.WealthTiming
+  name: Periods of 2, 6, 11 significators (wealth)
+  source:
+    chapter: III
+    paraphrase: Wealth matters fructify in the conjoined periods of planets signifying houses 2, 6, 11.
+  condition: signifies(kp_sub_lord(2), [2, 6, 11])
+  effect:
+    domains: [wealth, family, speech]
+    polarity: 1
+    themes: [period of wealth]
+  timing: signifies(dasha_lord, [2, 6, 11]) and signifies(antardasha_lord, [2, 6, 11]) and signifies(pratyantardasha_lord,
+    [2, 6, 11])
+  tags: ['domain:wealth', 'kp:cusp2', timing]
+- id: KP.III.SiblingsSubPromise
+  name: 3 cusp sub lord signifies 3, 11 (siblings)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 3 signifies houses 3, 11, siblings matters are promised.
+  condition: signifies(kp_sub_lord(3), [3, 11])
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: 2
+    themes: [siblings promised]
+  timing: signifies(dasha_lord, [3, 11]) and signifies(antardasha_lord, [3, 11])
+  tags: ['domain:siblings', 'kp:cusp3']
+- id: KP.III.SiblingsSubDenial
+  name: 3 cusp sub lord signifies only 2, 10, 12 (siblings)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 3 signifies 2, 10, 12 and none of 3, 11, siblings matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(3), [2, 10, 12]) and not signifies(kp_sub_lord(3), [3, 11])
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: -2
+    themes: [siblings denied or delayed]
+  tags: ['domain:siblings', 'kp:cusp3']
+- id: KP.III.SiblingsSubMixed
+  name: 3 cusp sub lord signifies both sets (siblings)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 3 signifies both 3, 11 and 2, 10, 12, siblings matters come with obstacles.
+  condition: signifies(kp_sub_lord(3), [3, 11]) and signifies(kp_sub_lord(3), [2, 10, 12])
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: -1
+    themes: [obstacles in siblings]
+  tags: ['domain:siblings', 'kp:cusp3']
+- id: KP.III.SiblingsTiming
+  name: Periods of 3, 11 significators (siblings)
+  source:
+    chapter: III
+    paraphrase: Siblings matters fructify in the conjoined periods of planets signifying houses 3, 11.
+  condition: signifies(kp_sub_lord(3), [3, 11])
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: 1
+    themes: [period of siblings]
+  timing: signifies(dasha_lord, [3, 11]) and signifies(antardasha_lord, [3, 11]) and signifies(pratyantardasha_lord, [3, 11])
+  tags: ['domain:siblings', 'kp:cusp3', timing]
+- id: KP.III.MotherSubPromise
+  name: 4 cusp sub lord signifies 4, 11 (mother)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies houses 4, 11, mother matters are promised.
+  condition: signifies(kp_sub_lord(4), [4, 11])
+  effect:
+    domains: [mother]
+    polarity: 2
+    themes: [mother promised]
+  timing: signifies(dasha_lord, [4, 11]) and signifies(antardasha_lord, [4, 11])
+  tags: ['domain:mother', 'kp:cusp4']
+- id: KP.III.MotherSubDenial
+  name: 4 cusp sub lord signifies only 3, 10, 12 (mother)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies 3, 10, 12 and none of 4, 11, mother matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(4), [3, 10, 12]) and not signifies(kp_sub_lord(4), [4, 11])
+  effect:
+    domains: [mother]
+    polarity: -2
+    themes: [mother denied or delayed]
+  tags: ['domain:mother', 'kp:cusp4']
+- id: KP.III.MotherSubMixed
+  name: 4 cusp sub lord signifies both sets (mother)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies both 4, 11 and 3, 10, 12, mother matters come with obstacles.
+  condition: signifies(kp_sub_lord(4), [4, 11]) and signifies(kp_sub_lord(4), [3, 10, 12])
+  effect:
+    domains: [mother]
+    polarity: -1
+    themes: [obstacles in mother]
+  tags: ['domain:mother', 'kp:cusp4']
+- id: KP.III.MotherTiming
+  name: Periods of 4, 11 significators (mother)
+  source:
+    chapter: III
+    paraphrase: Mother matters fructify in the conjoined periods of planets signifying houses 4, 11.
+  condition: signifies(kp_sub_lord(4), [4, 11])
+  effect:
+    domains: [mother]
+    polarity: 1
+    themes: [period of mother]
+  timing: signifies(dasha_lord, [4, 11]) and signifies(antardasha_lord, [4, 11]) and signifies(pratyantardasha_lord, [4, 11])
+  tags: ['domain:mother', 'kp:cusp4', timing]
+- id: KP.III.PropertySubPromise
+  name: 4 cusp sub lord signifies 4, 11, 12 (property)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies houses 4, 11, 12, property matters are promised.
+  condition: signifies(kp_sub_lord(4), [4, 11, 12])
+  effect:
+    domains: [home, property, vehicles, happiness]
+    polarity: 2
+    themes: [property promised]
+  timing: signifies(dasha_lord, [4, 11, 12]) and signifies(antardasha_lord, [4, 11, 12])
+  tags: ['domain:property', 'kp:cusp4']
+- id: KP.III.PropertySubDenial
+  name: 4 cusp sub lord signifies only 3, 5, 10 (property)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies 3, 5, 10 and none of 4, 11, 12, property matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(4), [3, 5, 10]) and not signifies(kp_sub_lord(4), [4, 11, 12])
+  effect:
+    domains: [home, property, vehicles, happiness]
+    polarity: -2
+    themes: [property denied or delayed]
+  tags: ['domain:property', 'kp:cusp4']
+- id: KP.III.PropertySubMixed
+  name: 4 cusp sub lord signifies both sets (property)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies both 4, 11, 12 and 3, 5, 10, property matters come with obstacles.
+  condition: signifies(kp_sub_lord(4), [4, 11, 12]) and signifies(kp_sub_lord(4), [3, 5, 10])
+  effect:
+    domains: [home, property, vehicles, happiness]
+    polarity: -1
+    themes: [obstacles in property]
+  tags: ['domain:property', 'kp:cusp4']
+- id: KP.III.PropertyTiming
+  name: Periods of 4, 11, 12 significators (property)
+  source:
+    chapter: III
+    paraphrase: Property matters fructify in the conjoined periods of planets signifying houses 4, 11, 12.
+  condition: signifies(kp_sub_lord(4), [4, 11, 12])
+  effect:
+    domains: [home, property, vehicles, happiness]
+    polarity: 1
+    themes: [period of property]
+  timing: signifies(dasha_lord, [4, 11, 12]) and signifies(antardasha_lord, [4, 11, 12]) and signifies(pratyantardasha_lord,
+    [4, 11, 12])
+  tags: ['domain:property', 'kp:cusp4', timing]
+- id: KP.III.EducationSubPromise
+  name: 4 cusp sub lord signifies 4, 9, 11 (education)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies houses 4, 9, 11, education matters are promised.
+  condition: signifies(kp_sub_lord(4), [4, 9, 11])
+  effect:
+    domains: [education, intelligence]
+    polarity: 2
+    themes: [education promised]
+  timing: signifies(dasha_lord, [4, 9, 11]) and signifies(antardasha_lord, [4, 9, 11])
+  tags: ['domain:education', 'kp:cusp4']
+- id: KP.III.EducationSubDenial
+  name: 4 cusp sub lord signifies only 3, 8, 10 (education)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies 3, 8, 10 and none of 4, 9, 11, education matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(4), [3, 8, 10]) and not signifies(kp_sub_lord(4), [4, 9, 11])
+  effect:
+    domains: [education, intelligence]
+    polarity: -2
+    themes: [education denied or delayed]
+  tags: ['domain:education', 'kp:cusp4']
+- id: KP.III.EducationSubMixed
+  name: 4 cusp sub lord signifies both sets (education)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 4 signifies both 4, 9, 11 and 3, 8, 10, education matters come with obstacles.
+  condition: signifies(kp_sub_lord(4), [4, 9, 11]) and signifies(kp_sub_lord(4), [3, 8, 10])
+  effect:
+    domains: [education, intelligence]
+    polarity: -1
+    themes: [obstacles in education]
+  tags: ['domain:education', 'kp:cusp4']
+- id: KP.III.EducationTiming
+  name: Periods of 4, 9, 11 significators (education)
+  source:
+    chapter: III
+    paraphrase: Education matters fructify in the conjoined periods of planets signifying houses 4, 9, 11.
+  condition: signifies(kp_sub_lord(4), [4, 9, 11])
+  effect:
+    domains: [education, intelligence]
+    polarity: 1
+    themes: [period of education]
+  timing: signifies(dasha_lord, [4, 9, 11]) and signifies(antardasha_lord, [4, 9, 11]) and signifies(pratyantardasha_lord,
+    [4, 9, 11])
+  tags: ['domain:education', 'kp:cusp4', timing]
+- id: KP.IV.ChildrenSubPromise
+  name: 5 cusp sub lord signifies 2, 5, 11 (children)
+  source:
+    chapter: IV
+    paraphrase: If the sub lord of cusp 5 signifies houses 2, 5, 11, children matters are promised.
+  condition: signifies(kp_sub_lord(5), [2, 5, 11])
+  effect:
+    domains: [children]
+    polarity: 2
+    themes: [children promised]
+  timing: signifies(dasha_lord, [2, 5, 11]) and signifies(antardasha_lord, [2, 5, 11])
+  tags: ['domain:children', 'kp:cusp5']
+- id: KP.IV.ChildrenSubDenial
+  name: 5 cusp sub lord signifies only 1, 4, 10 (children)
+  source:
+    chapter: IV
+    paraphrase: If the sub lord of cusp 5 signifies 1, 4, 10 and none of 2, 5, 11, children matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(5), [1, 4, 10]) and not signifies(kp_sub_lord(5), [2, 5, 11])
+  effect:
+    domains: [children]
+    polarity: -2
+    themes: [children denied or delayed]
+  tags: ['domain:children', 'kp:cusp5']
+- id: KP.IV.ChildrenSubMixed
+  name: 5 cusp sub lord signifies both sets (children)
+  source:
+    chapter: IV
+    paraphrase: If the sub lord of cusp 5 signifies both 2, 5, 11 and 1, 4, 10, children matters come with obstacles.
+  condition: signifies(kp_sub_lord(5), [2, 5, 11]) and signifies(kp_sub_lord(5), [1, 4, 10])
+  effect:
+    domains: [children]
+    polarity: -1
+    themes: [obstacles in children]
+  tags: ['domain:children', 'kp:cusp5']
+- id: KP.IV.ChildrenTiming
+  name: Periods of 2, 5, 11 significators (children)
+  source:
+    chapter: IV
+    paraphrase: Children matters fructify in the conjoined periods of planets signifying houses 2, 5, 11.
+  condition: signifies(kp_sub_lord(5), [2, 5, 11])
+  effect:
+    domains: [children]
+    polarity: 1
+    themes: [period of children]
+  timing: signifies(dasha_lord, [2, 5, 11]) and signifies(antardasha_lord, [2, 5, 11]) and signifies(pratyantardasha_lord,
+    [2, 5, 11])
+  tags: ['domain:children', 'kp:cusp5', timing]
+- id: KP.III.FatherSubPromise
+  name: 9 cusp sub lord signifies 9, 11 (father)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies houses 9, 11, father matters are promised.
+  condition: signifies(kp_sub_lord(9), [9, 11])
+  effect:
+    domains: [father]
+    polarity: 2
+    themes: [father promised]
+  timing: signifies(dasha_lord, [9, 11]) and signifies(antardasha_lord, [9, 11])
+  tags: ['domain:father', 'kp:cusp9']
+- id: KP.III.FatherSubDenial
+  name: 9 cusp sub lord signifies only 8, 10, 12 (father)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies 8, 10, 12 and none of 9, 11, father matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(9), [8, 10, 12]) and not signifies(kp_sub_lord(9), [9, 11])
+  effect:
+    domains: [father]
+    polarity: -2
+    themes: [father denied or delayed]
+  tags: ['domain:father', 'kp:cusp9']
+- id: KP.III.FatherSubMixed
+  name: 9 cusp sub lord signifies both sets (father)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies both 9, 11 and 8, 10, 12, father matters come with obstacles.
+  condition: signifies(kp_sub_lord(9), [9, 11]) and signifies(kp_sub_lord(9), [8, 10, 12])
+  effect:
+    domains: [father]
+    polarity: -1
+    themes: [obstacles in father]
+  tags: ['domain:father', 'kp:cusp9']
+- id: KP.III.FatherTiming
+  name: Periods of 9, 11 significators (father)
+  source:
+    chapter: III
+    paraphrase: Father matters fructify in the conjoined periods of planets signifying houses 9, 11.
+  condition: signifies(kp_sub_lord(9), [9, 11])
+  effect:
+    domains: [father]
+    polarity: 1
+    themes: [period of father]
+  timing: signifies(dasha_lord, [9, 11]) and signifies(antardasha_lord, [9, 11]) and signifies(pratyantardasha_lord, [9, 11])
+  tags: ['domain:father', 'kp:cusp9', timing]
+- id: KP.III.FortuneSubPromise
+  name: 9 cusp sub lord signifies 5, 9, 11 (fortune)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies houses 5, 9, 11, fortune matters are promised.
+  condition: signifies(kp_sub_lord(9), [5, 9, 11])
+  effect:
+    domains: [fortune, dharma, guru]
+    polarity: 2
+    themes: [fortune promised]
+  timing: signifies(dasha_lord, [5, 9, 11]) and signifies(antardasha_lord, [5, 9, 11])
+  tags: ['domain:fortune', 'kp:cusp9']
+- id: KP.III.FortuneSubDenial
+  name: 9 cusp sub lord signifies only 4, 8, 12 (fortune)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies 4, 8, 12 and none of 5, 9, 11, fortune matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(9), [4, 8, 12]) and not signifies(kp_sub_lord(9), [5, 9, 11])
+  effect:
+    domains: [fortune, dharma, guru]
+    polarity: -2
+    themes: [fortune denied or delayed]
+  tags: ['domain:fortune', 'kp:cusp9']
+- id: KP.III.FortuneSubMixed
+  name: 9 cusp sub lord signifies both sets (fortune)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 9 signifies both 5, 9, 11 and 4, 8, 12, fortune matters come with obstacles.
+  condition: signifies(kp_sub_lord(9), [5, 9, 11]) and signifies(kp_sub_lord(9), [4, 8, 12])
+  effect:
+    domains: [fortune, dharma, guru]
+    polarity: -1
+    themes: [obstacles in fortune]
+  tags: ['domain:fortune', 'kp:cusp9']
+- id: KP.III.FortuneTiming
+  name: Periods of 5, 9, 11 significators (fortune)
+  source:
+    chapter: III
+    paraphrase: Fortune matters fructify in the conjoined periods of planets signifying houses 5, 9, 11.
+  condition: signifies(kp_sub_lord(9), [5, 9, 11])
+  effect:
+    domains: [fortune, dharma, guru]
+    polarity: 1
+    themes: [period of fortune]
+  timing: signifies(dasha_lord, [5, 9, 11]) and signifies(antardasha_lord, [5, 9, 11]) and signifies(pratyantardasha_lord,
+    [5, 9, 11])
+  tags: ['domain:fortune', 'kp:cusp9', timing]
+- id: KP.III.CareerSubPromise
+  name: 10 cusp sub lord signifies 2, 6, 10, 11 (career)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 10 signifies houses 2, 6, 10, 11, career matters are promised.
+  condition: signifies(kp_sub_lord(10), [2, 6, 10, 11])
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: 2
+    themes: [career promised]
+  timing: signifies(dasha_lord, [2, 6, 10, 11]) and signifies(antardasha_lord, [2, 6, 10, 11])
+  tags: ['domain:career', 'kp:cusp10']
+- id: KP.III.CareerSubDenial
+  name: 10 cusp sub lord signifies only 1, 5, 9 (career)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 10 signifies 1, 5, 9 and none of 2, 6, 10, 11, career matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(10), [1, 5, 9]) and not signifies(kp_sub_lord(10), [2, 6, 10, 11])
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: -2
+    themes: [career denied or delayed]
+  tags: ['domain:career', 'kp:cusp10']
+- id: KP.III.CareerSubMixed
+  name: 10 cusp sub lord signifies both sets (career)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 10 signifies both 2, 6, 10, 11 and 1, 5, 9, career matters come with obstacles.
+  condition: signifies(kp_sub_lord(10), [2, 6, 10, 11]) and signifies(kp_sub_lord(10), [1, 5, 9])
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: -1
+    themes: [obstacles in career]
+  tags: ['domain:career', 'kp:cusp10']
+- id: KP.III.CareerTiming
+  name: Periods of 2, 6, 10, 11 significators (career)
+  source:
+    chapter: III
+    paraphrase: Career matters fructify in the conjoined periods of planets signifying houses 2, 6, 10, 11.
+  condition: signifies(kp_sub_lord(10), [2, 6, 10, 11])
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: 1
+    themes: [period of career]
+  timing: signifies(dasha_lord, [2, 6, 10, 11]) and signifies(antardasha_lord, [2, 6, 10, 11]) and signifies(pratyantardasha_lord,
+    [2, 6, 10, 11])
+  tags: ['domain:career', 'kp:cusp10', timing]
+- id: KP.III.GainsSubPromise
+  name: 11 cusp sub lord signifies 2, 6, 11 (gains)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 11 signifies houses 2, 6, 11, gains matters are promised.
+  condition: signifies(kp_sub_lord(11), [2, 6, 11])
+  effect:
+    domains: [gains, friends]
+    polarity: 2
+    themes: [gains promised]
+  timing: signifies(dasha_lord, [2, 6, 11]) and signifies(antardasha_lord, [2, 6, 11])
+  tags: ['domain:gains', 'kp:cusp11']
+- id: KP.III.GainsSubDenial
+  name: 11 cusp sub lord signifies only 5, 8, 12 (gains)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 11 signifies 5, 8, 12 and none of 2, 6, 11, gains matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(11), [5, 8, 12]) and not signifies(kp_sub_lord(11), [2, 6, 11])
+  effect:
+    domains: [gains, friends]
+    polarity: -2
+    themes: [gains denied or delayed]
+  tags: ['domain:gains', 'kp:cusp11']
+- id: KP.III.GainsSubMixed
+  name: 11 cusp sub lord signifies both sets (gains)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 11 signifies both 2, 6, 11 and 5, 8, 12, gains matters come with obstacles.
+  condition: signifies(kp_sub_lord(11), [2, 6, 11]) and signifies(kp_sub_lord(11), [5, 8, 12])
+  effect:
+    domains: [gains, friends]
+    polarity: -1
+    themes: [obstacles in gains]
+  tags: ['domain:gains', 'kp:cusp11']
+- id: KP.III.GainsTiming
+  name: Periods of 2, 6, 11 significators (gains)
+  source:
+    chapter: III
+    paraphrase: Gains matters fructify in the conjoined periods of planets signifying houses 2, 6, 11.
+  condition: signifies(kp_sub_lord(11), [2, 6, 11])
+  effect:
+    domains: [gains, friends]
+    polarity: 1
+    themes: [period of gains]
+  timing: signifies(dasha_lord, [2, 6, 11]) and signifies(antardasha_lord, [2, 6, 11]) and signifies(pratyantardasha_lord,
+    [2, 6, 11])
+  tags: ['domain:gains', 'kp:cusp11', timing]
+- id: KP.III.ForeignSubPromise
+  name: 12 cusp sub lord signifies 3, 9, 12 (foreign)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies houses 3, 9, 12, foreign matters are promised.
+  condition: signifies(kp_sub_lord(12), [3, 9, 12])
+  effect:
+    domains: [foreign, travel, expenditure, losses]
+    polarity: 2
+    themes: [foreign promised]
+  timing: signifies(dasha_lord, [3, 9, 12]) and signifies(antardasha_lord, [3, 9, 12])
+  tags: ['domain:foreign', 'kp:cusp12']
+- id: KP.III.ForeignSubDenial
+  name: 12 cusp sub lord signifies only 2, 4, 11 (foreign)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies 2, 4, 11 and none of 3, 9, 12, foreign matters are denied or long delayed.
+  condition: signifies(kp_sub_lord(12), [2, 4, 11]) and not signifies(kp_sub_lord(12), [3, 9, 12])
+  effect:
+    domains: [foreign, travel, expenditure, losses]
+    polarity: -2
+    themes: [foreign denied or delayed]
+  tags: ['domain:foreign', 'kp:cusp12']
+- id: KP.III.ForeignSubMixed
+  name: 12 cusp sub lord signifies both sets (foreign)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies both 3, 9, 12 and 2, 4, 11, foreign matters come with obstacles.
+  condition: signifies(kp_sub_lord(12), [3, 9, 12]) and signifies(kp_sub_lord(12), [2, 4, 11])
+  effect:
+    domains: [foreign, travel, expenditure, losses]
+    polarity: -1
+    themes: [obstacles in foreign]
+  tags: ['domain:foreign', 'kp:cusp12']
+- id: KP.III.ForeignTiming
+  name: Periods of 3, 9, 12 significators (foreign)
+  source:
+    chapter: III
+    paraphrase: Foreign matters fructify in the conjoined periods of planets signifying houses 3, 9, 12.
+  condition: signifies(kp_sub_lord(12), [3, 9, 12])
+  effect:
+    domains: [foreign, travel, expenditure, losses]
+    polarity: 1
+    themes: [period of foreign]
+  timing: signifies(dasha_lord, [3, 9, 12]) and signifies(antardasha_lord, [3, 9, 12]) and signifies(pratyantardasha_lord,
+    [3, 9, 12])
+  tags: ['domain:foreign', 'kp:cusp12', timing]
+- id: KP.III.SpiritualitySubPromise
+  name: 12 cusp sub lord signifies 5, 9, 12 (spirituality)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies houses 5, 9, 12, spirituality matters are promised.
+  condition: signifies(kp_sub_lord(12), [5, 9, 12])
+  effect:
+    domains: [spirituality, moksha]
+    polarity: 2
+    themes: [spirituality promised]
+  timing: signifies(dasha_lord, [5, 9, 12]) and signifies(antardasha_lord, [5, 9, 12])
+  tags: ['domain:spirituality', 'kp:cusp12']
+- id: KP.III.SpiritualitySubDenial
+  name: 12 cusp sub lord signifies only 2, 6, 10, 11 (spirituality)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies 2, 6, 10, 11 and none of 5, 9, 12, spirituality matters are denied or
+      long delayed.
+  condition: signifies(kp_sub_lord(12), [2, 6, 10, 11]) and not signifies(kp_sub_lord(12), [5, 9, 12])
+  effect:
+    domains: [spirituality, moksha]
+    polarity: -2
+    themes: [spirituality denied or delayed]
+  tags: ['domain:spirituality', 'kp:cusp12']
+- id: KP.III.SpiritualitySubMixed
+  name: 12 cusp sub lord signifies both sets (spirituality)
+  source:
+    chapter: III
+    paraphrase: If the sub lord of cusp 12 signifies both 5, 9, 12 and 2, 6, 10, 11, spirituality matters come with obstacles.
+  condition: signifies(kp_sub_lord(12), [5, 9, 12]) and signifies(kp_sub_lord(12), [2, 6, 10, 11])
+  effect:
+    domains: [spirituality, moksha]
+    polarity: -1
+    themes: [obstacles in spirituality]
+  tags: ['domain:spirituality', 'kp:cusp12']
+- id: KP.III.SpiritualityTiming
+  name: Periods of 5, 9, 12 significators (spirituality)
+  source:
+    chapter: III
+    paraphrase: Spirituality matters fructify in the conjoined periods of planets signifying houses 5, 9, 12.
+  condition: signifies(kp_sub_lord(12), [5, 9, 12])
+  effect:
+    domains: [spirituality, moksha]
+    polarity: 1
+    themes: [period of spirituality]
+  timing: signifies(dasha_lord, [5, 9, 12]) and signifies(antardasha_lord, [5, 9, 12]) and signifies(pratyantardasha_lord,
+    [5, 9, 12])
+  tags: ['domain:spirituality', 'kp:cusp12', timing]

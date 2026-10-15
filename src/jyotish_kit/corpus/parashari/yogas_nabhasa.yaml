@@ -1,0 +1,245 @@
+# Nabhasa yogas (BPHS ch.35): 32 configurations of the seven planets (Sun..Saturn; the nodes are not
+# counted). BPHS says these act throughout life rather than in a dasha, so no timing is given.
+# The text also gives an order of precedence (akriti/sankhya overlap); synthesis applies it, not this file.
+defaults:
+  school: parashari
+  classical_strength: primary
+  tags: [yoga, nabhasa]
+  source:
+    text: Brihat Parashara Hora Shastra
+    chapter: 35
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "verse to be confirmed against the edition"
+
+rules:
+  # ---------------------------------------------------------------- ashraya (by sign quality)
+  - id: BPHS.35.Rajju
+    name: Rajju yoga
+    source: {paraphrase: "All seven planets in movable signs: fond of travel, good-looking, earns in other lands, but harsh in temper."}
+    condition: "all(p in seven: in_sign(p, movable_signs))"
+    effect: {domains: [travel, foreign, temperament], polarity: 0, themes: ["wandering", "earning abroad", "harshness"]}
+    tags: [yoga, nabhasa, ashraya]
+
+  - id: BPHS.35.Musala
+    name: Musala yoga
+    source: {paraphrase: "All seven planets in fixed signs: proud, wealthy, learned, well known, firm of mind, with many children."}
+    condition: "all(p in seven: in_sign(p, fixed_signs))"
+    effect: {domains: [wealth, fame, temperament], polarity: 1, themes: ["steadiness", "wealth and learning", "pride"]}
+    tags: [yoga, nabhasa, ashraya]
+
+  - id: BPHS.35.Nala
+    name: Nala yoga
+    source: {paraphrase: "All seven planets in dual signs: a bodily defect, skilful, keen on accumulating money and helpful to relatives."}
+    condition: "all(p in seven: in_sign(p, dual_signs))"
+    effect: {domains: [wealth, family, health], polarity: 0, themes: ["skill", "saving money", "physical blemish"]}
+    tags: [yoga, nabhasa, ashraya]
+
+  # ---------------------------------------------------------------- dala (benefics / malefics in three kendras)
+  - id: BPHS.35.Mala
+    name: Mala (Srik) yoga
+    source: {paraphrase: "The benefics Mercury, Jupiter and Venus occupying three kendras: lifelong happiness, vehicles, fine clothes, good food and pleasures."}
+    condition: "all(b in [Mercury, Jupiter, Venus]: in_house(b, kendra)) and len(houses_of([Mercury, Jupiter, Venus])) == 3"
+    effect: {domains: [happiness, vehicles, wealth], polarity: 2, themes: ["comforts", "pleasures"]}
+    tags: [yoga, nabhasa, dala]
+
+  - id: BPHS.35.Sarpa
+    name: Sarpa yoga
+    source: {paraphrase: "The malefics Sun, Mars and Saturn occupying three kendras: crooked, cruel, poor and miserable, dependent on others."}
+    condition: "all(m in [Sun, Mars, Saturn]: in_house(m, kendra)) and len(houses_of([Sun, Mars, Saturn])) == 3"
+    effect: {domains: [happiness, wealth, temperament], polarity: -2, themes: ["hardship", "dependence"]}
+    tags: [yoga, nabhasa, dala]
+
+  # ---------------------------------------------------------------- akriti (shapes)
+  - id: BPHS.35.Gada
+    name: Gada yoga
+    source: {paraphrase: "All seven planets in two adjacent kendras (1-4, 4-7, 7-10 or 10-1): always striving for wealth, performs rites, learned in scripture, rich in gold and gems."}
+    condition: "houses_of(seven) in [[1, 4], [4, 7], [7, 10], [1, 10]]"
+    effect: {domains: [wealth, dharma, education], polarity: 1, themes: ["effort for wealth", "learning"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Sakata
+    name: Sakata yoga
+    source: {paraphrase: "All seven planets in the 1st and 7th: sickly, earns by carts or vehicles, poor and without friends."}
+    condition: "houses_of(seven) == [1, 7]"
+    effect: {domains: [health, wealth, friends], polarity: -2, themes: ["ill health", "toil", "few friends"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Vihaga
+    name: Vihaga (Pakshi) yoga
+    source: {paraphrase: "All seven planets in the 4th and 10th: a wanderer or messenger, quarrelsome, living by errands."}
+    condition: "houses_of(seven) == [4, 10]"
+    effect: {domains: [travel, career], polarity: -1, themes: ["wandering work", "quarrels"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Shringataka
+    name: Shringataka yoga
+    source: {paraphrase: "All seven planets in the 1st, 5th and 9th: fond of quarrels yet happy, dear to rulers, with a good spouse and wealth."}
+    condition: "houses_of(seven) == [1, 5, 9]"
+    effect: {domains: [status, spouse, wealth], polarity: 1, themes: ["favour of authority", "prosperity", "contentiousness"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Hala
+    name: Hala yoga
+    source: {paraphrase: "All seven planets in a trine other than the Lagna's (2-6-10, 3-7-11 or 4-8-12): a farmer, eats much, poor, distressed and abandoned by friends."}
+    condition: "houses_of(seven) in [[2, 6, 10], [3, 7, 11], [4, 8, 12]]"
+    effect: {domains: [wealth, career, friends], polarity: -1, themes: ["agricultural or manual work", "want"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Vajra
+    name: Vajra yoga
+    source: {paraphrase: "Benefics in the 1st and 7th, malefics in the 4th and 10th: happy in early and late life, brave, good-looking, fortunate."}
+    condition: >-
+      all(p in seven: (benefic(p) and in_house(p, [1, 7])) or (malefic(p) and in_house(p, [4, 10])))
+      and any(p in seven: in_house(p, [1, 7])) and any(p in seven: in_house(p, [4, 10]))
+    effect: {domains: [happiness, fortune, courage], polarity: 1, themes: ["happy beginning and end of life", "valour"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Yava
+    name: Yava yoga
+    source: {paraphrase: "Malefics in the 1st and 7th, benefics in the 4th and 10th: observes vows and religious acts, happy in middle life, wealthy and charitable."}
+    condition: >-
+      all(p in seven: (malefic(p) and in_house(p, [1, 7])) or (benefic(p) and in_house(p, [4, 10])))
+      and any(p in seven: in_house(p, [1, 7])) and any(p in seven: in_house(p, [4, 10]))
+    effect: {domains: [dharma, wealth, happiness], polarity: 1, themes: ["religious observance", "prosperity in middle life"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Kamala
+    name: Kamala (Padma) yoga
+    source: {paraphrase: "All seven planets spread over the four kendras: rich, virtuous, long-lived, famous, of pure deeds, ruler-like."}
+    condition: "houses_of(seven) == [1, 4, 7, 10]"
+    effect: {domains: [fame, wealth, longevity, status], polarity: 2, themes: ["renown", "virtue", "long life"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Vapi
+    name: Vapi yoga
+    source: {paraphrase: "All seven planets in the panaphara houses, or all in the apoklima houses: accumulates and keeps wealth, enjoys comforts and children."}
+    condition: "all(p in seven: in_house(p, panaphara)) or all(p in seven: in_house(p, apoklima))"
+    effect: {domains: [wealth, children, happiness], polarity: 1, themes: ["accumulated wealth", "comforts"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Yupa
+    name: Yupa yoga
+    source: {paraphrase: "All seven planets in the four houses from the Lagna (1-4): spiritual knowledge, fond of sacrificial rites, with spouse and strength, keeps vows."}
+    condition: "houses_of(seven) == house_run(1, 4)"
+    effect: {domains: [spirituality, dharma, spouse], polarity: 1, themes: ["ritual and spiritual practice"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Shara
+    name: Shara (Ishu) yoga
+    source: {paraphrase: "All seven planets in the four houses from the 4th (4-7): makes weapons, a hunter or jailer, eats meat, takes up rough crafts."}
+    condition: "houses_of(seven) == house_run(4, 4)"
+    effect: {domains: [career, temperament], polarity: -1, themes: ["rough occupations"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Shakti
+    name: Shakti yoga
+    source: {paraphrase: "All seven planets in the four houses from the 7th (7-10): without wealth, unsuccessful and sorrowful, idle, yet long-lived and able in battle."}
+    condition: "houses_of(seven) == house_run(7, 4)"
+    effect: {domains: [wealth, longevity], polarity: -1, themes: ["poor success", "endurance"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Danda
+    name: Danda yoga
+    source: {paraphrase: "All seven planets in the four houses from the 10th (10-1): loses children and spouse, poor, unkind, serves low people."}
+    condition: "houses_of(seven) == house_run(10, 4)"
+    effect: {domains: [children, spouse, wealth], polarity: -2, themes: ["separation from family", "servitude"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Nauka
+    name: Nauka yoga
+    source: {paraphrase: "All seven planets in the seven houses from the Lagna: earns from water or sea trade, wealthy and famous but miserly and restless."}
+    condition: "houses_of(seven) == house_run(1, 7)"
+    effect: {domains: [wealth, fame, travel], polarity: 1, themes: ["earning from water or shipping", "miserliness"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Koota
+    name: Koota yoga
+    source: {paraphrase: "All seven planets in the seven houses from the 4th: untruthful, a jailer, poor, harsh, living in hills or forts."}
+    condition: "houses_of(seven) == house_run(4, 7)"
+    effect: {domains: [temperament, wealth], polarity: -2, themes: ["deceit", "harsh occupations"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Chatra
+    name: Chatra yoga
+    source: {paraphrase: "All seven planets in the seven houses from the 7th: protects his people, kind, dear to rulers, intelligent, happy in early and late life, long-lived."}
+    condition: "houses_of(seven) == house_run(7, 7)"
+    effect: {domains: [status, friends, longevity], polarity: 2, themes: ["kindness", "favour of authority", "long life"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Chapa
+    name: Chapa (Karmuka) yoga
+    source: {paraphrase: "All seven planets in the seven houses from the 10th: untruthful, guards secrets, a thief or forest-dweller, happy in middle life."}
+    condition: "houses_of(seven) == house_run(10, 7)"
+    effect: {domains: [temperament, hidden_matters], polarity: -1, themes: ["secrecy", "dubious means"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Ardhachandra
+    name: Ardhachandra yoga
+    source: {paraphrase: "All seven planets in seven consecutive houses beginning from a non-kendra house: leads an army, splendid in body, dear to rulers, strong, owns jewels."}
+    condition: "any(s in [2, 3, 5, 6, 8, 9, 11, 12]: houses_of(seven) == house_run(s, 7))"
+    effect: {domains: [authority, status, wealth], polarity: 2, themes: ["command", "splendour"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Chakra
+    name: Chakra yoga
+    source: {paraphrase: "All seven planets in the six alternate houses from the Lagna (1, 3, 5, 7, 9, 11): an emperor to whom rulers bow."}
+    condition: "houses_of(seven) == [1, 3, 5, 7, 9, 11]"
+    effect: {domains: [authority, status, fame], polarity: 2, themes: ["supreme authority"]}
+    tags: [yoga, nabhasa, akriti]
+
+  - id: BPHS.35.Samudra
+    name: Samudra yoga
+    source: {paraphrase: "All seven planets in the six alternate houses from the 2nd (2, 4, 6, 8, 10, 12): many gems and riches, enjoyments, dear to people, of good disposition and lasting wealth."}
+    condition: "houses_of(seven) == [2, 4, 6, 8, 10, 12]"
+    effect: {domains: [wealth, happiness], polarity: 2, themes: ["abundant and lasting wealth"]}
+    tags: [yoga, nabhasa, akriti]
+
+  # ---------------------------------------------------------------- sankhya (number of signs occupied)
+  - id: BPHS.35.Vallaki
+    name: Vallaki (Veena) yoga
+    source: {paraphrase: "The seven planets in seven different signs: fond of song, dance and music, skilful, happy, wealthy, a leader."}
+    condition: "len(signs_of(seven)) == 7"
+    effect: {domains: [happiness, wealth, status], polarity: 1, themes: ["arts and music", "leadership"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Damini
+    name: Damini (Dama) yoga
+    source: {paraphrase: "The seven planets in six signs: helpful to others, wealth earned righteously, many cattle, children and gems."}
+    condition: "len(signs_of(seven)) == 6"
+    effect: {domains: [wealth, children, dharma], polarity: 1, themes: ["generosity", "righteous wealth"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Pasha
+    name: Pasha yoga
+    source: {paraphrase: "The seven planets in five signs: earns by questionable means, talkative, with many servants and dependants, liable to bondage."}
+    condition: "len(signs_of(seven)) == 5"
+    effect: {domains: [wealth, temperament], polarity: -1, themes: ["dubious earnings", "entanglements"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Kedara
+    name: Kedara yoga
+    source: {paraphrase: "The seven planets in four signs: lives by agriculture or land, useful to many, truthful, happy and wealthy."}
+    condition: "len(signs_of(seven)) == 4"
+    effect: {domains: [property, wealth, happiness], polarity: 1, themes: ["land", "usefulness to others"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Shoola
+    name: Shoola yoga
+    source: {paraphrase: "The seven planets in three signs: sharp, idle, without wealth, cruel, injured or hurt, yet brave in fights."}
+    condition: "len(signs_of(seven)) == 3"
+    effect: {domains: [wealth, health, temperament], polarity: -1, themes: ["harshness", "injury", "want"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Yuga
+    name: Yuga yoga
+    source: {paraphrase: "The seven planets in two signs: heterodox, poor, shunned, lacking children, mother and virtue."}
+    condition: "len(signs_of(seven)) == 2"
+    effect: {domains: [wealth, family, dharma], polarity: -2, themes: ["isolation", "poverty"]}
+    tags: [yoga, nabhasa, sankhya]
+
+  - id: BPHS.35.Gola
+    name: Gola yoga
+    source: {paraphrase: "All seven planets in one sign: strong yet poor, unclean, unlearned, sorrowful, wandering."}
+    condition: "len(signs_of(seven)) == 1"
+    effect: {domains: [wealth, education, happiness], polarity: -2, themes: ["poverty", "sorrow"]}
+    tags: [yoga, nabhasa, sankhya]

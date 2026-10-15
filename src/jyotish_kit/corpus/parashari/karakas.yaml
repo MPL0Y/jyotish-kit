@@ -1,0 +1,163 @@
+# Natural karakas (BPHS ch.32) strong or weak; Venus (spouse) is in marriage.yaml. Career's several karakas
+# are left to the triple confirmation rather than scored four times. Generated once; edit directly.
+defaults:
+  school: parashari
+  classical_strength: primary
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984
+    note: karaka assignments of ch.32; verse to be confirmed against the edition
+rules:
+- id: BPHS.32.SunKarakaStrong
+  name: Sun (karaka of self, father) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Sun as natural significator of self, father, when strong and outside the dusthanas, supports those matters.
+  condition: strong(Sun) and not in_house(Sun, dusthana)
+  effect:
+    domains: [self, father]
+    polarity: 1
+    themes: [self supported, father supported]
+  timing: Sun in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Sun']
+- id: BPHS.32.SunKarakaWeak
+  name: Sun (karaka of self, father) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Sun as natural significator of self, father, when weak (debilitated, combust, defeated) or in a dusthana,
+      harms those matters.
+  condition: (weak(Sun) or in_house(Sun, dusthana)) and not aided(Sun)
+  effect:
+    domains: [self, father]
+    polarity: -1
+    themes: [self strained, father strained]
+  timing: Sun in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Sun']
+- id: BPHS.32.MoonKarakaStrong
+  name: Moon (karaka of mother) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Moon as natural significator of mother, when strong and outside the dusthanas, supports those matters.
+  condition: strong(Moon) and not in_house(Moon, dusthana)
+  effect:
+    domains: [mother]
+    polarity: 1
+    themes: [mother supported]
+  timing: Moon in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Moon']
+- id: BPHS.32.MoonKarakaWeak
+  name: Moon (karaka of mother) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Moon as natural significator of mother, when weak (debilitated, combust, defeated) or in a dusthana, harms
+      those matters.
+  condition: (weak(Moon) or in_house(Moon, dusthana)) and not aided(Moon)
+  effect:
+    domains: [mother]
+    polarity: -1
+    themes: [mother strained]
+  timing: Moon in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Moon']
+- id: BPHS.32.MarsKarakaStrong
+  name: Mars (karaka of siblings, home, property) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Mars as natural significator of siblings, home, property, when strong and outside the dusthanas, supports
+      those matters.
+  condition: strong(Mars) and not in_house(Mars, dusthana)
+  effect:
+    domains: [siblings, home, property]
+    polarity: 1
+    themes: [siblings supported, home supported, property supported]
+  timing: Mars in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Mars']
+- id: BPHS.32.MarsKarakaWeak
+  name: Mars (karaka of siblings, home, property) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Mars as natural significator of siblings, home, property, when weak (debilitated, combust, defeated) or in
+      a dusthana, harms those matters.
+  condition: (weak(Mars) or in_house(Mars, dusthana)) and not aided(Mars)
+  effect:
+    domains: [siblings, home, property]
+    polarity: -1
+    themes: [siblings strained, home strained, property strained]
+  timing: Mars in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Mars']
+- id: BPHS.32.MercuryKarakaStrong
+  name: Mercury (karaka of education, intelligence) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Mercury as natural significator of education, intelligence, when strong and outside the dusthanas, supports
+      those matters.
+  condition: strong(Mercury) and not in_house(Mercury, dusthana)
+  effect:
+    domains: [education, intelligence]
+    polarity: 1
+    themes: [education supported, intelligence supported]
+  timing: Mercury in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Mercury']
+- id: BPHS.32.MercuryKarakaWeak
+  name: Mercury (karaka of education, intelligence) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Mercury as natural significator of education, intelligence, when weak (debilitated, combust, defeated) or
+      in a dusthana, harms those matters.
+  condition: (weak(Mercury) or in_house(Mercury, dusthana)) and not aided(Mercury)
+  effect:
+    domains: [education, intelligence]
+    polarity: -1
+    themes: [education strained, intelligence strained]
+  timing: Mercury in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Mercury']
+- id: BPHS.32.JupiterKarakaStrong
+  name: Jupiter (karaka of wealth, children, fortune, gains) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Jupiter as natural significator of wealth, children, fortune, gains, when strong and outside the dusthanas,
+      supports those matters.
+  condition: strong(Jupiter) and not in_house(Jupiter, dusthana)
+  effect:
+    domains: [wealth, children, fortune, gains]
+    polarity: 1
+    themes: [wealth supported, children supported, fortune supported, gains supported]
+  timing: Jupiter in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Jupiter']
+- id: BPHS.32.JupiterKarakaWeak
+  name: Jupiter (karaka of wealth, children, fortune, gains) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Jupiter as natural significator of wealth, children, fortune, gains, when weak (debilitated, combust, defeated)
+      or in a dusthana, harms those matters.
+  condition: (weak(Jupiter) or in_house(Jupiter, dusthana)) and not aided(Jupiter)
+  effect:
+    domains: [wealth, children, fortune, gains]
+    polarity: -1
+    themes: [wealth strained, children strained, fortune strained, gains strained]
+  timing: Jupiter in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Jupiter']
+- id: BPHS.32.SaturnKarakaStrong
+  name: Saturn (karaka of longevity) strong and well placed
+  source:
+    chapter: 32
+    paraphrase: Saturn as natural significator of longevity, when strong and outside the dusthanas, supports those matters.
+  condition: strong(Saturn) and not in_house(Saturn, dusthana)
+  effect:
+    domains: [longevity]
+    polarity: 1
+    themes: [longevity supported]
+  timing: Saturn in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Saturn']
+- id: BPHS.32.SaturnKarakaWeak
+  name: Saturn (karaka of longevity) weak or in a dusthana
+  source:
+    chapter: 32
+    paraphrase: Saturn as natural significator of longevity, when weak (debilitated, combust, defeated) or in a dusthana,
+      harms those matters.
+  condition: (weak(Saturn) or in_house(Saturn, dusthana)) and not aided(Saturn)
+  effect:
+    domains: [longevity]
+    polarity: -1
+    themes: [longevity strained]
+  timing: Saturn in [dasha_lord, antardasha_lord]
+  tags: ['karaka:Saturn']

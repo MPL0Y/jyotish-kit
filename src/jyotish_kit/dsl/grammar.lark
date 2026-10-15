@@ -1,0 +1,38 @@
+// Rule condition language: pure expressions over the fact graph, no side effects.
+?start: expr
+
+?expr: and_expr ("or" and_expr)+     -> or_
+     | and_expr
+?and_expr: not_expr ("and" not_expr)+ -> and_
+         | not_expr
+?not_expr: "not" not_expr             -> not_
+         | comparison
+?comparison: sum COMP sum             -> cmp
+           | sum "in" sum             -> in_
+           | sum "not" "in" sum       -> not_in
+           | sum
+?sum: sum ADD_OP product              -> arith
+    | product
+?product: product MUL_OP atom         -> arith
+        | atom
+?atom: NUMBER                         -> num
+     | STRING                         -> string
+     | QUANT "(" NAME "in" expr ":" expr ")" -> quant
+     | "varga" "(" STRING ")" "." call -> varga
+     | call
+     | NAME                           -> name
+     | "[" [expr ("," expr)*] "]"     -> list
+     | "(" expr ")"
+
+call: NAME "(" [expr ("," expr)*] ")"
+
+QUANT.2: "any" | "all" | "count"
+COMP: "==" | "!=" | "<=" | ">=" | "<" | ">"
+ADD_OP: "+" | "-"
+MUL_OP: "*" | "/" | "%"
+NAME: /[A-Za-z_][A-Za-z0-9_]*(\.[A-Za-z_][A-Za-z0-9_]*)?/
+STRING: /"[^"]*"/
+NUMBER: /\d+(\.\d+)?/
+
+%ignore /\s+/
+%ignore /#[^\n]*/

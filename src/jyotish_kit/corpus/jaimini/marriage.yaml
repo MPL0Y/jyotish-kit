@@ -1,0 +1,80 @@
+# Marriage domain, Jaimini: upapada (UL), darakaraka (DK), the 7th from karakamsha.
+defaults:
+  school: jaimini
+  classical_strength: primary
+  tags: [domain:marriage]
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: "R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984"
+    note: "Jaimini-type material carried in BPHS; verse to be confirmed against the edition"
+
+rules:
+  # ---------------------------------------------------------------- upapada (BPHS ch.30)
+  - id: BPHS.30.UL2Malefic
+    name: Malefic in the 2nd from upapada
+    source: {chapter: 30, paraphrase: "A malefic in the 2nd from the upapada, not aided by a benefic, threatens loss of the spouse or a break in the marriage; a malefic there in its own or exaltation sign does not."}
+    condition: >-
+      any(m in occupants_sign(sign_from(arudha("UL"), 2)): malefic(m))
+      and not any(b in occupants_sign(sign_from(arudha("UL"), 2)): benefic(b))
+    cancels_if: "all(m in occupants_sign(sign_from(arudha(\"UL\"), 2)): not malefic(m) or dignified(m))"
+    effect: {domains: [marriage, spouse], polarity: -2, themes: ["break in marriage", "loss of spouse"]}
+    tags: [domain:marriage, upapada]
+
+  - id: BPHS.30.UL2Benefic
+    name: Benefic in the 2nd from upapada
+    source: {chapter: 30, paraphrase: "Benefics in, or aspecting, the 2nd from the upapada sustain the marriage."}
+    condition: "any(b in occupants_sign(sign_from(arudha(\"UL\"), 2)): benefic(b))"
+    effect: {domains: [marriage], polarity: 1, themes: ["continuity of marriage"]}
+    tags: [domain:marriage, upapada]
+
+  - id: BPHS.30.ULBenefic
+    name: Benefics with the upapada
+    source: {chapter: 30, paraphrase: "Benefics occupying the upapada indicate a good spouse and happiness through marriage."}
+    condition: "any(b in occupants_sign(arudha(\"UL\")): benefic(b))"
+    effect: {domains: [spouse, marriage], polarity: 1, themes: ["good spouse"]}
+    classical_strength: supporting
+    tags: [domain:marriage, upapada]
+
+  # ---------------------------------------------------------------- darakaraka (BPHS ch.32)
+  - id: BPHS.32.DarakarakaDignified
+    name: Darakaraka dignified
+    source: {chapter: 32, paraphrase: "The darakaraka (the planet with the lowest degrees) signifies the spouse; dignified, it indicates a capable and supportive spouse."}
+    condition: 'dignified(karaka("DK")) or varga("D9").dignified(karaka("DK"))'
+    effect: {domains: [spouse], polarity: 1, themes: ["capable spouse"]}
+    timing: 'karaka("DK") in [dasha_lord, antardasha_lord]'
+    tags: [domain:marriage, karaka:DK]
+
+  - id: BPHS.32.DarakarakaWeak
+    name: Darakaraka debilitated or combust
+    source: {chapter: 32, paraphrase: "A debilitated or combust darakaraka points to difficulties for or with the spouse."}
+    condition: 'neecha(karaka("DK")) or is_combust(karaka("DK"))'
+    effect: {domains: [spouse, marriage], polarity: -1, themes: ["spouse's difficulties"]}
+    timing: 'karaka("DK") in [dasha_lord, antardasha_lord]'
+    tags: [domain:marriage, karaka:DK]
+
+  # ---------------------------------------------------------------- 7th from karakamsha (BPHS ch.33)
+  - id: BPHS.33.KL7MoonJupiter
+    name: Moon and Jupiter in the 7th from karakamsha
+    source: {chapter: 33, paraphrase: "The Moon and Jupiter in the 7th from the karakamsha give a very beautiful spouse.", note: "houses counted from the karakamsha in the navamsa chart (as in the text's navamsa context); some count in the rashi chart"}
+    varga: D9
+    condition: 'all(p in [Moon, Jupiter]: p in occupants_sign(sign_from(special_lagna("Karakamsha"), 7)))'
+    effect: {domains: [spouse], polarity: 2, themes: ["attractive spouse"]}
+    tags: [domain:marriage, karakamsha]
+
+  - id: BPHS.33.KL7Saturn
+    name: Saturn in the 7th from karakamsha
+    source: {chapter: 33, paraphrase: "Saturn in the 7th from the karakamsha gives a spouse older in age, or one who is sickly or austere.", note: "houses counted from the karakamsha in the navamsa chart"}
+    varga: D9
+    condition: 'Saturn in occupants_sign(sign_from(special_lagna("Karakamsha"), 7))'
+    effect: {domains: [spouse], polarity: -1, themes: ["older or austere spouse"]}
+    classical_strength: supporting
+    tags: [domain:marriage, karakamsha]
+
+  - id: BPHS.33.KL7Rahu
+    name: Rahu in the 7th from karakamsha
+    source: {chapter: 33, paraphrase: "Rahu in the 7th from the karakamsha indicates a spouse who was previously married or widowed.", note: "houses counted from the karakamsha in the navamsa chart"}
+    varga: D9
+    condition: 'Rahu in occupants_sign(sign_from(special_lagna("Karakamsha"), 7))'
+    effect: {domains: [spouse], polarity: -1, themes: ["unconventional spouse or circumstances"]}
+    classical_strength: supporting
+    tags: [domain:marriage, karakamsha]

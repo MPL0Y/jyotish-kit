@@ -1,0 +1,477 @@
+# House-judgement principles (BPHS ch.11) applied to houses 1-5 and 9-11; the 7th is in marriage.yaml.
+# Dusthanas (6, 8, 12) are left out: whether their prospering is good for the topic (disease, longevity,
+# foreign, moksha) needs its own rules. Malefics are not counted against the upachayas 3, 10, 11, which
+# they traditionally strengthen. Generated once; edit this file directly from now on.
+defaults:
+  school: parashari
+  classical_strength: primary
+  source:
+    text: Brihat Parashara Hora Shastra
+    edition: R. Santhanam (tr.), Brihat Parasara Hora Sastra, Ranjan Publications, New Delhi, 1984
+    note: the general house-judgement principles of ch.11 applied house by house; verse to be confirmed against the edition
+rules:
+- id: BPHS.11.H1LordAspects
+  name: Lagna house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the Lagna (self).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(1), 1) and not in_house(lord(1), 1)
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: 1
+    themes: [Lagna house supported by its lord]
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:1', 'lord:1']
+- id: BPHS.11.H1LordStrong
+  name: Lagna lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the Lagna (self).
+  condition: strong(lord(1)) and in_house(lord(1), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: 1
+    themes: [Lagna house matters flourish]
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags: ['lord:1']
+- id: BPHS.11.H1LordAfflicted
+  name: Lagna lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the Lagna (self).
+  condition: afflicted(lord(1)) and not aided(lord(1))
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: -1
+    themes: [obstacles in Lagna house matters]
+  timing: lord(1) in [dasha_lord, antardasha_lord]
+  tags: ['lord:1']
+- id: BPHS.11.H1Benefic
+  name: Benefic influence on the Lagna
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the Lagna (self).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 1) or aspects_house(b, 1))) and not any(m in planets: malefic(m)
+    and (in_house(m, 1) or aspects_house(m, 1)))'
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: 1
+    themes: [Lagna house matters protected]
+  tags: ['bhava:1']
+- id: BPHS.11.H1Malefic
+  name: Malefic influence on the Lagna
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by malefics with no benefic influence is harmed; applied to the Lagna (self).
+  condition: 'any(m in planets: malefic(m) and (in_house(m, 1) or aspects_house(m, 1))) and not any(b in planets: benefic(b)
+    and (in_house(b, 1) or aspects_house(b, 1)))'
+  effect:
+    domains: [self, health, appearance, temperament]
+    polarity: -1
+    themes: [Lagna house matters harmed]
+  tags: ['bhava:1']
+- id: BPHS.11.H2LordAspects
+  name: 2nd house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 2nd (wealth).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(2), 2) and not in_house(lord(2), 2)
+  effect:
+    domains: [wealth, family, speech]
+    polarity: 1
+    themes: [2nd house supported by its lord]
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:2', 'lord:2']
+- id: BPHS.11.H2LordStrong
+  name: 2nd lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 2nd (wealth).
+  condition: strong(lord(2)) and in_house(lord(2), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [wealth, family, speech]
+    polarity: 1
+    themes: [2nd house matters flourish]
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags: ['lord:2']
+- id: BPHS.11.H2LordAfflicted
+  name: 2nd lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 2nd (wealth).
+  condition: afflicted(lord(2)) and not aided(lord(2))
+  effect:
+    domains: [wealth, family, speech]
+    polarity: -1
+    themes: [obstacles in 2nd house matters]
+  timing: lord(2) in [dasha_lord, antardasha_lord]
+  tags: ['lord:2']
+- id: BPHS.11.H2Benefic
+  name: Benefic influence on the 2nd
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 2nd (wealth).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 2) or aspects_house(b, 2))) and not any(m in planets: malefic(m)
+    and (in_house(m, 2) or aspects_house(m, 2)))'
+  effect:
+    domains: [wealth, family, speech]
+    polarity: 1
+    themes: [2nd house matters protected]
+  tags: ['bhava:2']
+- id: BPHS.11.H2Malefic
+  name: Malefic influence on the 2nd
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by malefics with no benefic influence is harmed; applied to the 2nd (wealth).
+  condition: 'any(m in planets: malefic(m) and (in_house(m, 2) or aspects_house(m, 2))) and not any(b in planets: benefic(b)
+    and (in_house(b, 2) or aspects_house(b, 2)))'
+  effect:
+    domains: [wealth, family, speech]
+    polarity: -1
+    themes: [2nd house matters harmed]
+  tags: ['bhava:2']
+- id: BPHS.11.H3LordAspects
+  name: 3rd house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 3rd (siblings).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(3), 3) and not in_house(lord(3), 3)
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: 1
+    themes: [3rd house supported by its lord]
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:3', 'lord:3']
+- id: BPHS.11.H3LordStrong
+  name: 3rd lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 3rd (siblings).
+  condition: strong(lord(3)) and in_house(lord(3), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: 1
+    themes: [3rd house matters flourish]
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags: ['lord:3']
+- id: BPHS.11.H3LordAfflicted
+  name: 3rd lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 3rd (siblings).
+  condition: afflicted(lord(3)) and not aided(lord(3))
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: -1
+    themes: [obstacles in 3rd house matters]
+  timing: lord(3) in [dasha_lord, antardasha_lord]
+  tags: ['lord:3']
+- id: BPHS.11.H3Benefic
+  name: Benefic influence on the 3rd
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 3rd (siblings).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 3) or aspects_house(b, 3))) and not any(m in planets: malefic(m)
+    and (in_house(m, 3) or aspects_house(m, 3)))'
+  effect:
+    domains: [siblings, courage, communication]
+    polarity: 1
+    themes: [3rd house matters protected]
+  tags: ['bhava:3']
+- id: BPHS.11.H4LordAspects
+  name: 4th house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 4th (mother / property / education).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(4), 4) and not in_house(lord(4), 4)
+  effect:
+    domains: [mother, home, property, vehicles, happiness, education, intelligence]
+    polarity: 1
+    themes: [4th house supported by its lord]
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:4', 'lord:4']
+- id: BPHS.11.H4LordStrong
+  name: 4th lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 4th (mother / property
+      / education).
+  condition: strong(lord(4)) and in_house(lord(4), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [mother, home, property, vehicles, happiness, education, intelligence]
+    polarity: 1
+    themes: [4th house matters flourish]
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags: ['lord:4']
+- id: BPHS.11.H4LordAfflicted
+  name: 4th lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 4th (mother / property / education).
+  condition: afflicted(lord(4)) and not aided(lord(4))
+  effect:
+    domains: [mother, home, property, vehicles, happiness, education, intelligence]
+    polarity: -1
+    themes: [obstacles in 4th house matters]
+  timing: lord(4) in [dasha_lord, antardasha_lord]
+  tags: ['lord:4']
+- id: BPHS.11.H4Benefic
+  name: Benefic influence on the 4th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 4th (mother
+      / property / education).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 4) or aspects_house(b, 4))) and not any(m in planets: malefic(m)
+    and (in_house(m, 4) or aspects_house(m, 4)))'
+  effect:
+    domains: [mother, home, property, vehicles, happiness, education, intelligence]
+    polarity: 1
+    themes: [4th house matters protected]
+  tags: ['bhava:4']
+- id: BPHS.11.H4Malefic
+  name: Malefic influence on the 4th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by malefics with no benefic influence is harmed; applied to the 4th (mother /
+      property / education).
+  condition: 'any(m in planets: malefic(m) and (in_house(m, 4) or aspects_house(m, 4))) and not any(b in planets: benefic(b)
+    and (in_house(b, 4) or aspects_house(b, 4)))'
+  effect:
+    domains: [mother, home, property, vehicles, happiness, education, intelligence]
+    polarity: -1
+    themes: [4th house matters harmed]
+  tags: ['bhava:4']
+- id: BPHS.11.H5LordAspects
+  name: 5th house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 5th (children).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(5), 5) and not in_house(lord(5), 5)
+  effect:
+    domains: [children]
+    polarity: 1
+    themes: [5th house supported by its lord]
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:5', 'lord:5']
+- id: BPHS.11.H5LordStrong
+  name: 5th lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 5th (children).
+  condition: strong(lord(5)) and in_house(lord(5), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [children]
+    polarity: 1
+    themes: [5th house matters flourish]
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags: ['lord:5']
+- id: BPHS.11.H5LordAfflicted
+  name: 5th lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 5th (children).
+  condition: afflicted(lord(5)) and not aided(lord(5))
+  effect:
+    domains: [children]
+    polarity: -1
+    themes: [obstacles in 5th house matters]
+  timing: lord(5) in [dasha_lord, antardasha_lord]
+  tags: ['lord:5']
+- id: BPHS.11.H5Benefic
+  name: Benefic influence on the 5th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 5th (children).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 5) or aspects_house(b, 5))) and not any(m in planets: malefic(m)
+    and (in_house(m, 5) or aspects_house(m, 5)))'
+  effect:
+    domains: [children]
+    polarity: 1
+    themes: [5th house matters protected]
+  tags: ['bhava:5']
+- id: BPHS.11.H5Malefic
+  name: Malefic influence on the 5th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by malefics with no benefic influence is harmed; applied to the 5th (children).
+  condition: 'any(m in planets: malefic(m) and (in_house(m, 5) or aspects_house(m, 5))) and not any(b in planets: benefic(b)
+    and (in_house(b, 5) or aspects_house(b, 5)))'
+  effect:
+    domains: [children]
+    polarity: -1
+    themes: [5th house matters harmed]
+  tags: ['bhava:5']
+- id: BPHS.11.H9LordAspects
+  name: 9th house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 9th (father / fortune).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(9), 9) and not in_house(lord(9), 9)
+  effect:
+    domains: [father, fortune, dharma, guru]
+    polarity: 1
+    themes: [9th house supported by its lord]
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:9', 'lord:9']
+- id: BPHS.11.H9LordStrong
+  name: 9th lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 9th (father / fortune).
+  condition: strong(lord(9)) and in_house(lord(9), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [father, fortune, dharma, guru]
+    polarity: 1
+    themes: [9th house matters flourish]
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags: ['lord:9']
+- id: BPHS.11.H9LordAfflicted
+  name: 9th lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 9th (father / fortune).
+  condition: afflicted(lord(9)) and not aided(lord(9))
+  effect:
+    domains: [father, fortune, dharma, guru]
+    polarity: -1
+    themes: [obstacles in 9th house matters]
+  timing: lord(9) in [dasha_lord, antardasha_lord]
+  tags: ['lord:9']
+- id: BPHS.11.H9Benefic
+  name: Benefic influence on the 9th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 9th (father
+      / fortune).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 9) or aspects_house(b, 9))) and not any(m in planets: malefic(m)
+    and (in_house(m, 9) or aspects_house(m, 9)))'
+  effect:
+    domains: [father, fortune, dharma, guru]
+    polarity: 1
+    themes: [9th house matters protected]
+  tags: ['bhava:9']
+- id: BPHS.11.H9Malefic
+  name: Malefic influence on the 9th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by malefics with no benefic influence is harmed; applied to the 9th (father /
+      fortune).
+  condition: 'any(m in planets: malefic(m) and (in_house(m, 9) or aspects_house(m, 9))) and not any(b in planets: benefic(b)
+    and (in_house(b, 9) or aspects_house(b, 9)))'
+  effect:
+    domains: [father, fortune, dharma, guru]
+    polarity: -1
+    themes: [9th house matters harmed]
+  tags: ['bhava:9']
+- id: BPHS.11.H10LordAspects
+  name: 10th house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 10th (career).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(10), 10) and not in_house(lord(10), 10)
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: 1
+    themes: [10th house supported by its lord]
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:10', 'lord:10']
+- id: BPHS.11.H10LordStrong
+  name: 10th lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 10th (career).
+  condition: strong(lord(10)) and in_house(lord(10), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: 1
+    themes: [10th house matters flourish]
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags: ['lord:10']
+- id: BPHS.11.H10LordAfflicted
+  name: 10th lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 10th (career).
+  condition: afflicted(lord(10)) and not aided(lord(10))
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: -1
+    themes: [obstacles in 10th house matters]
+  timing: lord(10) in [dasha_lord, antardasha_lord]
+  tags: ['lord:10']
+- id: BPHS.11.H10Benefic
+  name: Benefic influence on the 10th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 10th (career).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 10) or aspects_house(b, 10))) and not any(m in planets: malefic(m)
+    and (in_house(m, 10) or aspects_house(m, 10)))'
+  effect:
+    domains: [career, status, authority, fame]
+    polarity: 1
+    themes: [10th house matters protected]
+  tags: ['bhava:10']
+- id: BPHS.11.H11LordAspects
+  name: 11th house aspected by its own lord
+  source:
+    chapter: 11
+    paraphrase: A house aspected by its own lord prospers; applied to the 11th (gains).
+    note: the lord occupying its own house is BPHS ch.24 (bhavesh) and not repeated here
+  condition: aspects_house(lord(11), 11) and not in_house(lord(11), 11)
+  effect:
+    domains: [gains, friends]
+    polarity: 1
+    themes: [11th house supported by its lord]
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags: ['bhava:11', 'lord:11']
+- id: BPHS.11.H11LordStrong
+  name: 11th lord strong in a kendra or trikona
+  source:
+    chapter: 11
+    paraphrase: A house prospers when its lord is strong and in a kendra or trikona; applied to the 11th (gains).
+  condition: strong(lord(11)) and in_house(lord(11), [1, 4, 5, 7, 9, 10])
+  effect:
+    domains: [gains, friends]
+    polarity: 1
+    themes: [11th house matters flourish]
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags: ['lord:11']
+- id: BPHS.11.H11LordAfflicted
+  name: 11th lord afflicted and unaided
+  source:
+    chapter: 11
+    paraphrase: A house suffers when its lord is joined with or aspected by malefics, combust or debilitated, without benefic
+      help; applied to the 11th (gains).
+  condition: afflicted(lord(11)) and not aided(lord(11))
+  effect:
+    domains: [gains, friends]
+    polarity: -1
+    themes: [obstacles in 11th house matters]
+  timing: lord(11) in [dasha_lord, antardasha_lord]
+  tags: ['lord:11']
+- id: BPHS.11.H11Benefic
+  name: Benefic influence on the 11th
+  source:
+    chapter: 11
+    paraphrase: A house occupied or aspected by benefics, free of malefic influence, prospers; applied to the 11th (gains).
+  condition: 'any(b in planets: benefic(b) and (in_house(b, 11) or aspects_house(b, 11))) and not any(m in planets: malefic(m)
+    and (in_house(m, 11) or aspects_house(m, 11)))'
+  effect:
+    domains: [gains, friends]
+    polarity: 1
+    themes: [11th house matters protected]
+  tags: ['bhava:11']

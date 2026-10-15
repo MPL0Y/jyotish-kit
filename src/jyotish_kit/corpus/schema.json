@@ -1,0 +1,284 @@
+{
+  "$defs": {
+    "Effect": {
+      "additionalProperties": false,
+      "properties": {
+        "domains": {
+          "items": {
+            "enum": [
+              "self",
+              "health",
+              "longevity",
+              "appearance",
+              "temperament",
+              "wealth",
+              "family",
+              "speech",
+              "education",
+              "siblings",
+              "courage",
+              "communication",
+              "mother",
+              "home",
+              "property",
+              "vehicles",
+              "happiness",
+              "children",
+              "intelligence",
+              "romance",
+              "enemies",
+              "disease",
+              "debts",
+              "service",
+              "marriage",
+              "spouse",
+              "partnership",
+              "inheritance",
+              "occult",
+              "hidden_matters",
+              "fortune",
+              "father",
+              "dharma",
+              "guru",
+              "travel",
+              "career",
+              "status",
+              "authority",
+              "fame",
+              "gains",
+              "friends",
+              "losses",
+              "expenditure",
+              "foreign",
+              "moksha",
+              "spirituality",
+              "sexuality"
+            ],
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Domains",
+          "type": "array"
+        },
+        "polarity": {
+          "maximum": 2,
+          "minimum": -2,
+          "title": "Polarity",
+          "type": "integer"
+        },
+        "themes": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Themes",
+          "type": "array"
+        }
+      },
+      "required": [
+        "domains",
+        "polarity"
+      ],
+      "title": "Effect",
+      "type": "object"
+    },
+    "Source": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "minLength": 2,
+          "title": "Text",
+          "type": "string"
+        },
+        "chapter": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "title": "Chapter"
+        },
+        "verse": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Verse"
+        },
+        "edition": {
+          "minLength": 3,
+          "title": "Edition",
+          "type": "string"
+        },
+        "paraphrase": {
+          "minLength": 10,
+          "title": "Paraphrase",
+          "type": "string"
+        },
+        "sanskrit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sanskrit"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "text",
+        "chapter",
+        "edition",
+        "paraphrase"
+      ],
+      "title": "Source",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "pattern": "^[A-Z][A-Za-z]*\\.[A-Za-z0-9]+\\.[A-Za-z0-9_]+(\\.[A-Za-z0-9_]+)?$",
+      "title": "Id",
+      "type": "string"
+    },
+    "name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Name"
+    },
+    "school": {
+      "enum": [
+        "parashari",
+        "jaimini",
+        "kp",
+        "tajika",
+        "nadi",
+        "lalkitab"
+      ],
+      "title": "School",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/Source"
+    },
+    "condition": {
+      "title": "Condition",
+      "type": "string"
+    },
+    "varga": {
+      "default": "D1",
+      "title": "Varga",
+      "type": "string"
+    },
+    "effect": {
+      "$ref": "#/$defs/Effect"
+    },
+    "cancels_if": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Cancels If"
+    },
+    "timing": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Timing"
+    },
+    "classical_strength": {
+      "enum": [
+        "primary",
+        "supporting",
+        "minority_view"
+      ],
+      "title": "Classical Strength",
+      "type": "string"
+    },
+    "tags": {
+      "default": [],
+      "items": {
+        "type": "string"
+      },
+      "title": "Tags",
+      "type": "array"
+    },
+    "status": {
+      "default": "draft",
+      "enum": [
+        "draft",
+        "verified",
+        "disputed"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "verified_by": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Verified By"
+    }
+  },
+  "required": [
+    "id",
+    "school",
+    "source",
+    "condition",
+    "effect",
+    "classical_strength"
+  ],
+  "title": "Rule",
+  "type": "object"
+}
